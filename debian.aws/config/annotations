@@ -5989,7 +5989,7 @@ CONFIG_PINCTRL_MT6397                           policy<{'arm64': 'y', 'armhf': '
 #
 CONFIG_PINCTRL_MT8135                           flag<REVIEW>
 CONFIG_PINCTRL_MT8127                           flag<REVIEW>
-CONFIG_PINCTRL_CHERRYVIEW                       mark<ENFORCED> note<LP #1630238>
+# CONFIG_PINCTRL_CHERRYVIEW                       mark<ENFORCED> note<LP #1630238>
 
 # Menu: Device Drivers >> Pin controllers >> Amlogic SoC pinctrl drivers
 CONFIG_PINCTRL_MESON                            policy<{'armhf': 'y'}>
