@@ -67,6 +67,8 @@ drivers/input/serio/serio_raw.ko
 drivers/input/serio/serport.ko
 drivers/input/touchscreen/usbtouchscreen.ko
 drivers/leds/leds-powernv.ko
+drivers/gpu/drm/drm.ko
+drivers/gpu/drm/drm_kms_helper.ko
 drivers/md/*
 drivers/message/fusion*
 drivers/misc/cxl/*
