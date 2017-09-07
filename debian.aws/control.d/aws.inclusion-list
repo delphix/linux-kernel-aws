@@ -21,6 +21,7 @@ drivers/block/floppy.ko
 drivers/block/loop.ko
 drivers/block/nbd.ko
 drivers/block/rbd.ko
+drivers/block/drbd/drbd.ko
 drivers/block/virtio_blk.ko
 drivers/block/xen-blkfront.ko
 drivers/char/hangcheck-timer.ko
