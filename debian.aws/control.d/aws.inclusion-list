@@ -97,6 +97,7 @@ drivers/net/ethernet/intel/e1000/e1000.ko
 drivers/net/ethernet/intel/e1000e/e1000e.ko
 drivers/net/ethernet/intel/i40e/*
 drivers/net/ethernet/intel/igb/*
+drivers/net/ipvlan/ipvlan.ko
 drivers/net/ethernet/intel/igbvf/igbvf.ko
 drivers/net/ethernet/intel/ixgbe/*
 drivers/net/ethernet/intel/ixgbevf/ixgbevf.ko
