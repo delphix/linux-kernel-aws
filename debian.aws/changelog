@@ -1,0 +1,13 @@
+linux-aws (4.15.0-1001.1) UNRELEASED; urgency=medium
+
+  [ Kamal Mostafa ]
+
+  * Initial linux-aws packaging based on linux (4.15.0-11.12) bionic
+
+ -- Kamal Mostafa <kamal@canonical.com>  Wed, 21 Feb 2018 14:36:49 -0800
+
+linux-aws (4.15.0-1000.0) bionic; urgency=medium
+
+  * Empty entry
+
+ -- Kamal Mostafa <kamal@canonical.com>  Wed, 21 Feb 2018 14:36:49 -0800
