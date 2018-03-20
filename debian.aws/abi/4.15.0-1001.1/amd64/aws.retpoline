@@ -7,7 +7,6 @@ camellia-aesni-avx-x86_64.ko .altinstr_replacement callq  *%r9
 camellia-aesni-avx-x86_64.ko camellia_xts_crypt_16way callq  *%r9
 camellia-aesni-avx2.ko .altinstr_replacement callq  *%r9
 camellia-aesni-avx2.ko camellia_xts_crypt_32way callq  *%r9
-hpwdt.ko asminline_call callq  *%r12
 hv_vmbus.ko hv_post_message callq  *%rsi
 hv_vmbus.ko vmbus_set_event callq  *%rax
 kvm-intel.ko vmx_handle_external_intr callq  *%rax
@@ -40,6 +39,7 @@ vmlinux .altinstr_replacement jmpq   *%rsi
 vmlinux MP_bus_info callq  *%rax
 vmlinux MP_bus_info callq  *%rax
 vmlinux MP_processor_info callq  *%rax
+vmlinux __dynamic_netdev_dbg jmpq   *%rax
 vmlinux __early_ioremap callq  *%r9
 vmlinux __gunzip callq  *%r15
 vmlinux __gunzip callq  *%r15
@@ -371,6 +371,7 @@ vmlinux x86_early_init_platform_quirks callq  *%rax
 vmlinux x86_late_time_init callq  *%rax
 vmlinux x86_late_time_init callq  *%rax
 vmlinux xen_foreach_remap_area callq  *%r12
+vmlinux xen_hvm_exit_mmap callq  *%rdx
 vmlinux xen_init_IRQ callq  *%rax
 vmlinux xen_init_IRQ callq  *%rax
 vmlinux xen_init_IRQ callq  *%rax
