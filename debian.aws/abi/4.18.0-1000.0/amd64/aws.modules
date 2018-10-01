@@ -13,7 +13,6 @@
 9pnet_xen
 BusLogic
 aacraid
-ablk_helper
 acpi_configfs
 act_bpf
 act_connmark
@@ -64,9 +63,6 @@ atm
 aty128fb
 atyfb
 aufs
-auo_k1900fb
-auo_k1901fb
-auo_k190x
 auth_rpcgss
 authenc
 authencesn
@@ -150,11 +146,9 @@ dccp
 dccp_diag
 dccp_ipv4
 dccp_ipv6
-dccp_probe
 de2104x
 de4x5
 decnet
-deflate
 defxx
 des3_ede-x86_64
 des_generic
@@ -368,7 +362,6 @@ iptable_raw
 iptable_security
 ipvlan
 ipvtap
-ipx
 irqbypass
 iscsi_boot_sysfs
 iscsi_ibft
@@ -376,7 +369,6 @@ iscsi_target_mod
 iscsi_tcp
 isofs
 isp116x-hcd
-isp1362-hcd
 iw_cm
 ixgbe
 ixgbevf
@@ -479,7 +471,6 @@ nf_conntrack_ipv6
 nf_conntrack_irc
 nf_conntrack_netbios_ns
 nf_conntrack_netlink
-nf_conntrack_pptp
 nf_conntrack_proto_gre
 nf_conntrack_sane
 nf_conntrack_sip
@@ -503,11 +494,7 @@ nf_nat_h323
 nf_nat_ipv4
 nf_nat_ipv6
 nf_nat_irc
-nf_nat_masquerade_ipv4
-nf_nat_masquerade_ipv6
-nf_nat_pptp
 nf_nat_proto_gre
-nf_nat_redirect
 nf_nat_sip
 nf_nat_snmp_basic
 nf_nat_tftp
@@ -517,12 +504,6 @@ nf_socket_ipv4
 nf_socket_ipv6
 nf_synproxy_core
 nf_tables
-nf_tables_arp
-nf_tables_bridge
-nf_tables_inet
-nf_tables_ipv4
-nf_tables_ipv6
-nf_tables_netdev
 nfnetlink
 nfnetlink_acct
 nfnetlink_cthelper
@@ -547,7 +528,6 @@ nft_ct
 nft_dup_ipv4
 nft_dup_ipv6
 nft_dup_netdev
-nft_exthdr
 nft_fib
 nft_fib_inet
 nft_fib_ipv4
@@ -560,8 +540,6 @@ nft_log
 nft_masq
 nft_masq_ipv4
 nft_masq_ipv6
-nft_meta
-nft_meta_bridge
 nft_nat
 nft_numgen
 nft_objref
@@ -575,10 +553,6 @@ nft_reject_bridge
 nft_reject_inet
 nft_reject_ipv4
 nft_reject_ipv6
-nft_rt
-nft_set_bitmap
-nft_set_hash
-nft_set_rbtree
 nhc_dest
 nhc_fragment
 nhc_hop
@@ -603,7 +577,6 @@ osd
 overlay
 oxu210hp-hcd
 p8022
-p8023
 parman
 parport
 parport_pc
@@ -621,17 +594,13 @@ poly1305-x86_64
 poly1305_generic
 ppdev
 ppp_async
-ppp_deflate
 ppp_mppe
 ppp_synctty
 pppoatm
 pppoe
 pppox
-pps_core
-pptp
 psample
 psnap
-ptp
 pvcalls-front
 pvpanic
 qla1280
@@ -659,7 +628,6 @@ rpcsec_gss_krb5
 rxrpc
 s1d13xxxfb
 s3fb
-salsa20-x86_64
 salsa20_generic
 savagefb
 sch_atm
@@ -699,7 +667,6 @@ scsi_transport_sas
 scsi_transport_spi
 sctp
 sctp_diag
-sctp_probe
 seed
 serio_raw
 serpent-avx-x86_64
@@ -754,7 +721,6 @@ tcp_hybla
 tcp_illinois
 tcp_lp
 tcp_nv
-tcp_probe
 tcp_scalable
 tcp_vegas
 tcp_veno
@@ -763,12 +729,6 @@ tcp_yeah
 tcrypt
 tdfxfb
 tea
-test_bpf
-test_firmware
-test_module
-test_static_key_base
-test_static_keys
-test_user_copy
 tg3
 tgr192
 tipc
