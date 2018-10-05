@@ -1,6 +1,6 @@
-arch="amd64"
+arch="amd64 arm64"
 supported="AWS"
 target="Geared toward Amazon Web Services (AWS) systems."
 desc="=HUMAN= SMP"
-bootloader="grub-pc | grub-efi-amd64 | grub-efi-ia32 | grub | lilo"
+bootloader="grub-pc [amd64] | grub-efi-amd64 [amd64] | grub-efi-ia32 [amd64] | grub [amd64] | lilo [amd64] | grub-efi-arm64 [arm64]"
 provides=""
