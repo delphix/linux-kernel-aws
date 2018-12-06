@@ -10,3 +10,4 @@ repo_list=(
 package_prefixes linux-image linux-modules
 
 getall amd64 aws
+getall arm64 aws
