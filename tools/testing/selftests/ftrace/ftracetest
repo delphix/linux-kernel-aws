@@ -260,7 +260,7 @@ eval_result() { # sigval
     $UNRESOLVED)
       prlog "	[${color_blue}UNRESOLVED${color_reset}]"
       UNRESOLVED_CASES="$UNRESOLVED_CASES $CASENO"
-      return 1 # this is a kind of bug.. something happened.
+      return 0 # this is a kind of bug.. something happened.
     ;;
     $UNTESTED)
       prlog "	[${color_blue}UNTESTED${color_reset}]"
