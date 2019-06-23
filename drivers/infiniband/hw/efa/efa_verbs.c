@@ -5,6 +5,7 @@
 
 #include <linux/vmalloc.h>
 #include <linux/log2.h>
+#include <linux/version.h>
 
 #include <rdma/ib_addr.h>
 #include <rdma/ib_umem.h>
@@ -920,7 +921,12 @@ int efa_modify_qp(struct ib_qp *ibqp, struct ib_qp_attr *qp_attr,
 		return -EOPNOTSUPP;
 
 	if (udata->inlen &&
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,14,0)
 	    !ib_is_udata_cleared(udata, 0, udata->inlen)) {
+#else
+	    /* WA for e093111ddb6c ("IB/core: Fix input len in multiple user verbs") */
+	    !ib_is_udata_cleared(udata, 0, udata->inlen - sizeof(struct ib_uverbs_cmd_hdr))) {
+#endif
 		ibdev_dbg(&dev->ibdev,
 			  "Incompatible ABI params, udata not cleared\n");
 		return -EINVAL;
