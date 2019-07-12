@@ -57,6 +57,7 @@ drivers/infiniband/core/ib_umad.ko
 drivers/infiniband/core/ib_uverbs.ko
 drivers/infiniband/core/iw_cm.ko
 drivers/infiniband/core/rdma_cm.ko
+drivers/infiniband/hw/efa/efa.ko
 drivers/infiniband/ulp/iser/ib_iser.ko
 drivers/infiniband/ulp/isert/ib_isert.ko
 drivers/input/evbug.ko
