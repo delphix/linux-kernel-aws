@@ -736,6 +736,7 @@ ee1004
 eeprom
 eeprom_93cx6
 eeprom_93xx46
+efa
 efi-pstore
 efi_test
 efibc
