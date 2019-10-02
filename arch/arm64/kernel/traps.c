@@ -470,8 +470,12 @@ static void ctr_read_handler(unsigned int esr, struct pt_regs *regs)
 	int rt = ESR_ELx_SYS64_ISS_RT(esr);
 	unsigned long val = arm64_ftr_reg_user_value(&arm64_ftr_reg_ctrel0);
 
-	if (cpus_have_const_cap(ARM64_WORKAROUND_1542419))
+	if (cpus_have_const_cap(ARM64_WORKAROUND_1542419)) {
 		val &= ~BIT(CTR_DIC_SHIFT);
+
+		val &= ~CTR_IMINLINE_MASK;
+		val |= PAGE_SHIFT - 2;
+	}
 
 	pt_regs_write_reg(regs, rt, val);
 
