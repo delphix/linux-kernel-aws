@@ -5138,6 +5138,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	devm_ioport_unmap
 EXPORT_SYMBOL vmlinux 0x00000000	devm_ioremap
 EXPORT_SYMBOL vmlinux 0x00000000	devm_ioremap_nocache
 EXPORT_SYMBOL vmlinux 0x00000000	devm_ioremap_resource
+EXPORT_SYMBOL vmlinux 0x00000000	devm_ioremap_uc
 EXPORT_SYMBOL vmlinux 0x00000000	devm_ioremap_wc
 EXPORT_SYMBOL vmlinux 0x00000000	devm_iounmap
 EXPORT_SYMBOL vmlinux 0x00000000	devm_kvasprintf
