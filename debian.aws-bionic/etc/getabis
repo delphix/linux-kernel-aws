@@ -1,0 +1,14 @@
+repo_list=(
+	"http://archive.ubuntu.com/ubuntu/pool/main/l/linux-aws-5.3"
+	"http://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux-aws-5.3"
+	"http://archive.ubuntu.com/ubuntu/pool/universe/l/linux-aws-5.3"
+	"http://ports.ubuntu.com/ubuntu-ports/pool/universe/l/linux-aws-5.3"
+	"http://ppa.launchpad.net/canonical-kernel-team/ppa/ubuntu/pool/main/l/linux-aws-5.3"
+	"http://ppa.launchpad.net/canonical-kernel-team/unstable/ubuntu/pool/main/l/linux-aws-5.3"
+	"https://launchpad.net/~canonical-kernel-team/+archive/ubuntu/bootstrap/+files"
+)
+
+package_prefixes linux-buildinfo
+
+getall amd64 aws
+getall arm64 aws

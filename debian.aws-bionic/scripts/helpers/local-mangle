@@ -1,0 +1,6 @@
+#!/bin/bash -eu
+
+# shellcheck disable=SC1091
+. debian/debian.env
+
+echo -e 'skipabi=true\nskipmodule=true\nskipretpoline=true' >> "${DEBIAN}/rules.d/hooks.mk"
