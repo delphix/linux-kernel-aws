@@ -2528,7 +2528,6 @@ rfc1201
 rfd77402
 rfkill-gpio
 rio-scan
-rio500
 rio_cm
 rio_mport_cdev
 rionet
