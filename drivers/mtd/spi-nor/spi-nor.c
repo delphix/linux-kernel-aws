@@ -1402,7 +1402,7 @@ static int spi_nor_is_locked(struct mtd_info *mtd, loff_t ofs, uint64_t len)
  */
 static int write_sr_cr(struct spi_nor *nor, u8 *sr_cr)
 {
-	int ret;
+	ssize_t ret;
 
 	write_enable(nor);
 
