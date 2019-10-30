@@ -13,6 +13,7 @@
 #include <linux/sched.h>
 
 #include <rdma/ib_verbs.h>
+#include "kcompat.h"
 
 #include "efa_common_defs.h"
 #include "efa_admin_defs.h"

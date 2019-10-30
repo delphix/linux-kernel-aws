@@ -6,4 +6,4 @@
 
 obj-$(CONFIG_INFINIBAND_EFA) += efa.o
 
-efa-y := efa_com_cmd.o efa_com.o efa_main.o efa_verbs.o
+efa-y := efa_com_cmd.o efa_com.o efa_main.o efa_verbs.o efa_sysfs.o
