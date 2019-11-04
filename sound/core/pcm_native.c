@@ -223,7 +223,8 @@ static bool hw_support_mmap(struct snd_pcm_substream *substream)
 	/* architecture supports dma_mmap_coherent()? */
 #if defined(CONFIG_ARCH_NO_COHERENT_DMA_MMAP) || !defined(CONFIG_HAS_DMA)
 	if (!substream->ops->mmap &&
-	    substream->dma_buffer.dev.type == SNDRV_DMA_TYPE_DEV)
+	    (substream->dma_buffer.dev.type != SNDRV_DMA_TYPE_DEV &&
+	     substream->dma_buffer.dev.type != SNDRV_DMA_TYPE_DEV_UC))
 		return false;
 #endif
 	return true;
