@@ -109,6 +109,12 @@ static int cdns_ufs_m31_16nm_phy_initialization(struct ufs_hba *hba)
 	data |= BIT(24);
 	ufshcd_writel(hba, data, CDNS_UFS_REG_PHY_XCFGD1);
 
+	/*
+	 * Disabling Autohibern8 feature in cadence UFS
+	 * to mask unexpected interrupt trigger.
+	 */
+	hba->ahit = 0;
+
 	return 0;
 }
 
