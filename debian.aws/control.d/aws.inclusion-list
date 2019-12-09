@@ -167,6 +167,7 @@ drivers/scsi/sd_mod.ko
 drivers/scsi/sr_mod.ko
 drivers/scsi/virtio_scsi.ko
 drivers/scsi/vmw_pvscsi.ko
+drivers/soundwire/soundwire-bus.ko
 drivers/target/target_core*.ko
 drivers/tty/serial/jsm/*
 drivers/uio/uio.ko
