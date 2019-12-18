@@ -214,6 +214,8 @@ static int hda_link_hw_params(struct snd_pcm_substream *substream,
 	if (!link_dev)
 		return -EBUSY;
 
+	snd_soc_dai_set_dma_data(dai, substream, (void *)link_dev);
+
 	stream_tag = hdac_stream(link_dev)->stream_tag;
 
 	hda_stream = hstream_to_sof_hda_stream(link_dev);
@@ -223,8 +225,6 @@ static int hda_link_hw_params(struct snd_pcm_substream *substream,
 				  substream->stream);
 	if (ret < 0)
 		return ret;
-
-	snd_soc_dai_set_dma_data(dai, substream, (void *)link_dev);
 
 	hda_stream->hw_params_upon_resume = 0;
 
@@ -357,6 +357,13 @@ static int hda_link_hw_free(struct snd_pcm_substream *substream,
 	bus = hstream->bus;
 	rtd = snd_pcm_substream_chip(substream);
 	link_dev = snd_soc_dai_get_dma_data(dai, substream);
+
+	if (!link_dev) {
+		dev_dbg(dai->dev,
+			"%s: link_dev is not assigned\n", __func__);
+		return -EINVAL;
+	}
+
 	hda_stream = hstream_to_sof_hda_stream(link_dev);
 
 	/* free the link DMA channel in the FW */
