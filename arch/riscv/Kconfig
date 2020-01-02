@@ -54,6 +54,7 @@ config RISCV
 	select EDAC_SUPPORT
 	select ARCH_HAS_GIGANTIC_PAGE
 	select ARCH_WANT_HUGE_PMD_SHARE if 64BIT
+	select HAVE_COPY_THREAD_TLS
 
 config MMU
 	def_bool y
