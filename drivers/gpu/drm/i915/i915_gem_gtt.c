@@ -967,6 +967,7 @@ gen8_ppgtt_insert_pte_entries(struct i915_ppgtt *ppgtt,
 	pd = i915_pd_entry(pdp, idx->pdpe);
 	vaddr = kmap_atomic_px(i915_pt_entry(pd, idx->pde));
 	do {
+		GEM_BUG_ON(iter->sg->length < I915_GTT_PAGE_SIZE);
 		vaddr[idx->pte] = pte_encode | iter->dma;
 
 		iter->dma += I915_GTT_PAGE_SIZE;
@@ -1780,6 +1781,7 @@ static void gen6_ppgtt_insert_entries(struct i915_address_space *vm,
 
 	vaddr = kmap_atomic_px(i915_pt_entry(pd, act_pt));
 	do {
+		GEM_BUG_ON(iter.sg->length < I915_GTT_PAGE_SIZE);
 		vaddr[act_pte] = pte_encode | GEN6_PTE_ADDR_ENCODE(iter.dma);
 
 		iter.dma += I915_GTT_PAGE_SIZE;
