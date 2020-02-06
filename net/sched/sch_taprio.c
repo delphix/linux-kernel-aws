@@ -1187,9 +1187,9 @@ static int taprio_change(struct Qdisc *sch, struct nlattr *opt,
 		goto unlock;
 	}
 
-	if (TXTIME_ASSIST_IS_ENABLED(taprio_flags)) {
-		setup_txtime(q, new_admin, start);
+	setup_txtime(q, new_admin, start);
 
+	if (TXTIME_ASSIST_IS_ENABLED(taprio_flags)) {
 		if (!oper) {
 			rcu_assign_pointer(q->oper_sched, new_admin);
 			err = 0;
