@@ -25,7 +25,6 @@ Build-Depends:
  libssl-dev <!stage1>,
  libaudit-dev <!stage1>,
  bc <!stage1>,
- python-dev <!stage1>,
  gawk <!stage1>,
  libudev-dev <!stage1>,
  autoconf <!stage1>,
@@ -44,8 +43,8 @@ Build-Depends-Indep:
  bzip2 <!stage1>,
  sharutils <!stage1>,
  asciidoc <!stage1>,
- python-sphinx <!stage1>,
- python-sphinx-rtd-theme <!stage1>,
+ python3-sphinx <!stage1>,
+ python3-sphinx-rtd-theme <!stage1>,
  python3-docutils <!stage1>,
 Vcs-Git: git://git.launchpad.net/~canonical-kernel/ubuntu/+source/linux-aws/+git/=SERIES=
 XS-Testsuite: autopkgtest
