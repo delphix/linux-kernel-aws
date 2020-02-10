@@ -1,3 +1,9 @@
+linux-aws-5.4 (5.4.0-1000.0) focal; urgency=medium
+
+  * Rebase to focal 5.4 kernel.
+
+ -- Thadeu Lima de Souza Cascardo <cascardo@canonical.com>  Mon, 10 Feb 2020 10:34:59 -0300
+
 linux-aws (5.3.0-1011.12) eoan; urgency=medium
 
   * eoan/linux-aws: 5.3.0-1011.12 -proposed tracker (LP: #1861199)
