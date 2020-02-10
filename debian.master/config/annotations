@@ -8078,6 +8078,8 @@ CONFIG_SND_AC97_POWER_SAVE_DEFAULT              policy<{'amd64': '0', 'arm64': '
 
 # Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> HD-Audio
 CONFIG_SND_HDA_INTEL                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'i386': 'm', 'ppc64el': 'm'}>
+CONFIG_SND_HDA_INTEL_DETECT_DMIC                policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y'}>
+CONFIG_SND_HDA_INTEL_DETECT_DMIC                note<LP:1837828>
 CONFIG_SND_HDA_TEGRA                            policy<{'armhf-generic': 'm'}>
 CONFIG_SND_HDA_HWDEP                            policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y'}>
 CONFIG_SND_HDA_RECONFIG                         policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y'}>
@@ -8215,6 +8217,8 @@ CONFIG_SND_VIA82XX_MODEM                        policy<{'amd64': 'm', 'arm64': '
 CONFIG_SND_VIRTUOSO                             policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'i386': 'm', 'ppc64el': 'm'}>
 CONFIG_SND_VX222                                policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'i386': 'm', 'ppc64el': 'm'}>
 CONFIG_SND_YMFPCI                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'i386': 'm', 'ppc64el': 'm'}>
+CONFIG_SND_INTEL_NHLT                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'i386': 'm', 'ppc64el': 'm'}>
+CONFIG_SND_INTEL_NHLT                           note<LP:1837828>
 
 # Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> PCMCIA sound devices
 CONFIG_SND_PCMCIA                               policy<{'amd64': 'y', 'i386': 'y'}>
