@@ -15,7 +15,6 @@
 8250_lpss
 8250_men_mcb
 8250_mid
-8250_moxa
 8390
 842
 842_compress
@@ -156,7 +155,6 @@ adm9240
 adp5061
 adp5588-keys
 adp5589-keys
-ads1015
 ads7828
 ads7871
 adt7310
@@ -182,11 +180,6 @@ adxl372_spi
 adxrs450
 aegis128
 aegis128-aesni
-aegis128l
-aegis128l-aesni
-aegis256
-aegis256-aesni
-aes-x86_64
 aes_ti
 aesni-intel
 af_alg
@@ -551,7 +544,6 @@ crc8
 crct10dif-pclmul
 cros_ec_accel_legacy
 cros_ec_baro
-cros_ec_core
 cros_ec_debugfs
 cros_ec_dev
 cros_ec_i2c
@@ -689,7 +681,6 @@ drm
 drm_kms_helper
 drm_vram_helper
 drm_xen_front
-drop_monitor
 drv260x
 drv2665
 drv2667
@@ -699,7 +690,6 @@ ds1803
 ds4424
 ds620
 dsa_core
-dscc4
 dstr
 dummy
 dummy-irq
@@ -1368,7 +1358,6 @@ inv-mpu6050-spi
 io_edgeport
 io_ti
 ioatdma
-ioc4
 iowarrior
 ip6_gre
 ip6_tables
@@ -1847,7 +1836,6 @@ microtek
 mii
 minix
 mip6
-mipi-dbi
 mkiss
 mlx-platform
 mlx4_core
@@ -1881,13 +1869,6 @@ mma9553
 mmc35240
 mmc_block
 mmc_spi
-morus1280
-morus1280-avx2
-morus1280-sse2
-morus1280_glue
-morus640
-morus640-sse2
-morus640_glue
 mos7720
 mos7840
 most_cdev
@@ -1930,7 +1911,6 @@ mspro_block
 msr
 mt6311-regulator
 mt6323-regulator
-mt6397-core
 mt6397-regulator
 mt7530
 mtip32xx
@@ -2482,7 +2462,6 @@ regmap-i2c
 regmap-spmi
 regulator-haptic
 reiserfs
-remoteproc
 repaper
 reset-ti-syscon
 retu-mfd
@@ -2974,7 +2953,6 @@ tifm_core
 tifm_ms
 tifm_sd
 timeriomem-rng
-tinydrm
 tipc
 tlan
 tlclk
