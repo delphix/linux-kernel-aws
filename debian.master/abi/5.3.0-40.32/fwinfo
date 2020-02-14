@@ -1094,6 +1094,10 @@ firmware:       prism_ap_fw.bin
 firmware:       prism_sta_fw.bin
 firmware:       qat_895xcc.bin
 firmware:       qat_895xcc_mmp.bin
+firmware:       qat_c3xxx.bin
+firmware:       qat_c3xxx_mmp.bin
+firmware:       qat_c62x.bin
+firmware:       qat_c62x_mmp.bin
 firmware:       qcom/a300_pfp.fw
 firmware:       qcom/a300_pm4.fw
 firmware:       qcom/a330_pfp.fw

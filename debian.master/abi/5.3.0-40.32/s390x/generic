@@ -2699,9 +2699,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	__nlmsg_put
 EXPORT_SYMBOL vmlinux 0x00000000	__node_distance
 EXPORT_SYMBOL vmlinux 0x00000000	__page_cache_alloc
 EXPORT_SYMBOL vmlinux 0x00000000	__page_frag_cache_drain
-EXPORT_SYMBOL vmlinux 0x00000000	__page_pool_free
 EXPORT_SYMBOL vmlinux 0x00000000	__page_pool_put_page
-EXPORT_SYMBOL vmlinux 0x00000000	__page_pool_request_shutdown
 EXPORT_SYMBOL vmlinux 0x00000000	__page_symlink
 EXPORT_SYMBOL vmlinux 0x00000000	__pagevec_lru_add
 EXPORT_SYMBOL vmlinux 0x00000000	__pagevec_release
@@ -5176,6 +5174,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	page_mapped
 EXPORT_SYMBOL vmlinux 0x00000000	page_mapping
 EXPORT_SYMBOL vmlinux 0x00000000	page_pool_alloc_pages
 EXPORT_SYMBOL vmlinux 0x00000000	page_pool_create
+EXPORT_SYMBOL vmlinux 0x00000000	page_pool_destroy
 EXPORT_SYMBOL vmlinux 0x00000000	page_pool_unmap_page
 EXPORT_SYMBOL vmlinux 0x00000000	page_put_link
 EXPORT_SYMBOL vmlinux 0x00000000	page_readlink
