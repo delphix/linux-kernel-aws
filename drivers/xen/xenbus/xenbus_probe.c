@@ -50,6 +50,7 @@
 #include <linux/io.h>
 #include <linux/slab.h>
 #include <linux/module.h>
+#include <linux/suspend.h>
 
 #include <asm/page.h>
 #include <asm/xen/hypervisor.h>
@@ -228,13 +229,13 @@ int xenbus_dev_probe(struct device *_dev)
 
 	err = talk_to_otherend(dev);
 	if (err) {
-		dev_warn(&dev->dev, "talk_to_otherend on %s failed.\n",
+		dev_warn(_dev, "talk_to_otherend on %s failed.\n",
 			 dev->nodename);
 		return err;
 	}
 
 	if (!try_module_get(drv->driver.owner)) {
-		dev_warn(&dev->dev, "failed to acquire module reference on '%s'\n",
+		dev_warn(_dev, "failed to acquire module reference on '%s'\n",
 			 drv->driver.name);
 		err = -ESRCH;
 		goto fail;
@@ -248,7 +249,7 @@ int xenbus_dev_probe(struct device *_dev)
 
 	err = watch_otherend(dev);
 	if (err) {
-		dev_warn(&dev->dev, "watch_otherend on %s failed.\n",
+		dev_warn(_dev, "watch_otherend on %s failed.\n",
 		       dev->nodename);
 		return err;
 	}
@@ -600,26 +601,44 @@ int xenbus_dev_suspend(struct device *dev)
 	struct xenbus_driver *drv;
 	struct xenbus_device *xdev
 		= container_of(dev, struct xenbus_device, dev);
+	bool xen_suspend = xen_suspend_mode_is_xen_suspend();
 
 	DPRINTK("%s", xdev->nodename);
 
 	if (dev->driver == NULL)
 		return 0;
 	drv = to_xenbus_driver(dev->driver);
-	if (drv->suspend)
-		err = drv->suspend(xdev);
-	if (err)
-		dev_warn(dev, "suspend failed: %i\n", err);
+	if (xen_suspend) {
+		if (drv->suspend)
+			err = drv->suspend(xdev);
+	} else {
+		if (drv->freeze) {
+			err = drv->freeze(xdev);
+			if (!err) {
+				free_otherend_watch(xdev);
+				free_otherend_details(xdev);
+				return 0;
+			}
+		}
+	}
+
+	if (err) {
+		dev_warn(dev, "%s %s failed: %i\n", xen_suspend ?
+			"suspend" : "freeze", dev_name(dev), err);
+		return err;
+	}
+
 	return 0;
 }
 EXPORT_SYMBOL_GPL(xenbus_dev_suspend);
 
 int xenbus_dev_resume(struct device *dev)
 {
-	int err;
+	int err = 0;
 	struct xenbus_driver *drv;
 	struct xenbus_device *xdev
 		= container_of(dev, struct xenbus_device, dev);
+	bool xen_suspend = xen_suspend_mode_is_xen_suspend();
 
 	DPRINTK("%s", xdev->nodename);
 
@@ -628,23 +647,31 @@ int xenbus_dev_resume(struct device *dev)
 	drv = to_xenbus_driver(dev->driver);
 	err = talk_to_otherend(xdev);
 	if (err) {
-		dev_warn(dev, "resume (talk_to_otherend) failed: %i\n", err);
+		dev_warn(dev, "%s (talk_to_otherend) %s failed: %i\n",
+			xen_suspend ? "resume" : "restore", err);
 		return err;
 	}
 
-	xdev->state = XenbusStateInitialising;
+	if (xen_suspend) {
+		xdev->state = XenbusStateInitialising;
+		if (drv->resume)
+			err = drv->resume(xdev);
+	} else {
+		if (drv->restore)
+			err = drv->restore(xdev);
+	}
 
-	if (drv->resume) {
-		err = drv->resume(xdev);
-		if (err) {
-			dev_warn(dev, "resume failed: %i\n", err);
-			return err;
-		}
+	if (err) {
+		dev_warn(dev, "%s %s failed: %i\n",
+			xen_suspend ? "resume" : "restore",
+			dev_name(dev), err);
+		return err;
 	}
 
 	err = watch_otherend(xdev);
 	if (err) {
-		dev_warn(dev, "resume (watch_otherend) failed: %d\n", err);
+		dev_warn(dev, "%s (watch_otherend) %s failed: %d.\n",
+			xen_suspend ? "resume" : "restore", err);
 		return err;
 	}
 
@@ -654,8 +681,45 @@ EXPORT_SYMBOL_GPL(xenbus_dev_resume);
 
 int xenbus_dev_cancel(struct device *dev)
 {
-	/* Do nothing */
-	DPRINTK("cancel");
+	int err = 0;
+	struct xenbus_driver *drv;
+	struct xenbus_device *xdev
+		= container_of(dev, struct xenbus_device, dev);
+	bool xen_suspend = xen_suspend_mode_is_xen_suspend();
+
+	if (xen_suspend) {
+		/* Do nothing */
+		DPRINTK("cancel");
+		return 0;
+	}
+
+	DPRINTK("%s", xdev->nodename);
+
+	if (dev->driver == NULL)
+		return 0;
+	drv = to_xenbus_driver(dev->driver);
+	err = talk_to_otherend(xdev);
+	if (err) {
+		pr_warn("thaw (talk_to_otherend) %s failed: %d.\n",
+			dev_name(dev), err);
+		return err;
+	}
+
+	if (drv->thaw) {
+		err = drv->thaw(xdev);
+		if (err) {
+			pr_warn("thaw %s failed: %i\n", dev_name(dev), err);
+			return err;
+		}
+	}
+
+	err = watch_otherend(xdev);
+	if (err) {
+		pr_warn("thaw (watch_otherend) %s failed: %d.\n",
+			dev_name(dev), err);
+		return err;
+	}
+
 	return 0;
 }
 EXPORT_SYMBOL_GPL(xenbus_dev_cancel);
