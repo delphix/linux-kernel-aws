@@ -1073,9 +1073,12 @@ static int intel_pt_read_finish(struct auxtrace_record *itr, int idx)
 	struct perf_evsel *evsel;
 
 	evlist__for_each_entry(ptr->evlist, evsel) {
-		if (evsel->attr.type == ptr->intel_pt_pmu->type)
+		if (evsel->attr.type == ptr->intel_pt_pmu->type) {
+			if (evsel->disabled)
+				return 0;
 			return perf_evlist__enable_event_idx(ptr->evlist, evsel,
 							     idx);
+		}
 	}
 	return -EINVAL;
 }
