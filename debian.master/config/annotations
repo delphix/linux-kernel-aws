@@ -7908,7 +7908,8 @@ CONFIG_SND_SOC_INTEL_SST_TOPLEVEL               policy<{'amd64': 'y', 'i386': 'y
 CONFIG_SND_SOC_INTEL_HASWELL                    policy<{'amd64': 'm', 'i386': 'm'}>
 CONFIG_SND_SST_ATOM_HIFI2_PLATFORM_PCI          policy<{'amd64': 'm', 'i386': 'm'}>
 CONFIG_SND_SST_ATOM_HIFI2_PLATFORM_ACPI         policy<{'amd64': 'm', 'i386': 'm'}>
-CONFIG_SND_SOC_INTEL_SKYLAKE                    policy<{'amd64': 'm', 'i386': 'm'}>
+CONFIG_SND_SOC_INTEL_SKYLAKE                    policy<{'amd64': 'n', 'i386': 'n'}>
+CONFIG_SND_SOC_INTEL_SKYLAKE                    mark<ENFORCED> note<LP:#1864061>
 CONFIG_SND_SOC_INTEL_SKL                        policy<{'amd64': 'm', 'i386': 'm'}>
 CONFIG_SND_SOC_INTEL_APL                        policy<{'amd64': 'm', 'i386': 'm'}>
 CONFIG_SND_SOC_INTEL_KBL                        policy<{'amd64': 'm', 'i386': 'm'}>
@@ -7917,7 +7918,8 @@ CONFIG_SND_SOC_INTEL_CNL                        policy<{'amd64': 'm', 'i386': 'm
 CONFIG_SND_SOC_INTEL_CFL                        policy<{'amd64': 'm', 'i386': 'm'}>
 CONFIG_SND_SOC_INTEL_CML_H                      policy<{'amd64': 'm', 'i386': 'm'}>
 CONFIG_SND_SOC_INTEL_CML_LP                     policy<{'amd64': 'm', 'i386': 'm'}>
-CONFIG_SND_SOC_INTEL_SKYLAKE_HDAUDIO_CODEC      policy<{'amd64': 'y', 'i386': 'y'}>
+CONFIG_SND_SOC_INTEL_SKYLAKE_HDAUDIO_CODEC      policy<{'amd64': 'n', 'i386': 'n'}>
+CONFIG_SND_SOC_INTEL_SKYLAKE_HDAUDIO_CODEC      mark<ENFORCED> note<LP:#1864061>
 CONFIG_SND_SOC_SOF_HDA_LINK                     mark<ENFORCED> note<LP:#1848490>
 CONFIG_SND_SOC_SOF_HDA_LINK                     policy<{'amd64': 'y', 'i386': 'y'}>
 CONFIG_SND_SOC_SOF_HDA_AUDIO_CODEC              mark<ENFORCED> note<LP:#1848490>
