@@ -6048,7 +6048,11 @@ reset_and_undo:
 
 static void tcp_rcv_synrecv_state_fastopen(struct sock *sk)
 {
-	tcp_try_undo_loss(sk, false);
+	/* If we are still handling the SYNACK RTO, see if timestamp ECR allows
+	 * undo. If peer SACKs triggered fast recovery, we can't undo here.
+	 */
+	if (inet_csk(sk)->icsk_ca_state == TCP_CA_Loss)
+		tcp_try_undo_loss(sk, false);
 
 	/* Reset rtx states to prevent spurious retransmits_timed_out() */
 	tcp_sk(sk)->retrans_stamp = 0;
