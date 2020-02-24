@@ -510,7 +510,11 @@ execlists_user_begin(struct intel_engine_execlists *execlists,
 inline void
 execlists_user_end(struct intel_engine_execlists *execlists)
 {
+	struct intel_engine_cs *engine =
+		container_of(execlists, typeof(*engine), execlists);
+
 	execlists_clear_active(execlists, EXECLISTS_ACTIVE_USER);
+	mod_delayed_work(engine->i915->wq, &engine->i915->gem.retire_work, 0);
 }
 
 static inline void
