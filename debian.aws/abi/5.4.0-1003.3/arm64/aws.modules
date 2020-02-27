@@ -4444,6 +4444,7 @@ spi-fsl-dspi
 spi-fsl-lpspi
 spi-fsl-qspi
 spi-gpio
+spi-hisi-sfc-v3xx
 spi-imx
 spi-iproc-qspi
 spi-lm70llp
