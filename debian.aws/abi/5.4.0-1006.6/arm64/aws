@@ -1369,6 +1369,13 @@ EXPORT_SYMBOL drivers/infiniband/core/ib_core 0x00000000	rdma_rw_ctx_wrs
 EXPORT_SYMBOL drivers/infiniband/core/ib_core 0x00000000	rdma_rw_mr_factor	
 EXPORT_SYMBOL drivers/infiniband/core/ib_core 0x00000000	rdma_set_cq_moderation	
 EXPORT_SYMBOL drivers/infiniband/core/ib_core 0x00000000	rdma_translate_ip	
+EXPORT_SYMBOL drivers/infiniband/core/ib_core 0x00000000	rdma_umap_priv_init	
+EXPORT_SYMBOL drivers/infiniband/core/ib_core 0x00000000	rdma_user_mmap_entry_get	
+EXPORT_SYMBOL drivers/infiniband/core/ib_core 0x00000000	rdma_user_mmap_entry_get_pgoff	
+EXPORT_SYMBOL drivers/infiniband/core/ib_core 0x00000000	rdma_user_mmap_entry_insert	
+EXPORT_SYMBOL drivers/infiniband/core/ib_core 0x00000000	rdma_user_mmap_entry_put	
+EXPORT_SYMBOL drivers/infiniband/core/ib_core 0x00000000	rdma_user_mmap_entry_remove	
+EXPORT_SYMBOL drivers/infiniband/core/ib_core 0x00000000	rdma_user_mmap_io	
 EXPORT_SYMBOL drivers/infiniband/core/ib_core 0x00000000	roce_gid_type_mask_support	
 EXPORT_SYMBOL drivers/infiniband/core/ib_core 0x00000000	zgid	
 EXPORT_SYMBOL drivers/infiniband/core/ib_uverbs 0x00000000	_uverbs_alloc	
@@ -1392,7 +1399,6 @@ EXPORT_SYMBOL drivers/infiniband/core/ib_uverbs 0x00000000	ib_umem_page_count
 EXPORT_SYMBOL drivers/infiniband/core/ib_uverbs 0x00000000	ib_umem_release	
 EXPORT_SYMBOL drivers/infiniband/core/ib_uverbs 0x00000000	ib_uverbs_flow_resources_free	
 EXPORT_SYMBOL drivers/infiniband/core/ib_uverbs 0x00000000	ib_uverbs_get_ucontext_file	
-EXPORT_SYMBOL drivers/infiniband/core/ib_uverbs 0x00000000	rdma_user_mmap_io	
 EXPORT_SYMBOL drivers/infiniband/core/ib_uverbs 0x00000000	uverbs_close_fd	
 EXPORT_SYMBOL drivers/infiniband/core/ib_uverbs 0x00000000	uverbs_copy_to	
 EXPORT_SYMBOL drivers/infiniband/core/ib_uverbs 0x00000000	uverbs_destroy_def_handler	
@@ -7881,6 +7887,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	memdup_user_nul
 EXPORT_SYMBOL vmlinux 0x00000000	memmove	
 EXPORT_SYMBOL vmlinux 0x00000000	memory_cgrp_subsys	
 EXPORT_SYMBOL vmlinux 0x00000000	memory_read_from_buffer	
+EXPORT_SYMBOL vmlinux 0x00000000	memory_read_from_io_buffer	
 EXPORT_SYMBOL vmlinux 0x00000000	memparse	
 EXPORT_SYMBOL vmlinux 0x00000000	mempool_alloc	
 EXPORT_SYMBOL vmlinux 0x00000000	mempool_alloc_pages	
