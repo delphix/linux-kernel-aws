@@ -8,7 +8,7 @@ repo_list=(
 	"https://launchpad.net/~canonical-kernel-team/+archive/ubuntu/bootstrap/+files"
 )
 
-package_prefixes linux-image linux-modules
+package_prefixes linux-buildinfo
 
 getall amd64 aws
 getall arm64 aws
