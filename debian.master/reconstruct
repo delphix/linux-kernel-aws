@@ -1,6 +1,7 @@
 # Recreate any symlinks created since the orig.
 # Remove any files deleted from the orig.
 rm -f 'Documentation/usb/rio.rst'
+rm -f 'drivers/gpu/drm/amd/display/dc/calcs/dcn_calc_math.h'
 rm -f 'drivers/usb/misc/rio500.c'
 rm -f 'drivers/usb/misc/rio500_usb.h'
 rm -f 'include/uapi/rdma/nes-abi.h'
