@@ -1,5 +1,5 @@
-zfs-linux 0.8.1-1ubuntu14.3
-nvidia-graphics-drivers-390 390.129-0ubuntu2
-nvidia-graphics-drivers-440 0
-nvidia-graphics-drivers-435 0
+zfs-linux 0.8.1-1ubuntu14.4
+nvidia-graphics-drivers-390 390.132-0ubuntu0.19.10.1
+nvidia-graphics-drivers-440 440.59-0ubuntu0.19.10.2
+nvidia-graphics-drivers-435 435.21-0ubuntu2
 virtualbox 6.0.14-dfsg-1
