@@ -2929,6 +2929,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	ap_parse_mask_str
 EXPORT_SYMBOL vmlinux 0x00000000	ap_perms
 EXPORT_SYMBOL vmlinux 0x00000000	ap_perms_mutex
 EXPORT_SYMBOL vmlinux 0x00000000	ap_queue_init_reply
+EXPORT_SYMBOL vmlinux 0x00000000	ap_queue_init_state
 EXPORT_SYMBOL vmlinux 0x00000000	ap_queue_message
 EXPORT_SYMBOL vmlinux 0x00000000	ap_queue_resume
 EXPORT_SYMBOL vmlinux 0x00000000	ap_queue_suspend
@@ -7734,6 +7735,7 @@ EXPORT_SYMBOL_GPL drivers/s390/net/qeth 0x00000000	qeth_setadp_promisc_mode
 EXPORT_SYMBOL_GPL drivers/s390/net/qeth 0x00000000	qeth_setadpparms_change_macaddr
 EXPORT_SYMBOL_GPL drivers/s390/net/qeth 0x00000000	qeth_setassparms_cb
 EXPORT_SYMBOL_GPL drivers/s390/net/qeth 0x00000000	qeth_stop
+EXPORT_SYMBOL_GPL drivers/s390/net/qeth 0x00000000	qeth_stop_channel
 EXPORT_SYMBOL_GPL drivers/s390/net/qeth 0x00000000	qeth_threads_running
 EXPORT_SYMBOL_GPL drivers/s390/net/qeth 0x00000000	qeth_trace_features
 EXPORT_SYMBOL_GPL drivers/s390/net/qeth 0x00000000	qeth_tx_timeout
@@ -9996,7 +9998,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	crypto_shash_final
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	crypto_shash_finup
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	crypto_shash_setkey
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	crypto_shash_update
-EXPORT_SYMBOL_GPL vmlinux 0x00000000	crypto_shoot_alg
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	crypto_skcipher_decrypt
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	crypto_skcipher_encrypt
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	crypto_spawn_tfm
