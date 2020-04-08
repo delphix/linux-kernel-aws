@@ -260,14 +260,12 @@ CONFIG_PCIEAER                                  policy<{'amd64': 'y', 'arm64': '
 CONFIG_PCIE_ECRC                                policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 's390x': 'n'}>
 CONFIG_PCIEAER_INJECT                           policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 's390x': 'n'}>
 CONFIG_PCIEASPM                                 policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 's390x': 'y'}>
-CONFIG_PCIEASPM_DEBUG                           policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 's390x': 'y'}>
 CONFIG_PCIE_DPC                                 policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 's390x': 'y'}>
 CONFIG_PCIE_PTM                                 policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 's390x': 'y'}>
 #
 CONFIG_PCIEPORTBUS                              mark<ENFORCED> note<LP#1665404>
 CONFIG_HOTPLUG_PCI_PCIE                         mark<ENFORCED> note<LP#1374440>
 CONFIG_PCIEAER_INJECT                           flag<TESTING>
-CONFIG_PCIEASPM_DEBUG                           note<LP#1398544>
 
 # Menu: Bus options (PCI etc.) >> PCI support >> PCI Express Port Bus support >> Default ASPM policy
 CONFIG_PCIEASPM_DEFAULT                         policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 's390x': 'y'}>
