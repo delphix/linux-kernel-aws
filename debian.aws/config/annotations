@@ -9385,11 +9385,6 @@ CONFIG_USER_NS                                  policy<{'amd64': 'y', 'arm64': '
 CONFIG_PID_NS                                   policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'y'}>
 CONFIG_NET_NS                                   policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'y'}>
 
-# Menu: General setup >> RCU Subsystem
-# XXX
-#
-CONFIG_CONTEXT_TRACKING_FORCE                   note<LP:1349028>
-
 # Menu: General setup >> RCU Subsystem >> Make expert-level adjustments to RCU configuration
 CONFIG_RCU_EXPERT                               policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 'ppc64el': 'n', 's390x': 'n'}>
 #
@@ -9413,6 +9408,9 @@ CONFIG_CC_STACKPROTECTOR_STRONG                 policy<{'amd64': 'y', 'arm64': '
 # Menu: General setup >> Timers subsystem
 CONFIG_NO_HZ                                    policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'y'}>
 CONFIG_HIGH_RES_TIMERS                          policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'y'}>
+CONFIG_CONTEXT_TRACKING_FORCE                   policy<{'amd64': '-', 'arm64': '-', 'armhf': '-', 'i386': '-', 'ppc64el': '-', 'riscv64': '-', 's390x': '-'}>
+
+CONFIG_CONTEXT_TRACKING_FORCE                   note<LP:1349028>
 
 # Menu: General setup >> Timers subsystem >> Timer tick handling
 CONFIG_HZ_PERIODIC                              policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 'ppc64el': 'n', 's390x': 'n'}>
