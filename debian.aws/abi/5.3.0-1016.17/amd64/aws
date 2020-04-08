@@ -9429,7 +9429,6 @@ EXPORT_SYMBOL_GPL drivers/ata/libahci 0x00000000	ahci_check_ready
 EXPORT_SYMBOL_GPL drivers/ata/libahci 0x00000000	ahci_dev_classify
 EXPORT_SYMBOL_GPL drivers/ata/libahci 0x00000000	ahci_do_hardreset
 EXPORT_SYMBOL_GPL drivers/ata/libahci 0x00000000	ahci_do_softreset
-EXPORT_SYMBOL_GPL drivers/ata/libahci 0x00000000	ahci_em_messages
 EXPORT_SYMBOL_GPL drivers/ata/libahci 0x00000000	ahci_error_handler
 EXPORT_SYMBOL_GPL drivers/ata/libahci 0x00000000	ahci_fill_cmd_slot
 EXPORT_SYMBOL_GPL drivers/ata/libahci 0x00000000	ahci_handle_port_intr
@@ -14641,7 +14640,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	crypto_shash_final
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	crypto_shash_finup
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	crypto_shash_setkey
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	crypto_shash_update
-EXPORT_SYMBOL_GPL vmlinux 0x00000000	crypto_shoot_alg
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	crypto_skcipher_decrypt
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	crypto_skcipher_encrypt
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	crypto_spawn_tfm
@@ -17323,6 +17321,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	regulator_get_voltage_sel_regmap
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	regulator_has_full_constraints
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	regulator_is_enabled
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	regulator_is_enabled_regmap
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	regulator_is_equal
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	regulator_is_supported_voltage
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	regulator_list_hardware_vsel
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	regulator_list_voltage
