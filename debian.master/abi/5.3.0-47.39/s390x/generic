@@ -4835,6 +4835,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	memdup_user_nul
 EXPORT_SYMBOL vmlinux 0x00000000	memmove
 EXPORT_SYMBOL vmlinux 0x00000000	memory_cgrp_subsys
 EXPORT_SYMBOL vmlinux 0x00000000	memory_read_from_buffer
+EXPORT_SYMBOL vmlinux 0x00000000	memory_read_from_io_buffer
 EXPORT_SYMBOL vmlinux 0x00000000	memparse
 EXPORT_SYMBOL vmlinux 0x00000000	mempool_alloc
 EXPORT_SYMBOL vmlinux 0x00000000	mempool_alloc_pages
@@ -4991,6 +4992,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	netdev_master_upper_dev_get
 EXPORT_SYMBOL vmlinux 0x00000000	netdev_master_upper_dev_get_rcu
 EXPORT_SYMBOL vmlinux 0x00000000	netdev_master_upper_dev_link
 EXPORT_SYMBOL vmlinux 0x00000000	netdev_max_backlog
+EXPORT_SYMBOL vmlinux 0x00000000	netdev_next_lower_dev_rcu
 EXPORT_SYMBOL vmlinux 0x00000000	netdev_notice
 EXPORT_SYMBOL vmlinux 0x00000000	netdev_notify_peers
 EXPORT_SYMBOL vmlinux 0x00000000	netdev_pick_tx
@@ -10762,6 +10764,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	gpiod_set_value
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	gpiod_set_value_cansleep
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	gpiod_to_chip
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	gpiod_to_irq
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	gpiod_toggle_active_low
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	gpiod_unexport
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	guid_gen
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	halt_poll_ns
@@ -12364,6 +12367,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	tty_ldisc_ref_wait
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	tty_ldisc_release
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	tty_mode_ioctl
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	tty_perform_flush
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	tty_port_default_client_ops
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	tty_port_install
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	tty_port_link_device
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	tty_port_register_device
