@@ -1,6 +1,6 @@
-linux (5.3.0-48.40) eoan; urgency=medium
+linux (5.3.0-48.41) eoan; urgency=medium
 
-  * eoan/linux: 5.3.0-48.40 -proposed tracker (LP: #1871900)
+  * eoan/linux: 5.3.0-48.41 -proposed tracker (LP: #1871900)
 
   * ubuntu_bpf test failed to build on Eoan (LP: #1871613)
     - SAUCE: Revert "bpf: Selftests build error in sockmap_basic.c"
@@ -10,6 +10,7 @@ linux (5.3.0-48.40) eoan; urgency=medium
 
   * dkms artifacts may expire from the pool (LP: #1850958)
     - [packaging] handle downloads from the librarian better
+    - [Packaging] autoreconstruct -- manage executable debian files
 
  -- Khalid Elmously <khalid.elmously@canonical.com>  Thu, 09 Apr 2020 14:59:16 -0400
 
