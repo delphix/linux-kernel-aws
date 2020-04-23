@@ -29,6 +29,7 @@
 #include <linux/irq_work.h>
 #include <linux/lockdep.h>
 
+#include "gt/intel_context_types.h"
 #include "gt/intel_engine_types.h"
 
 #include "i915_gem.h"
