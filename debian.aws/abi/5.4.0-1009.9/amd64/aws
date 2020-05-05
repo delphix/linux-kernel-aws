@@ -16226,6 +16226,7 @@ EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	irq_work_run
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	irq_work_sync
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	irqchip_fwnode_ops
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	irqd_cfg
+EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	is_binary_blacklisted
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	is_current_mnt_ns
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	is_hash_blacklisted
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	is_hpet_enabled
