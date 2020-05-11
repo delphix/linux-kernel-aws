@@ -2819,6 +2819,7 @@ EXPORT_SYMBOL drivers/video/vgastate 0x00000000	save_vga
 EXPORT_SYMBOL drivers/watchdog/iTCO_vendor_support 0x00000000	iTCO_vendor_check_noreboot_on
 EXPORT_SYMBOL drivers/watchdog/iTCO_vendor_support 0x00000000	iTCO_vendor_pre_start
 EXPORT_SYMBOL drivers/watchdog/iTCO_vendor_support 0x00000000	iTCO_vendor_pre_stop
+EXPORT_SYMBOL drivers/watchdog/iTCO_vendor_support 0x00000000	iTCO_vendorsupport
 EXPORT_SYMBOL fs/fscache/fscache 0x00000000	__fscache_acquire_cookie
 EXPORT_SYMBOL fs/fscache/fscache 0x00000000	__fscache_alloc_page
 EXPORT_SYMBOL fs/fscache/fscache 0x00000000	__fscache_attr_changed
@@ -3195,6 +3196,7 @@ EXPORT_SYMBOL net/ceph/libceph 0x00000000	ceph_pagelist_set_cursor
 EXPORT_SYMBOL net/ceph/libceph 0x00000000	ceph_pagelist_truncate
 EXPORT_SYMBOL net/ceph/libceph 0x00000000	ceph_parse_ips
 EXPORT_SYMBOL net/ceph/libceph 0x00000000	ceph_parse_options
+EXPORT_SYMBOL net/ceph/libceph 0x00000000	ceph_pg_pool_flags
 EXPORT_SYMBOL net/ceph/libceph 0x00000000	ceph_pg_pool_name_by_id
 EXPORT_SYMBOL net/ceph/libceph 0x00000000	ceph_pg_poolid_by_name
 EXPORT_SYMBOL net/ceph/libceph 0x00000000	ceph_pg_to_acting_primary
@@ -3544,7 +3546,6 @@ EXPORT_SYMBOL net/rxrpc/rxrpc 0x00000000	rxrpc_kernel_get_peer
 EXPORT_SYMBOL net/rxrpc/rxrpc 0x00000000	rxrpc_kernel_get_reply_time
 EXPORT_SYMBOL net/rxrpc/rxrpc 0x00000000	rxrpc_kernel_get_rtt
 EXPORT_SYMBOL net/rxrpc/rxrpc 0x00000000	rxrpc_kernel_new_call_notification
-EXPORT_SYMBOL net/rxrpc/rxrpc 0x00000000	rxrpc_kernel_probe_life
 EXPORT_SYMBOL net/rxrpc/rxrpc 0x00000000	rxrpc_kernel_recv_data
 EXPORT_SYMBOL net/rxrpc/rxrpc 0x00000000	rxrpc_kernel_send_data
 EXPORT_SYMBOL net/rxrpc/rxrpc 0x00000000	rxrpc_kernel_set_max_life
@@ -10574,6 +10575,7 @@ EXPORT_SYMBOL_GPL drivers/misc/vmw_vmci/vmw_vmci 0x00000000	vmci_qpair_produce_f
 EXPORT_SYMBOL_GPL drivers/misc/vmw_vmci/vmw_vmci 0x00000000	vmci_send_datagram
 EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci 0x00000000	__sdhci_add_host
 EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci 0x00000000	__sdhci_read_caps
+EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci 0x00000000	__sdhci_set_timeout
 EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci 0x00000000	sdhci_add_host
 EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci 0x00000000	sdhci_adma_write_desc
 EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci 0x00000000	sdhci_alloc_host
@@ -10600,6 +10602,7 @@ EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci 0x00000000	sdhci_send_command
 EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci 0x00000000	sdhci_send_tuning
 EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci 0x00000000	sdhci_set_bus_width
 EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci 0x00000000	sdhci_set_clock
+EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci 0x00000000	sdhci_set_data_timeout_irq
 EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci 0x00000000	sdhci_set_ios
 EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci 0x00000000	sdhci_set_power
 EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci 0x00000000	sdhci_set_power_noreg
@@ -12488,7 +12491,6 @@ EXPORT_SYMBOL_GPL net/dsa/dsa_core 0x00000000	dsa_tag_drivers_unregister
 EXPORT_SYMBOL_GPL net/dsa/dsa_core 0x00000000	dsa_unregister_switch
 EXPORT_SYMBOL_GPL net/dsa/dsa_core 0x00000000	register_dsa_notifier
 EXPORT_SYMBOL_GPL net/dsa/dsa_core 0x00000000	unregister_dsa_notifier
-EXPORT_SYMBOL_GPL net/dsa/tag_8021q 0x00000000	dsa_8021q_remove_header
 EXPORT_SYMBOL_GPL net/dsa/tag_8021q 0x00000000	dsa_8021q_rx_source_port
 EXPORT_SYMBOL_GPL net/dsa/tag_8021q 0x00000000	dsa_8021q_rx_switch_id
 EXPORT_SYMBOL_GPL net/dsa/tag_8021q 0x00000000	dsa_8021q_rx_vid
