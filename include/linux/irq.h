@@ -543,6 +543,7 @@ struct irq_chip {
  * IRQCHIP_SUPPORTS_LEVEL_MSI	Chip can provide two doorbells for Level MSIs
  * IRQCHIP_SUPPORTS_NMI:	Chip can deliver NMIs, only for root irqchips
  * IRQCHIP_AFFINITY_PRE_STARTUP:      Default affinity update before startup
+ * IRQCHIP_SHUTDOWN_ON_SUSPEND: Shutdown non wake irqs in the suspend path
  */
 enum {
 	IRQCHIP_SET_TYPE_MASKED		= (1 <<  0),
@@ -554,7 +555,8 @@ enum {
 	IRQCHIP_EOI_THREADED		= (1 <<  6),
 	IRQCHIP_SUPPORTS_LEVEL_MSI	= (1 <<  7),
 	IRQCHIP_SUPPORTS_NMI		= (1 <<  8),
-	IRQCHIP_AFFINITY_PRE_STARTUP	= (1 << 10),
+	IRQCHIP_AFFINITY_PRE_STARTUP	= (1 << 9),
+	IRQCHIP_SHUTDOWN_ON_SUSPEND     = (1 <<  10),
 };
 
 #include <linux/irqdesc.h>
