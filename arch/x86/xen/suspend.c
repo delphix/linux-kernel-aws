@@ -105,8 +105,6 @@ static int xen_syscore_suspend(void)
 		xen_save_steal_clock(cpu);
 	}
 
-	xen_shutdown_pirqs();
-
 	xrfp.domid = DOMID_SELF;
 	xrfp.gpfn = __pa(HYPERVISOR_shared_info) >> PAGE_SHIFT;
 
