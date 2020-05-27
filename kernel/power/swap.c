@@ -73,6 +73,15 @@ static inline unsigned long low_free_pages(void)
 	return nr_free_pages() - nr_free_highpages();
 }
 
+/*
+ * Number of pages required to be kept free while writing the image. Always
+ * half of all available low pages before the writing starts.
+ */
+static inline unsigned long reqd_free_pages(void)
+{
+	return low_free_pages() / 2;
+}
+
 struct swap_map_page {
 	sector_t entries[MAP_PAGE_ENTRIES];
 	sector_t next_swap;
@@ -94,6 +103,7 @@ struct swap_map_handle {
 	sector_t cur_swap;
 	sector_t first_sector;
 	unsigned int k;
+	unsigned long reqd_free_pages;
 	u32 crc32;
 };
 
@@ -506,6 +516,7 @@ static int get_swap_writer(struct swap_map_handle *handle)
 		goto err_rel;
 	}
 	handle->k = 0;
+	handle->reqd_free_pages = reqd_free_pages();
 	handle->first_sector = handle->cur_swap;
 	return 0;
 err_rel:
@@ -540,10 +551,15 @@ static int swap_write_page(struct swap_map_handle *handle, void *buf,
 		handle->cur_swap = offset;
 		handle->k = 0;
 
-		if (hb) {
+		if (hb && low_free_pages() <= handle->reqd_free_pages) {
 			error = hib_wait_io(hb);
 			if (error)
 				goto out;
+			/*
+			 * Recalculate the number of required free pages, to
+			 * make sure we never take more than half.
+			 */
+			handle->reqd_free_pages = reqd_free_pages();
 		}
 	}
  out:
@@ -824,6 +840,12 @@ static int save_image_lzo(struct swap_map_handle *handle,
 		ret = -ENOMEM;
 		goto out_clean;
 	}
+
+	/*
+	 * Adjust the number of required free pages after all allocations have
+	 * been done. We don't want to run out of pages when writing.
+	 */
+	handle->reqd_free_pages = reqd_free_pages();
 
 	pr_info("Using %u thread(s) for compression\n", nr_threads);
 	pr_info("Compressing and saving image data (%u pages)...\n",
