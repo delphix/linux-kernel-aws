@@ -483,8 +483,7 @@ EXPORT_SYMBOL(iscsit_queue_rsp);
 void iscsit_aborted_task(struct iscsi_conn *conn, struct iscsi_cmd *cmd)
 {
 	spin_lock_bh(&conn->cmd_lock);
-	if (!list_empty(&cmd->i_conn_node))
-		list_del_init(&cmd->i_conn_node);
+	list_del_init(&cmd->i_conn_node);
 	spin_unlock_bh(&conn->cmd_lock);
 
 	__iscsit_free_cmd(cmd, true);
@@ -4070,7 +4069,8 @@ out:
 
 static void iscsit_release_commands_from_conn(struct iscsi_conn *conn)
 {
-	LIST_HEAD(tmp_list);
+	LIST_HEAD(tmp_cmd_list);
+	LIST_HEAD(tmp_tmr_list);
 	struct iscsi_cmd *cmd = NULL, *cmd_tmp = NULL;
 	struct iscsi_session *sess = conn->sess;
 	/*
@@ -4079,9 +4079,9 @@ static void iscsit_release_commands_from_conn(struct iscsi_conn *conn)
 	 * has been reset -> returned sleeping pre-handler state.
 	 */
 	spin_lock_bh(&conn->cmd_lock);
-	list_splice_init(&conn->conn_cmd_list, &tmp_list);
+	list_splice_init(&conn->conn_cmd_list, &tmp_cmd_list);
 
-	list_for_each_entry_safe(cmd, cmd_tmp, &tmp_list, i_conn_node) {
+	list_for_each_entry_safe(cmd, cmd_tmp, &tmp_cmd_list, i_conn_node) {
 		struct se_cmd *se_cmd = &cmd->se_cmd;
 
 		if (se_cmd->se_tfo != NULL) {
@@ -4099,11 +4099,47 @@ static void iscsit_release_commands_from_conn(struct iscsi_conn *conn)
 			}
 			spin_unlock_irq(&se_cmd->t_state_lock);
 		}
+
+		if (se_cmd->se_cmd_flags & SCF_SCSI_TMR_CDB)
+			list_move_tail(&cmd->i_conn_node, &tmp_tmr_list);
 	}
 	spin_unlock_bh(&conn->cmd_lock);
 
-	list_for_each_entry_safe(cmd, cmd_tmp, &tmp_list, i_conn_node) {
+	/*
+	 * We must wait for TMRs to be processed first. Any commands that were
+	 * aborted by those TMRs will have been freed and removed from the
+	 * tmp_cmd_list once we have finished traversing tmp_tmr_list.
+	 */
+	list_for_each_entry_safe(cmd, cmd_tmp, &tmp_tmr_list, i_conn_node) {
+		struct se_cmd *se_cmd = &cmd->se_cmd;
+
+		spin_lock_bh(&conn->cmd_lock);
 		list_del_init(&cmd->i_conn_node);
+		spin_unlock_bh(&conn->cmd_lock);
+
+		iscsit_increment_maxcmdsn(cmd, sess);
+		pr_debug("%s: freeing TMR icmd 0x%px cmd 0x%px\n",
+			__func__, cmd, se_cmd);
+		iscsit_free_cmd(cmd, true);
+		pr_debug("%s: TMR freed\n", __func__);
+	}
+
+	list_for_each_entry_safe(cmd, cmd_tmp, &tmp_cmd_list, i_conn_node) {
+		struct se_cmd *se_cmd = &cmd->se_cmd;
+
+		/*
+		 * We shouldn't be freeing any aborted commands here. Those
+		 * commands should be freed by iscsit_aborted_task, and the
+		 * last reference will be released by target_put_cmd_and_wait,
+		 * called from core_tmr_drain_tmr_list or core_tmr_abort_task.
+		 */
+		spin_lock_irq(&se_cmd->t_state_lock);
+		WARN_ON(se_cmd->transport_state & CMD_T_ABORTED);
+		spin_unlock_irq(&se_cmd->t_state_lock);
+
+		spin_lock_bh(&conn->cmd_lock);
+		list_del_init(&cmd->i_conn_node);
+		spin_unlock_bh(&conn->cmd_lock);
 
 		iscsit_increment_maxcmdsn(cmd, sess);
 		iscsit_free_cmd(cmd, true);
