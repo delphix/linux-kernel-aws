@@ -268,6 +268,7 @@ as370-hwmon
 as3935
 asb100
 asc7621
+ashmem_linux
 asix
 aspeed-pwm-tacho
 ast
@@ -355,6 +356,7 @@ bfs
 bh1750
 bh1770glc
 bh1780
+binder_linux
 binfmt_misc
 blocklayoutdriver
 blowfish-x86_64
@@ -3315,6 +3317,7 @@ xen-front-pgdir-shbuf
 xen-gntalloc
 xen-gntdev
 xen-netback
+xen-netfront
 xen-pciback
 xen-pcifront
 xen-privcmd
