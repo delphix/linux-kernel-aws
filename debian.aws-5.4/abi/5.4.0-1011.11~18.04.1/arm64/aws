@@ -12445,6 +12445,7 @@ EXPORT_SYMBOL_GPL	 drivers/mmc/host/renesas_sdhi_core 0x00000000	renesas_sdhi_pr
 EXPORT_SYMBOL_GPL	 drivers/mmc/host/renesas_sdhi_core 0x00000000	renesas_sdhi_remove
 EXPORT_SYMBOL_GPL	 drivers/mmc/host/sdhci 0x00000000	__sdhci_add_host
 EXPORT_SYMBOL_GPL	 drivers/mmc/host/sdhci 0x00000000	__sdhci_read_caps
+EXPORT_SYMBOL_GPL	 drivers/mmc/host/sdhci 0x00000000	__sdhci_set_timeout
 EXPORT_SYMBOL_GPL	 drivers/mmc/host/sdhci 0x00000000	sdhci_abort_tuning
 EXPORT_SYMBOL_GPL	 drivers/mmc/host/sdhci 0x00000000	sdhci_add_host
 EXPORT_SYMBOL_GPL	 drivers/mmc/host/sdhci 0x00000000	sdhci_adma_write_desc
@@ -12472,6 +12473,7 @@ EXPORT_SYMBOL_GPL	 drivers/mmc/host/sdhci 0x00000000	sdhci_send_command
 EXPORT_SYMBOL_GPL	 drivers/mmc/host/sdhci 0x00000000	sdhci_send_tuning
 EXPORT_SYMBOL_GPL	 drivers/mmc/host/sdhci 0x00000000	sdhci_set_bus_width
 EXPORT_SYMBOL_GPL	 drivers/mmc/host/sdhci 0x00000000	sdhci_set_clock
+EXPORT_SYMBOL_GPL	 drivers/mmc/host/sdhci 0x00000000	sdhci_set_data_timeout_irq
 EXPORT_SYMBOL_GPL	 drivers/mmc/host/sdhci 0x00000000	sdhci_set_ios
 EXPORT_SYMBOL_GPL	 drivers/mmc/host/sdhci 0x00000000	sdhci_set_power
 EXPORT_SYMBOL_GPL	 drivers/mmc/host/sdhci 0x00000000	sdhci_set_power_noreg
@@ -16740,6 +16742,7 @@ EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	acpi_pm_set_device_wakeup
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	acpi_pm_wakeup_event
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	acpi_processor_get_performance_info
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	acpi_register_gsi
+EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	acpi_register_wakeup_handler
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	acpi_release_memory
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	acpi_scan_lock_acquire
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	acpi_scan_lock_release
@@ -16756,6 +16759,7 @@ EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	acpi_subsys_suspend_late
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	acpi_subsys_suspend_noirq
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	acpi_unbind_one
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	acpi_unregister_gsi
+EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	acpi_unregister_wakeup_handler
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	acpi_walk_dep_device_list
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	acpiphp_register_attention
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	acpiphp_unregister_attention
