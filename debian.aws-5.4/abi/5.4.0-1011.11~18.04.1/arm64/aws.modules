@@ -379,6 +379,7 @@ as3935
 as5011
 asc7621
 ascot2e
+ashmem_linux
 asix
 aspeed-pwm-tacho
 aspeed-video
@@ -533,6 +534,7 @@ bfusb
 bh1750
 bh1770glc
 bh1780
+binder_linux
 binfmt_misc
 block2mtd
 blocklayoutdriver
@@ -1269,7 +1271,6 @@ et1011c
 et131x
 et8ek8
 ethoc
-etnaviv
 evbug
 exc3000
 exfat
@@ -5242,6 +5243,7 @@ xen-gntalloc
 xen-gntdev
 xen-kbdfront
 xen-netback
+xen-netfront
 xen-privcmd
 xen-scsiback
 xen-scsifront
