@@ -1338,7 +1338,6 @@ intel-ishtp-hid
 intel-ishtp-loader
 intel-lpss
 intel-lpss-pci
-rapl
 intel-rng
 intel-rst
 intel-smartconnect
@@ -2471,6 +2470,7 @@ raid456
 raid6_pq
 raid_class
 ramoops
+rapl
 rave-sp
 rave-sp-backlight
 rave-sp-pwrbutton
