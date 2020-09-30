@@ -2250,11 +2250,11 @@ EXPORT_SYMBOL	 drivers/misc/tifm_core 0x00000000	tifm_register_driver
 EXPORT_SYMBOL	 drivers/misc/tifm_core 0x00000000	tifm_remove_adapter
 EXPORT_SYMBOL	 drivers/misc/tifm_core 0x00000000	tifm_unmap_sg
 EXPORT_SYMBOL	 drivers/misc/tifm_core 0x00000000	tifm_unregister_driver
+EXPORT_SYMBOL	 drivers/mmc/host/cqhci 0x00000000	cqhci_deactivate
 EXPORT_SYMBOL	 drivers/mmc/host/cqhci 0x00000000	cqhci_init
 EXPORT_SYMBOL	 drivers/mmc/host/cqhci 0x00000000	cqhci_irq
 EXPORT_SYMBOL	 drivers/mmc/host/cqhci 0x00000000	cqhci_pltfm_init
 EXPORT_SYMBOL	 drivers/mmc/host/cqhci 0x00000000	cqhci_resume
-EXPORT_SYMBOL	 drivers/mmc/host/cqhci 0x00000000	cqhci_suspend
 EXPORT_SYMBOL	 drivers/mmc/host/dw_mmc 0x00000000	dw_mci_probe
 EXPORT_SYMBOL	 drivers/mmc/host/dw_mmc 0x00000000	dw_mci_remove
 EXPORT_SYMBOL	 drivers/mmc/host/dw_mmc 0x00000000	dw_mci_runtime_resume
@@ -17497,6 +17497,7 @@ EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	cpu_have_feature
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	cpu_hotplug_disable
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	cpu_hotplug_enable
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	cpu_is_hotpluggable
+EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	cpu_logical_map
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	cpu_mitigations_auto_nosmt
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	cpu_mitigations_off
 EXPORT_SYMBOL_GPL	 vmlinux 0x00000000	cpu_pm_enter
