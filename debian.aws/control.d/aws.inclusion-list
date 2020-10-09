@@ -261,3 +261,4 @@ sound/soundcore.ko
 ubuntu/vbox/vboxguest/vboxguest.ko
 ubuntu/vbox/vboxsf/vboxsf.ko
 zfs/*
+ubuntu/ubuntu-host/ubuntu-host.ko
