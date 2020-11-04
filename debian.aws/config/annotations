@@ -9862,7 +9862,7 @@ CONFIG_TOSHIBA_WMI                              policy<{'amd64': 'n'}>
 CONFIG_LG_LAPTOP                                policy<{'amd64': 'm'}>
 
 # Menu: Device Drivers >> Xen driver support
-CONFIG_XEN_BALLOON                              policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_XEN_BALLOON                              policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_XEN_BALLOON_MEMORY_HOTPLUG               policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_XEN_BALLOON_MEMORY_HOTPLUG_LIMIT         policy<{'amd64': '512'}>
 CONFIG_XEN_SCRUB_PAGES_DEFAULT                  policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -9880,6 +9880,7 @@ CONFIG_XEN_MCE_LOG                              policy<{'amd64': 'y'}>
 CONFIG_XEN_SYMS                                 policy<{'amd64': 'y'}>
 #
 CONFIG_XEN_ACPI_PROCESSOR                       mark<ENFORCED> <boot essential on XEN host>
+CONFIG_XEN_BALLOON                              mark<ENFORCED> <LP:1732512>
 
 # Menu: Device Drivers >> Xen driver support >> Backend driver support
 CONFIG_XEN_BACKEND                              policy<{'amd64': 'y', 'arm64': 'y'}>
