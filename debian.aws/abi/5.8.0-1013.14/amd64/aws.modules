@@ -1880,7 +1880,6 @@ hx8357
 hx8357d
 hyperbus-core
 hyperv-keyboard
-hyperv_fb
 i10nm_edac
 i2400m
 i2400m-usb
