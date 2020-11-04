@@ -2181,7 +2181,7 @@ CONFIG_FB_IBM_GXT4500                           policy<{'amd64': 'n', 'arm64': '
 CONFIG_FB_XILINX                                policy<{'arm64': 'm'}>
 CONFIG_FB_DA8XX                                 policy<{'armhf-generic': 'm'}>
 CONFIG_FB_VIRTUAL                               policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'ppc64el': 'n', 's390x': 'n'}>
-CONFIG_XEN_FBDEV_FRONTEND                       policy<{'amd64': 'm', 'arm64': 'm'}>
+CONFIG_XEN_FBDEV_FRONTEND                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_FB_METRONOME                             policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm', 's390x': 'n'}>
 CONFIG_FB_MB862XX                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm', 's390x': 'n'}>
 CONFIG_FB_MB862XX_I2C                           policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
@@ -2193,6 +2193,7 @@ CONFIG_FB_SM712                                 policy<{'amd64': 'm', 'arm64': '
 #
 CONFIG_FB_VIRTUAL                               flag<TESTING>
 CONFIG_FB_HYPERV                                mark<ENFORCED> note<LP:1879711>
+CONFIG_XEN_FBDEV_FRONTEND                       mark<ENFORCED> note<LP:1732512>
 
 # Menu: Device Drivers >> Graphics support >> Frame buffer Devices >> Support for frame buffer devices >> AMD Geode family framebuffer support
 
