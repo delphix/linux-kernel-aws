@@ -5569,7 +5569,6 @@ xcbc
 xdpe12284
 xen-blkback
 xen-evtchn
-xen-fbfront
 xen-front-pgdir-shbuf
 xen-gntalloc
 xen-gntdev
