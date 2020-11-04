@@ -12417,7 +12417,7 @@ CONFIG_ARCH_XGENE                               policy<{'arm64': 'y'}>
 CONFIG_ARCH_ZYNQMP                              policy<{'arm64': 'y'}>
 
 # Menu: Power management and ACPI options
-CONFIG_SUSPEND                                  policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
+CONFIG_SUSPEND                                  policy<{'amd64': 'n', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
 CONFIG_SUSPEND_FREEZER                          policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
 CONFIG_SUSPEND_SKIP_SYNC                        policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'ppc64el': 'n'}>
 CONFIG_HIBERNATION                              policy<{'amd64': 'y', 'arm64': 'n', 'armhf': 'y', 'ppc64el': 'n'}>
@@ -12439,6 +12439,7 @@ CONFIG_INTEL_IDLE                               policy<{'amd64': 'y'}>
 CONFIG_HIBERNATION                              flag<REVIEW>
 CONFIG_HIBERNATION                              mark<ENFORCED> note<LP:1867753>
 CONFIG_PM                                       mark<ENFORCED> note<LP:1867753>
+CONFIG_SUSPEND                                  mark<ENFORCED> note<LP:1732512> note<LP:1898087>
 
 # Menu: Power management and ACPI options >> 512x-based boards >> Architecture: powerpc
 
