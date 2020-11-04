@@ -3543,7 +3543,7 @@ CONFIG_INPUT_IMS_PCU                            policy<{'amd64': 'm', 'arm64': '
 CONFIG_INPUT_IQS269A                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
 CONFIG_INPUT_CMA3000                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
 CONFIG_INPUT_CMA3000_I2C                        policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_INPUT_XEN_KBDDEV_FRONTEND                policy<{'amd64': 'm', 'arm64': 'm'}>
+CONFIG_INPUT_XEN_KBDDEV_FRONTEND                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_INPUT_IDEAPAD_SLIDEBAR                   policy<{'amd64': 'm', 'ppc64el': 'm'}>
 CONFIG_INPUT_SOC_BUTTON_ARRAY                   policy<{'amd64': 'm', 'arm64': 'm'}>
 CONFIG_INPUT_DRV260X_HAPTICS                    policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
@@ -3555,6 +3555,7 @@ CONFIG_INPUT_SC27XX_VIBRA                       policy<{'arm64': 'm'}>
 CONFIG_INPUT_STPMIC1_ONKEY                      policy<{'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
 #
 CONFIG_INPUT_UINPUT                             mark<ENFORCED> note<LP:584812>
+CONFIG_INPUT_XEN_KBDDEV_FRONTEND                mark<ENFORCED> note<LP:1732512>
 
 # Menu: Device Drivers >> Input device support >> Generic input layer (needed for keyboard, mouse, ...) >> Mouse interface
 CONFIG_INPUT_MOUSEDEV                           policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y', 's390x': 'n'}>
