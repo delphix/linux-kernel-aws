@@ -5572,7 +5572,6 @@ xen-evtchn
 xen-front-pgdir-shbuf
 xen-gntalloc
 xen-gntdev
-xen-kbdfront
 xen-netback
 xen-pciback
 xen-pcifront
