@@ -210,7 +210,11 @@ algif_rng
 algif_skcipher
 alim1535_wdt
 alim7101_wdt
+altera-cvp
+altera-freeze-bridge
 altera-msgdma
+altera-pr-ip-core
+altera-ps-spi
 altera-stapl
 altera_jtaguart
 altera_ps2
@@ -635,6 +639,13 @@ dell-smm-hwmon
 des3_ede-x86_64
 des_generic
 device_dax
+dfl
+dfl-afu
+dfl-fme
+dfl-fme-br
+dfl-fme-mgr
+dfl-fme-region
+dfl-pci
 dht11
 diag
 digi_acceleport
@@ -860,6 +871,9 @@ fotg210-hcd
 fotg210-udc
 fou
 fou6
+fpga-bridge
+fpga-mgr
+fpga-region
 freevxfs
 friq
 frpw
@@ -3335,6 +3349,8 @@ xfrm_user
 xfs
 xgene-hwmon
 xhci-plat-hcd
+xilinx-pr-decoupler
+xilinx-spi
 xilinx-xadc
 xilinx_emac
 xilinx_gmii2rgmii
