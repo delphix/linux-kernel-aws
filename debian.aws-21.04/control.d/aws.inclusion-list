@@ -125,7 +125,6 @@ drivers/net/vmxnet3/vmxnet3.ko
 drivers/net/vxlan.ko
 drivers/net/wireguard/wireguard.ko
 drivers/net/xen-netback/*
-drivers/net/xen-netfront.ko
 drivers/nvme/host/nvme.ko
 drivers/nvmem/nvmem_core.ko
 drivers/parport/parport.ko
