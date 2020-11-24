@@ -2181,17 +2181,19 @@ CONFIG_FB_IBM_GXT4500                           policy<{'amd64': 'n', 'arm64': '
 CONFIG_FB_XILINX                                policy<{'arm64': 'm'}>
 CONFIG_FB_DA8XX                                 policy<{'armhf-generic': 'm'}>
 CONFIG_FB_VIRTUAL                               policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'ppc64el': 'n', 's390x': 'n'}>
-CONFIG_XEN_FBDEV_FRONTEND                       policy<{'amd64': 'm', 'arm64': 'm'}>
+CONFIG_XEN_FBDEV_FRONTEND                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_FB_METRONOME                             policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm', 's390x': 'n'}>
 CONFIG_FB_MB862XX                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm', 's390x': 'n'}>
 CONFIG_FB_MB862XX_I2C                           policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
 CONFIG_FB_MX3                                   policy<{'arm64': 'y', 'armhf-generic': 'y'}>
-CONFIG_FB_HYPERV                                policy<{'amd64': 'm'}>
+CONFIG_FB_HYPERV                                policy<{'amd64': 'n'}>
 CONFIG_FB_SIMPLE                                policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y', 's390x': 'n'}>
 CONFIG_FB_SSD1307                               policy<{'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
 CONFIG_FB_SM712                                 policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm', 's390x': 'n'}>
 #
 CONFIG_FB_VIRTUAL                               flag<TESTING>
+CONFIG_FB_HYPERV                                mark<ENFORCED> note<LP:1879711>
+CONFIG_XEN_FBDEV_FRONTEND                       mark<ENFORCED> note<LP:1732512>
 
 # Menu: Device Drivers >> Graphics support >> Frame buffer Devices >> Support for frame buffer devices >> AMD Geode family framebuffer support
 
@@ -3541,7 +3543,7 @@ CONFIG_INPUT_IMS_PCU                            policy<{'amd64': 'm', 'arm64': '
 CONFIG_INPUT_IQS269A                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
 CONFIG_INPUT_CMA3000                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
 CONFIG_INPUT_CMA3000_I2C                        policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_INPUT_XEN_KBDDEV_FRONTEND                policy<{'amd64': 'm', 'arm64': 'm'}>
+CONFIG_INPUT_XEN_KBDDEV_FRONTEND                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_INPUT_IDEAPAD_SLIDEBAR                   policy<{'amd64': 'm', 'ppc64el': 'm'}>
 CONFIG_INPUT_SOC_BUTTON_ARRAY                   policy<{'amd64': 'm', 'arm64': 'm'}>
 CONFIG_INPUT_DRV260X_HAPTICS                    policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
@@ -3553,6 +3555,7 @@ CONFIG_INPUT_SC27XX_VIBRA                       policy<{'arm64': 'm'}>
 CONFIG_INPUT_STPMIC1_ONKEY                      policy<{'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
 #
 CONFIG_INPUT_UINPUT                             mark<ENFORCED> note<LP:584812>
+CONFIG_INPUT_XEN_KBDDEV_FRONTEND                mark<ENFORCED> note<LP:1732512>
 
 # Menu: Device Drivers >> Input device support >> Generic input layer (needed for keyboard, mouse, ...) >> Mouse interface
 CONFIG_INPUT_MOUSEDEV                           policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y', 's390x': 'n'}>
@@ -5241,7 +5244,7 @@ CONFIG_NETDEVSIM                                policy<{'amd64': 'm', 'arm64': '
 CONFIG_NET_FAILOVER                             policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm', 's390x': 'm'}>
 #
 CONFIG_HIPPI                                    note<DEPRECATED>
-CONFIG_XEN_NETDEV_FRONTEND                      note<not autoloadable -- XEN paravirt support>
+CONFIG_XEN_NETDEV_FRONTEND                      mark<ENFORCED> note<not autoloadable -- XEN paravirt support>
 
 # Menu: Device Drivers >> Network device support >> ARCnet support
 CONFIG_ARCNET                                   policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm', 's390x': 'n'}>
@@ -7885,643 +7888,8 @@ CONFIG_MEMSTICK_R592                            policy<{'amd64': 'm', 'arm64': '
 CONFIG_MEMSTICK_REALTEK_PCI                     policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
 CONFIG_MEMSTICK_REALTEK_USB                     policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
 
-# Menu: Device Drivers >> Sound card support
-CONFIG_SOUND                                    policy<{'amd64': 'm', 'arm64-generic': 'm', 'armhf': 'y', 'ppc64el': 'm', 's390x': 'n'}>
-CONFIG_SOUND_OSS_CORE_PRECLAIM                  policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'ppc64el': 'n'}>
-#
-CONFIG_SOUND                                    note<not autoloadable on omap>
-CONFIG_SOUND_OSS_CORE_PRECLAIM                  mark<ENFORCED> note<LP#1105230 LP#1385510>
-
 # Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture
-CONFIG_SND                                      policy<{'amd64': 'm', 'arm64-generic': 'm', 'armhf': 'y', 'ppc64el': 'm'}>
-CONFIG_SND_OSSEMUL                              policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_MIXER_OSS                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_PCM_OSS                              policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'ppc64el': 'n'}>
-CONFIG_SND_PCM_TIMER                            policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_HRTIMER                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_DYNAMIC_MINORS                       policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_MAX_CARDS                            policy<{'amd64': '32', 'arm64': '32', 'armhf': '32', 'ppc64el': '32'}>
-CONFIG_SND_SUPPORT_OLD_API                      policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_PROC_FS                              policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_VERBOSE_PROCFS                       policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_VERBOSE_PRINTK                       policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'ppc64el': 'n'}>
-CONFIG_SND_HDA_PREALLOC_SIZE                    policy<{'amd64': '0', 'arm64': '64', 'armhf': '64', 'ppc64el': '64'}>
-CONFIG_SND_XEN_FRONTEND                         policy<{'amd64': 'm', 'arm64': 'm'}>
-#
-CONFIG_SND                                      note<not autoloadable on omap>
-CONFIG_SND_PCM_OSS                              note<deprecated in favour of pulseaudio emulation>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support
-CONFIG_SND_SOC                                  policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'y', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_AMD_ACP                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_AMD_CZ_DA7219MX98357_MACH        policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_AMD_CZ_RT5645_MACH               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_AMD_ACP3x                        policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_AMD_RV_RT5682_MACH               policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_AMD_RENOIR                       policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_AMD_RENOIR_MACH                  policy<{'amd64': 'm'}>
-CONFIG_SND_BCM2835_SOC_I2S                      policy<{'arm64': 'm'}>
-CONFIG_SND_BCM63XX_I2S_WHISTLER                 policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_DESIGNWARE_I2S                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_DESIGNWARE_PCM                       policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_I2S_HI6210_I2S                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_KIRKWOOD_SOC                         policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_KIRKWOOD_SOC_ARMADA370_DB            policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_MT2701                           policy<{'arm64': 'n', 'armhf': 'n'}>
-CONFIG_SND_SOC_MT6797                           policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_MT6797_MT6351                    policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_MT8183                           policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_MT8183_MT6358_TS3A227E_MAX98357A policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_MT8183_DA7219_MAX98357A          policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_MTK_BTCVSD                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_QCOM                             policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_STORM                            policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_APQ8016_SBC                      policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_QDSP6                            policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_MSM8996                          policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_SDM845                           policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_SPRD                             policy<{'arm64': 'm'}>
-CONFIG_SND_SOC_SPRD_MCDT                        policy<{'arm64': 'm'}>
-CONFIG_SND_SOC_XILINX_I2S                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_XILINX_AUDIO_FORMATTER           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_XILINX_SPDIF                     policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_XTFPGA_I2S                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_ZX_TDM                                   policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SIMPLE_CARD                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_AUDIO_GRAPH_CARD                     policy<{'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-#
-CONFIG_SND_SOC                                  note<not autoloadable on omap>
-CONFIG_SND_SOC_AMD_RENOIR                       mark<ENFORCED> note<LP:1881046>
-CONFIG_SND_SOC_AMD_RENOIR_MACH                  mark<ENFORCED> note<LP:1881046>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> ASoC support for Amlogic platforms
-CONFIG_SND_MESON_AIU                            policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_MESON_AXG_FRDDR                      policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_MESON_AXG_TODDR                      policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_MESON_AXG_TDMIN                      policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_MESON_AXG_TDMOUT                     policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_MESON_AXG_SOUND_CARD                 policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_MESON_AXG_SPDIFOUT                   policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_MESON_AXG_SPDIFIN                    policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_MESON_AXG_PDM                        policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_MESON_GX_SOUND_CARD                  policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_MESON_G12A_TOACODEC                  policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_MESON_G12A_TOHDMITX                  policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_MESON_T9015                      policy<{'arm64': 'm', 'armhf': 'm'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> ASoC support for Mediatek MT8173 chip
-CONFIG_SND_SOC_MT8173                           policy<{'arm64': 'n', 'armhf': 'n'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> ASoC support for Rockchip
-CONFIG_SND_SOC_ROCKCHIP                         policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_ROCKCHIP_I2S                     policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_ROCKCHIP_PDM                     policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_ROCKCHIP_SPDIF                   policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_ROCKCHIP_MAX98090                policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_ROCKCHIP_RT5645                  policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_RK3288_HDMI_ANALOG               policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_RK3399_GRU_SOUND                 policy<{'arm64': 'm', 'armhf': 'm'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> ASoC support for Samsung
-CONFIG_SND_SOC_SAMSUNG                          policy<{'armhf': 'm'}>
-CONFIG_SND_SAMSUNG_PCM                          policy<{'armhf': 'm'}>
-CONFIG_SND_SAMSUNG_SPDIF                        policy<{'armhf': 'm'}>
-CONFIG_SND_SAMSUNG_I2S                          policy<{'armhf': 'm'}>
-CONFIG_SND_SOC_SAMSUNG_SMDK_WM8994              policy<{'armhf': 'm'}>
-CONFIG_SND_SOC_SAMSUNG_SMDK_SPDIF               policy<{'armhf': 'm'}>
-CONFIG_SND_SOC_SMDK_WM8994_PCM                  policy<{'armhf': 'm'}>
-CONFIG_SND_SOC_SNOW                             policy<{'armhf': 'm'}>
-CONFIG_SND_SOC_ODROID                           policy<{'armhf': 'm'}>
-CONFIG_SND_SOC_ARNDALE                          policy<{'armhf': 'm'}>
-CONFIG_SND_SOC_SAMSUNG_TM2_WM5110               policy<{'armhf': 'm'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> ASoC support for UniPhier
-CONFIG_SND_SOC_UNIPHIER                         policy<{'armhf': 'm'}>
-CONFIG_SND_SOC_UNIPHIER_AIO                     policy<{'armhf': 'm'}>
-CONFIG_SND_SOC_UNIPHIER_LD11                    policy<{'armhf': 'm'}>
-CONFIG_SND_SOC_UNIPHIER_PXS2                    policy<{'armhf': 'm'}>
-CONFIG_SND_SOC_UNIPHIER_EVEA_CODEC              policy<{'armhf': 'm'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> Allwinner SoC Audio support
-CONFIG_SND_SUN4I_CODEC                          policy<{'arm64': 'n'}>
-CONFIG_SND_SUN8I_CODEC                          policy<{'arm64': 'm'}>
-CONFIG_SND_SUN8I_CODEC_ANALOG                   policy<{'arm64': 'm'}>
-CONFIG_SND_SUN50I_CODEC_ANALOG                  policy<{'arm64': 'm'}>
-CONFIG_SND_SUN4I_I2S                            policy<{'arm64': 'n'}>
-CONFIG_SND_SUN4I_SPDIF                          policy<{'arm64': 'n'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> Audio support for Imagination Technologies designs
-CONFIG_SND_SOC_IMG                              policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_SOC_IMG_I2S_IN                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_IMG_I2S_OUT                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_IMG_PARALLEL_OUT                 policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_IMG_SPDIF_IN                     policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_IMG_SPDIF_OUT                    policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_IMG_PISTACHIO_INTERNAL_DAC       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> Audio support for Texas Instruments SoCs
-CONFIG_SND_SOC_DAVINCI_MCASP                    policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_OMAP_DMIC                        policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_OMAP_MCBSP                       policy<{'armhf': 'm'}>
-CONFIG_SND_SOC_OMAP_MCPDM                       policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_NOKIA_RX51                       policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_OMAP3_PANDORA                    policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_OMAP3_TWL4030                    policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_OMAP_ABE_TWL6040                 policy<{'armhf-generic': 'm'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> Audio support for Texas Instruments SoCs >> DM365 codec select
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> CODEC drivers
-CONFIG_SND_SOC_AC97_CODEC                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_ADAU1701                         policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_ADAU1761_I2C                     policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_ADAU1761_SPI                     policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_ADAU7002                         policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_ADAU7118_HW                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_ADAU7118_I2C                     policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_AK4104                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_AK4118                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_AK4458                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_AK4554                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_AK4613                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_AK4642                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_AK5386                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_AK5558                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_ALC5623                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_BD28623                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_BT_SCO                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CPCAP                            policy<{'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CROS_EC_CODEC                    policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_CS35L32                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CS35L33                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CS35L34                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CS35L35                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CS35L36                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CS42L42                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CS42L51_I2C                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CS42L52                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CS42L56                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CS42L73                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CS4265                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CS4270                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CS4271_I2C                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CS4271_SPI                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CS42XX8_I2C                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CS43130                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CS4341                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CS4349                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CS53L30                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_CX2072X                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_DA7213                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_DMIC                             policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_ES7134                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_ES7241                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_ES8316                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_ES8328_I2C                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_ES8328_SPI                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_GTM601                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_INNO_RK3036                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_LOCHNAGAR_SC                     policy<{'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_MAX98088                         policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_MAX98357A                        policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_MAX98504                         policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_MAX9867                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_MAX98927                         policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_MAX98373                         policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_MAX98390                         policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_MAX9860                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_MSM8916_WCD_ANALOG               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_MSM8916_WCD_DIGITAL              policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_PCM1681                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_PCM1789_I2C                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_PCM179X_I2C                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_PCM179X_SPI                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_PCM186X_I2C                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_PCM186X_SPI                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_PCM3060_I2C                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_PCM3060_SPI                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_PCM3168A_I2C                     policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_PCM3168A_SPI                     policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_PCM512x_I2C                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_PCM512x_SPI                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_RK3328                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_RT1308_SDW                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_RT5616                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_RT5631                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_RT5682_SDW                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_RT700_SDW                        policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_RT711_SDW                        policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_RT715_SDW                        policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_SGTL5000                         policy<{'amd64': 'm', 'arm64': 'm', 'armhf-generic': 'y', 'armhf-generic-lpae': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_SIMPLE_AMPLIFIER                 policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_SIRF_AUDIO_CODEC                 policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_SPDIF                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_SSM2305                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_SSM2602_SPI                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_SSM2602_I2C                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_SSM4567                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_STA32X                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_STA350                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_STI_SAS                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TAS2552                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TAS2562                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TAS2770                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TAS5086                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TAS571X                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TAS5720                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TAS6424                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TDA7419                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TFA9879                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TLV320AIC23_I2C                  policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TLV320AIC23_SPI                  policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TLV320AIC31XX                    policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TLV320AIC32X4_I2C                policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TLV320AIC32X4_SPI                policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TLV320AIC3X                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TLV320ADCX140                    policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TS3A227E                         policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TSCS42XX                         policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TSCS454                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_UDA1334                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WCD9335                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WCD934X                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8510                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8523                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8524                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8580                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8711                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8728                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8731                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8737                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8741                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8750                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8753                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8770                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8776                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8782                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8804_I2C                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8804_SPI                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8903                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8904                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8960                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8962                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8974                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8978                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WM8985                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_WSA881X                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_ZL38060                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_ZX_AUD96P22                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_MAX9759                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_MT6351                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_MT6358                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_MT6660                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_NAU8540                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_NAU8810                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_NAU8822                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_NAU8824                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_TPA6130A2                        policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-#
-CONFIG_SND_SOC_SGTL5000                         flag<REVIEW>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> Intel ASoC SST drivers
-CONFIG_SND_SOC_INTEL_SST_TOPLEVEL               policy<{'amd64': 'y'}>
-CONFIG_SND_SOC_INTEL_HASWELL                    policy<{'amd64': 'm'}>
-CONFIG_SND_SST_ATOM_HIFI2_PLATFORM_PCI          policy<{'amd64': 'm'}>
-CONFIG_SND_SST_ATOM_HIFI2_PLATFORM_ACPI         policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_SKYLAKE                    policy<{'amd64': 'n'}>
-CONFIG_SND_SOC_INTEL_SKL                        policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_APL                        policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_KBL                        policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_GLK                        policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_CNL                        policy<{'amd64': 'n'}>
-CONFIG_SND_SOC_INTEL_CFL                        policy<{'amd64': 'n'}>
-CONFIG_SND_SOC_INTEL_CML_H                      policy<{'amd64': 'n'}>
-CONFIG_SND_SOC_INTEL_CML_LP                     policy<{'amd64': 'n'}>
-CONFIG_SND_SOC_INTEL_SKYLAKE_HDAUDIO_CODEC      policy<{'amd64': 'n'}>
-#
-CONFIG_SND_SOC_INTEL_SKYLAKE                    mark<ENFORCED> note<deprecated>
-CONFIG_SND_SOC_INTEL_CNL                        mark<ENFORCED> note<deprecated>
-CONFIG_SND_SOC_INTEL_CFL                        mark<ENFORCED> note<deprecated>
-CONFIG_SND_SOC_INTEL_CML_H                      mark<ENFORCED> note<deprecated>
-CONFIG_SND_SOC_INTEL_CML_LP                     mark<ENFORCED> note<deprecated>
-CONFIG_SND_SOC_INTEL_SKYLAKE_HDAUDIO_CODEC      mark<ENFORCED> note<deprecated>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> Intel ASoC SST drivers >> Intel Machine drivers
-CONFIG_SND_SOC_INTEL_MACH                       policy<{'amd64': 'y'}>
-CONFIG_SND_SOC_INTEL_USER_FRIENDLY_LONG_NAMES   policy<{'amd64': 'n'}>
-CONFIG_SND_SOC_INTEL_HASWELL_MACH               policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_BDW_RT5650_MACH            policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_BDW_RT5677_MACH            policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_BROADWELL_MACH             policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_BYTCR_RT5640_MACH          policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_BYTCR_RT5651_MACH          policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_CHT_BSW_RT5672_MACH        policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_CHT_BSW_RT5645_MACH        policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_CHT_BSW_MAX98090_TI_MACH   policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_CHT_BSW_NAU8824_MACH       policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_BYT_CHT_CX2072X_MACH       policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_BYT_CHT_DA7213_MACH        policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_BYT_CHT_ES8316_MACH        policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_BYT_CHT_NOCODEC_MACH       policy<{'amd64': 'n'}>
-CONFIG_SND_SOC_INTEL_SKL_RT286_MACH             policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_SKL_NAU88L25_SSM4567_MACH  policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_SKL_NAU88L25_MAX98357A_MACH policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_BXT_DA7219_MAX98357A_MACH  policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_BXT_RT298_MACH             policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_SOF_WM8804_MACH            policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_KBL_RT5663_MAX98927_MACH   policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_KBL_RT5663_RT5514_MAX98927_MACH policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_KBL_DA7219_MAX98357A_MACH  policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_KBL_DA7219_MAX98927_MACH   policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_KBL_RT5660_MACH            policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_GLK_DA7219_MAX98357A_MACH  policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_GLK_RT5682_MAX98357A_MACH  policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_SKL_HDA_DSP_GENERIC_MACH   policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_SOF_RT5682_MACH            policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_SOF_PCM512x_MACH           policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_CML_LP_DA7219_MAX98357A_MACH policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_SOF_CML_RT1011_RT5682_MACH policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_SOF_DA7219_MAX98373_MACH   policy<{'amd64': 'm'}>
-CONFIG_SND_SOC_INTEL_EHL_RT5660_MACH            policy<{'amd64': 'm'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> STMicroelectronics STM32 SOC audio support
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> SoC Audio for Freescale CPUs
-CONFIG_SND_SOC_FSL_ASRC                         policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_FSL_SAI                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_FSL_MQS                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_FSL_AUDMIX                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_FSL_SSI                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf-generic': 'y', 'armhf-generic-lpae': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_FSL_SPDIF                        policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_FSL_ESAI                         policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_FSL_MICFIL                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_FSL_EASRC                        policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_IMX_AUDMUX                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf-generic': 'y', 'armhf-generic-lpae': 'm', 'ppc64el': 'm'}>
-#
-CONFIG_SND_SOC_FSL_SSI                          flag<REVIEW>
-CONFIG_SND_SOC_IMX_AUDMUX                       flag<REVIEW>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> SoC Audio for Freescale CPUs >> SoC Audio for Freescale PowerPC CPUs
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> SoC Audio for Freescale CPUs >> SoC Audio for Freescale i.MX CPUs
-CONFIG_SND_IMX_SOC                              policy<{'arm64': 'm', 'armhf-generic': 'y'}>
-CONFIG_SND_SOC_EUKREA_TLV320                    policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_IMX_ES8328                       policy<{'arm64': 'm', 'armhf-generic': 'm'}>
-CONFIG_SND_SOC_IMX_SGTL5000                     policy<{'arm64': 'm', 'armhf-generic': 'y'}>
-CONFIG_SND_SOC_IMX_SPDIF                        policy<{'arm64': 'm', 'armhf-generic': 'm'}>
-CONFIG_SND_SOC_IMX_MC13783                      policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_FSL_ASOC_CARD                    policy<{'arm64': 'm', 'armhf-generic': 'm'}>
-CONFIG_SND_SOC_IMX_AUDMIX                       policy<{'arm64': 'm', 'armhf-generic': 'm'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> SoC Audio for Freescale MXS CPUs
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> SoC Audio for the Atmel System-on-Chip
-CONFIG_SND_ATMEL_SOC                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_MIKROE_PROTO                     policy<{'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> SoC Audio for the Intel PXA2xx chip
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> SoC Audio for the Tegra System-on-Chip
-CONFIG_SND_SOC_TEGRA                            policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_TEGRA20_AC97                     policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_TEGRA20_DAS                      policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_TEGRA20_I2S                      policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_TEGRA20_SPDIF                    policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_TEGRA30_AHUB                     policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_TEGRA30_I2S                      policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_TEGRA_RT5640                     policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_TEGRA_WM8753                     policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_TEGRA_WM8903                     policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_TEGRA_WM9712                     policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_TEGRA_TRIMSLICE                  policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_TEGRA_ALC5632                    policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_TEGRA_MAX98090                   policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_TEGRA_RT5677                     policy<{'armhf-generic': 'm'}>
-CONFIG_SND_SOC_TEGRA_SGTL5000                   policy<{'armhf-generic': 'm'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> SoC Audio support for Renesas SoCs
-CONFIG_SND_SOC_SH4_FSI                          policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SND_SOC_RCAR                             policy<{'arm64': 'm', 'armhf': 'm'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> SoC Audio support for Ux500 platform
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> SoC Audio support for the Cirrus Logic EP93xx series
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> Sound Open Firmware Support
-CONFIG_SND_SOC_SOF_TOPLEVEL                     policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_SOC_SOF_PCI                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_SOF_ACPI                         policy<{'amd64': 'm', 'arm64': 'm'}>
-CONFIG_SND_SOC_SOF_OF                           policy<{'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SOC_SOF_DEBUG_PROBES                 policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'ppc64el': 'n'}>
-CONFIG_SND_SOC_SOF_IMX_TOPLEVEL                 policy<{'arm64': 'y'}>
-CONFIG_SND_SOC_SOF_IMX8_SUPPORT                 policy<{'arm64': 'y'}>
-CONFIG_SND_SOC_SOF_IMX8M_SUPPORT                policy<{'arm64': 'y'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> Sound Open Firmware Support >> SOF developer options support
-CONFIG_SND_SOC_SOF_DEVELOPER_SUPPORT            policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'ppc64el': 'n'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> Sound Open Firmware Support >> SOF developer options support >> SOF debugging features
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ALSA for SoC audio support >> Sound Open Firmware Support >> SOF support for Intel audio DSPs
-CONFIG_SND_SOC_SOF_INTEL_TOPLEVEL               policy<{'amd64': 'y'}>
-CONFIG_SND_SOC_SOF_MERRIFIELD_SUPPORT           policy<{'amd64': 'y'}>
-CONFIG_SND_SOC_SOF_APOLLOLAKE_SUPPORT           policy<{'amd64': 'y'}>
-CONFIG_SND_SOC_SOF_GEMINILAKE_SUPPORT           policy<{'amd64': 'y'}>
-CONFIG_SND_SOC_SOF_CANNONLAKE_SUPPORT           policy<{'amd64': 'y'}>
-CONFIG_SND_SOC_SOF_COFFEELAKE_SUPPORT           policy<{'amd64': 'y'}>
-CONFIG_SND_SOC_SOF_ICELAKE_SUPPORT              policy<{'amd64': 'y'}>
-CONFIG_SND_SOC_SOF_COMETLAKE_LP_SUPPORT         policy<{'amd64': 'y'}>
-CONFIG_SND_SOC_SOF_TIGERLAKE_SUPPORT            policy<{'amd64': 'y'}>
-CONFIG_SND_SOC_SOF_ELKHARTLAKE_SUPPORT          policy<{'amd64': 'y'}>
-CONFIG_SND_SOC_SOF_JASPERLAKE_SUPPORT           policy<{'amd64': 'y'}>
-CONFIG_SND_SOC_SOF_HDA_LINK                     policy<{'amd64': 'y'}>
-CONFIG_SND_SOC_SOF_HDA_AUDIO_CODEC              policy<{'amd64': 'y'}>
-CONFIG_SND_SOC_SOF_HDA_ALWAYS_ENABLE_DMI_L1     policy<{'amd64': 'y'}>
-#
-CONFIG_SND_SOC_SOF_HDA_LINK                     mark<ENFORCED> note<LP:1848490>
-CONFIG_SND_SOC_SOF_HDA_AUDIO_CODEC              mark<ENFORCED> note<LP:1848490>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ARM sound devices
-CONFIG_SND_ARM                                  policy<{'armhf': 'y'}>
-CONFIG_SND_ARMAACI                              policy<{'armhf': 'm'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> Apple Onboard Audio driver
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> Atmel devices (AT91)
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> Debug
-CONFIG_SND_DEBUG                                policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'ppc64el': 'n'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> FireWire sound devices
-CONFIG_SND_FIREWIRE                             policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_DICE                                 policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_OXFW                                 policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_ISIGHT                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_FIREWORKS                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_BEBOB                                policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_FIREWIRE_DIGI00X                     policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_FIREWIRE_TASCAM                      policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_FIREWIRE_MOTU                        policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_FIREFACE                             policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> GSC sound devices
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> Generic sound devices
-CONFIG_SND_DRIVERS                              policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_PCSP                                 policy<{'amd64': 'm'}>
-CONFIG_SND_DUMMY                                policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_ALOOP                                policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_VIRMIDI                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_MTPAV                                policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_MTS64                                policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SERIAL_U16550                        policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_MPU401                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_PORTMAN2X4                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_AC97_POWER_SAVE                      policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_AC97_POWER_SAVE_DEFAULT              policy<{'amd64': '0', 'arm64': '0', 'armhf': '0', 'ppc64el': '0'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> HD-Audio
-CONFIG_SND_HDA_INTEL                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_HDA_TEGRA                            policy<{'armhf-generic': 'm'}>
-CONFIG_SND_HDA_HWDEP                            policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_HDA_RECONFIG                         policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_HDA_INPUT_BEEP                       policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_HDA_INPUT_BEEP_MODE                  policy<{'amd64': '0', 'arm64': '0', 'armhf': '0', 'ppc64el': '0'}>
-CONFIG_SND_HDA_PATCH_LOADER                     policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_HDA_CODEC_REALTEK                    policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_HDA_CODEC_ANALOG                     policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_HDA_CODEC_SIGMATEL                   policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_HDA_CODEC_VIA                        policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_HDA_CODEC_HDMI                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_HDA_CODEC_CIRRUS                     policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_HDA_CODEC_CONEXANT                   policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_HDA_CODEC_CA0110                     policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_HDA_CODEC_CA0132                     policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_HDA_CODEC_CA0132_DSP                 policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_HDA_CODEC_CMEDIA                     policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_HDA_CODEC_SI3054                     policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_HDA_GENERIC                          policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_HDA_POWER_SAVE_DEFAULT               policy<{'amd64': '1', 'arm64': '1', 'armhf': '1', 'ppc64el': '1'}>
-#
-CONFIG_SND_HDA_RECONFIG                         note<allows fixes to be tested live>
-CONFIG_SND_HDA_POWER_SAVE_DEFAULT               note<LP:1804265>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> ISA sound devices
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> MIPS sound devices
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> PCI sound devices
-CONFIG_SND_PCI                                  policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_AD1889                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_ALS300                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf-generic-lpae': 'm'}>
-CONFIG_SND_ALS4000                              policy<{'amd64': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_ALI5451                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf-generic-lpae': 'm'}>
-CONFIG_SND_ASIHPI                               policy<{'amd64': 'm'}>
-CONFIG_SND_ATIIXP                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_ATIIXP_MODEM                         policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_AU8810                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_AU8820                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_AU8830                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_AW2                                  policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_AZT3328                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf-generic-lpae': 'm'}>
-CONFIG_SND_BT87X                                policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_BT87X_OVERCLOCK                      policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'ppc64el': 'n'}>
-CONFIG_SND_CA0106                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_CMIPCI                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_OXYGEN                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_CS4281                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_CS46XX                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_CS46XX_NEW_DSP                       policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_CTXFI                                policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_DARLA20                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_GINA20                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_LAYLA20                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_DARLA24                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_GINA24                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_LAYLA24                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_MONA                                 policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_MIA                                  policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_ECHO3G                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_INDIGO                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_INDIGOIO                             policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_INDIGODJ                             policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_INDIGOIOX                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_INDIGODJX                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_EMU10K1                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf-generic-lpae': 'm'}>
-CONFIG_SND_EMU10K1X                             policy<{'amd64': 'm', 'arm64': 'm', 'armhf-generic-lpae': 'm'}>
-CONFIG_SND_ENS1370                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_ENS1371                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_ES1938                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf-generic-lpae': 'm'}>
-CONFIG_SND_ES1968                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf-generic-lpae': 'm'}>
-CONFIG_SND_ES1968_INPUT                         policy<{'amd64': 'y', 'arm64': 'y', 'armhf-generic-lpae': 'y'}>
-CONFIG_SND_ES1968_RADIO                         policy<{'amd64': 'y', 'arm64': 'y', 'armhf-generic-lpae': 'y'}>
-CONFIG_SND_FM801                                policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_FM801_TEA575X_BOOL                   policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_HDSP                                 policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_HDSPM                                policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_ICE1712                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf-generic-lpae': 'm'}>
-CONFIG_SND_ICE1724                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_INTEL8X0                             policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_INTEL8X0M                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_KORG1212                             policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_LOLA                                 policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_LX6464ES                             policy<{'amd64': 'm', 'arm64': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_MAESTRO3                             policy<{'amd64': 'm', 'arm64': 'm', 'armhf-generic-lpae': 'm'}>
-CONFIG_SND_MAESTRO3_INPUT                       policy<{'amd64': 'y', 'arm64': 'y', 'armhf-generic-lpae': 'y'}>
-CONFIG_SND_MIXART                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_NM256                                policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_PCXHR                                policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_RIPTIDE                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_RME32                                policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_RME96                                policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_RME9652                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SONICVIBES                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf-generic-lpae': 'm'}>
-CONFIG_SND_TRIDENT                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf-generic-lpae': 'm'}>
-CONFIG_SND_VIA82XX                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_VIA82XX_MODEM                        policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_VIRTUOSO                             policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_VX222                                policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_YMFPCI                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> PCMCIA sound devices
-CONFIG_SND_PCMCIA                               policy<{'amd64': 'y'}>
-CONFIG_SND_VXPOCKET                             policy<{'amd64': 'm'}>
-CONFIG_SND_PDAUDIOCF                            policy<{'amd64': 'm'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> PowerPC sound devices
-CONFIG_SND_PPC                                  policy<{'ppc64el': 'y'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> SPI sound devices
-CONFIG_SND_SPI                                  policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> SUPERH sound devices
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> Sequencer support
-CONFIG_SND_SEQUENCER                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SEQ_DUMMY                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_SEQUENCER_OSS                        policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'ppc64el': 'n'}>
-CONFIG_SND_SEQ_HRTIMER_DEFAULT                  policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> Sparc sound devices
-
-# Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> USB sound devices
-CONFIG_SND_USB                                  policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_USB_AUDIO                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_USB_UA101                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_USB_USX2Y                            policy<{'amd64': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_USB_CAIAQ                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_USB_CAIAQ_INPUT                      policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
-CONFIG_SND_USB_US122L                           policy<{'amd64': 'm'}>
-CONFIG_SND_USB_6FIRE                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_USB_HIFACE                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_BCD2000                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_USB_POD                              policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_USB_PODHD                            policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_USB_TONEPORT                         policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-CONFIG_SND_USB_VARIAX                           policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'ppc64el': 'm'}>
-
 # Menu: Device Drivers >> Sound card support >> Advanced Linux Sound Architecture >> X86 sound devices
-CONFIG_SND_X86                                  policy<{'amd64': 'y'}>
 CONFIG_HDMI_LPE_AUDIO                           policy<{'amd64': 'm'}>
 
 # Menu: Device Drivers >> SoundWire support
@@ -8583,7 +7951,6 @@ CONFIG_ION                                      policy<{'amd64': 'n', 'arm64': '
 # Menu: Device Drivers >> Staging drivers >> Broadcom VideoCore support
 CONFIG_BCM_VIDEOCORE                            policy<{'arm64': 'm'}>
 CONFIG_BCM2835_VCHIQ                            policy<{'arm64': 'm'}>
-CONFIG_SND_BCM2835                              policy<{'arm64': 'm'}>
 CONFIG_VIDEO_BCM2835                            policy<{'arm64': 'm'}>
 
 # Menu: Device Drivers >> Staging drivers >> Daktronics KPC Device support
@@ -9859,7 +9226,7 @@ CONFIG_TOSHIBA_WMI                              policy<{'amd64': 'n'}>
 CONFIG_LG_LAPTOP                                policy<{'amd64': 'm'}>
 
 # Menu: Device Drivers >> Xen driver support
-CONFIG_XEN_BALLOON                              policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_XEN_BALLOON                              policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_XEN_BALLOON_MEMORY_HOTPLUG               policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_XEN_BALLOON_MEMORY_HOTPLUG_LIMIT         policy<{'amd64': '512'}>
 CONFIG_XEN_SCRUB_PAGES_DEFAULT                  policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -9877,6 +9244,7 @@ CONFIG_XEN_MCE_LOG                              policy<{'amd64': 'y'}>
 CONFIG_XEN_SYMS                                 policy<{'amd64': 'y'}>
 #
 CONFIG_XEN_ACPI_PROCESSOR                       mark<ENFORCED> <boot essential on XEN host>
+CONFIG_XEN_BALLOON                              mark<ENFORCED> <LP:1732512>
 
 # Menu: Device Drivers >> Xen driver support >> Backend driver support
 CONFIG_XEN_BACKEND                              policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -11274,7 +10642,7 @@ CONFIG_DMA_CMA                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_CMA_SIZE_MBYTES                          policy<{'arm64': '32', 'armhf': '32'}>
 CONFIG_CMA_ALIGNMENT                            policy<{'arm64': '8', 'armhf': '8'}>
 #
-CONFIG_DMA_CMA                                  mark<ENFORCED> note<LP#1362261> note<LP:1803206>
+CONFIG_DMA_CMA                                  mark<ENFORCED> note<LP#1362261> note<LP:1803206> note<LP:1879711>
 CONFIG_CMA_SIZE_MBYTES                          mark<ENFORCED> note<LP:1823753>
 
 # Menu: Library routines >> DMA Contiguous Memory Allocator >> Selected region size
@@ -12416,7 +11784,7 @@ CONFIG_ARCH_XGENE                               policy<{'arm64': 'y'}>
 CONFIG_ARCH_ZYNQMP                              policy<{'arm64': 'y'}>
 
 # Menu: Power management and ACPI options
-CONFIG_SUSPEND                                  policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
+CONFIG_SUSPEND                                  policy<{'amd64': 'n', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
 CONFIG_SUSPEND_FREEZER                          policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y'}>
 CONFIG_SUSPEND_SKIP_SYNC                        policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'ppc64el': 'n'}>
 CONFIG_HIBERNATION                              policy<{'amd64': 'y', 'arm64': 'n', 'armhf': 'y', 'ppc64el': 'n'}>
@@ -12438,6 +11806,7 @@ CONFIG_INTEL_IDLE                               policy<{'amd64': 'y'}>
 CONFIG_HIBERNATION                              flag<REVIEW>
 CONFIG_HIBERNATION                              mark<ENFORCED> note<LP:1867753>
 CONFIG_PM                                       mark<ENFORCED> note<LP:1867753>
+CONFIG_SUSPEND                                  mark<ENFORCED> note<LP:1732512> note<LP:1898087>
 
 # Menu: Power management and ACPI options >> 512x-based boards >> Architecture: powerpc
 
