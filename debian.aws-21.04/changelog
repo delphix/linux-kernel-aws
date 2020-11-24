@@ -1,3 +1,9 @@
+linux-aws (5.8.0-1010.10) hirsute; urgency=medium
+
+  * Empty entry.
+
+ -- Paolo Pisati <paolo.pisati@canonical.com>  Tue, 24 Mar 2020 12:27:38 +0200
+
 linux-aws (5.8.0-1010.10) groovy; urgency=medium
 
   * groovy/linux-aws: 5.8.0-1010.10 -proposed tracker (LP: #1899929)
