@@ -1959,6 +1959,9 @@ static int netfront_freeze(struct xenbus_device *dev)
 
 	netif_device_detach(info->netdev);
 
+	if (dev->state == XenbusStateClosed)
+		goto closed;
+
 	info->freeze_state = NETIF_FREEZE_STATE_FREEZING;
 
 	/* Kick the backend to disconnect */
@@ -1970,12 +1973,18 @@ static int netfront_freeze(struct xenbus_device *dev)
 	timeout = wait_for_completion_timeout(&info->wait_backend_disconnected,
 					      timeout);
 	if (!timeout) {
+		int state = xenbus_read_driver_state(dev->otherend);
+
+		if (state == XenbusStateClosed ||
+		    state == XenbusStateUnknown)
+			goto closed;
+
 		err = -EBUSY;
 		xenbus_dev_error(dev, err, "Freezing timed out;"
 				 "the device may become inconsistent state");
 		return err;
 	}
-
+closed:
 	/* Tear down queues */
 	xennet_disconnect_backend(info);
 	xennet_destroy_queues(info);
