@@ -1896,6 +1896,9 @@ static int netfront_freeze(struct xenbus_device *dev)
 
 	netif_device_detach(info->netdev);
 
+	if (dev->state == XenbusStateClosed)
+		goto closed;
+
 	info->freeze_state = NETIF_FREEZE_STATE_FREEZING;
 
 	/* Kick the backend to disconnect */
@@ -1912,7 +1915,7 @@ static int netfront_freeze(struct xenbus_device *dev)
 				 "the device may become inconsistent state");
 		return err;
 	}
-
+closed:
 	/* Tear down queues */
 	xennet_disconnect_backend(info);
 	xennet_destroy_queues(info);
