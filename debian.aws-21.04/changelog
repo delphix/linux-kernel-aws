@@ -1,6 +1,6 @@
-linux-aws (5.8.0-1017.18+21.04.1) hirsute; urgency=medium
+linux-aws (5.8.0-1017.18+21.04.2) hirsute; urgency=medium
 
-  * hirsute/linux-aws: 5.8.0-1017.18+21.04.1 -proposed tracker (LP: #1907563)
+  * hirsute/linux-aws: 5.8.0-1017.18+21.04.2 -proposed tracker (LP: #1907563)
 
   [ Ubuntu: 5.8.0-1017.18 ]
 
@@ -148,6 +148,12 @@ linux-aws (5.8.0-1017.18+21.04.1) hirsute; urgency=medium
     - selftests/powerpc: entry flush test
 
  -- Stefan Bader <stefan.bader@canonical.com>  Wed, 16 Dec 2020 11:26:45 +0100
+
+linux-aws (5.8.0-1015.16+21.04.1) hirsute; urgency=medium
+
+  * Superseded by 5.8.0-1017.18+21.04.1
+
+ -- Kelsey Skunberg <kelsey.skunberg@canonical.com>  Fri, 04 Dec 2020 16:52:10 -0700
 
 linux-aws (5.8.0-1014.15+21.04.1) hirsute; urgency=medium
 
