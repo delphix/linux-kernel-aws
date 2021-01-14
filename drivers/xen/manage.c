@@ -14,7 +14,6 @@
 #include <linux/freezer.h>
 #include <linux/syscore_ops.h>
 #include <linux/export.h>
-#include <linux/suspend.h>
 
 #include <xen/xen.h>
 #include <xen/xenbus.h>
@@ -40,31 +39,6 @@ enum shutdown_state {
 
 /* Ignore multiple shutdown requests. */
 static enum shutdown_state shutting_down = SHUTDOWN_INVALID;
-
-enum suspend_modes {
-	NO_SUSPEND = 0,
-	XEN_SUSPEND,
-	PM_SUSPEND,
-	PM_HIBERNATION,
-};
-
-/* Protected by pm_mutex */
-static enum suspend_modes suspend_mode = NO_SUSPEND;
-
-bool xen_suspend_mode_is_xen_suspend(void)
-{
-	return suspend_mode == XEN_SUSPEND;
-}
-
-bool xen_suspend_mode_is_pm_suspend(void)
-{
-	return suspend_mode == PM_SUSPEND;
-}
-
-bool xen_suspend_mode_is_pm_hibernation(void)
-{
-	return suspend_mode == PM_HIBERNATION;
-}
 
 struct suspend_info {
 	int cancelled;
@@ -124,10 +98,6 @@ static void do_suspend(void)
 {
 	int err;
 	struct suspend_info si;
-
-	lock_system_sleep();
-
-	suspend_mode = XEN_SUSPEND;
 
 	shutting_down = SHUTDOWN_SUSPEND;
 
@@ -192,10 +162,6 @@ out_thaw:
 	thaw_processes();
 out:
 	shutting_down = SHUTDOWN_INVALID;
-
-	suspend_mode = NO_SUSPEND;
-
-	unlock_system_sleep();
 }
 #endif	/* CONFIG_HIBERNATE_CALLBACKS */
 
@@ -421,42 +387,3 @@ int xen_setup_shutdown_event(void)
 EXPORT_SYMBOL_GPL(xen_setup_shutdown_event);
 
 subsys_initcall(xen_setup_shutdown_event);
-
-static int xen_pm_notifier(struct notifier_block *notifier,
-			   unsigned long pm_event, void *unused)
-{
-	switch (pm_event) {
-	case PM_SUSPEND_PREPARE:
-		suspend_mode = PM_SUSPEND;
-		break;
-	case PM_HIBERNATION_PREPARE:
-	case PM_RESTORE_PREPARE:
-		suspend_mode = PM_HIBERNATION;
-		break;
-	case PM_POST_SUSPEND:
-	case PM_POST_RESTORE:
-	case PM_POST_HIBERNATION:
-		/* Set back to the default */
-		suspend_mode = NO_SUSPEND;
-		break;
-	default:
-		pr_warn("Receive unknown PM event 0x%lx\n", pm_event);
-		return -EINVAL;
-	}
-
-	return 0;
-};
-
-static struct notifier_block xen_pm_notifier_block = {
-	.notifier_call = xen_pm_notifier
-};
-
-static int xen_setup_pm_notifier(void)
-{
-	if (!xen_hvm_domain())
-		return -ENODEV;
-
-	return register_pm_notifier(&xen_pm_notifier_block);
-}
-
-subsys_initcall(xen_setup_pm_notifier);
