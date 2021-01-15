@@ -8668,7 +8668,7 @@ CONFIG_PARTITION_ADVANCED                       policy<{'amd64': 'y', 'arm64': '
 CONFIG_AIX_PARTITION                            policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'n'}>
 CONFIG_OSF_PARTITION                            policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'n'}>
 CONFIG_AMIGA_PARTITION                          policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'n'}>
-CONFIG_ATARI_PARTITION                          policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'n'}>
+CONFIG_ATARI_PARTITION                          policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 'ppc64el': 'n', 's390x': 'n'}>
 CONFIG_IBM_PARTITION                            policy<{'s390x': 'y'}>
 CONFIG_MAC_PARTITION                            policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'n'}>
 CONFIG_LDM_PARTITION                            policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'n'}>
@@ -8682,6 +8682,7 @@ CONFIG_SYSV68_PARTITION                         policy<{'amd64': 'y', 'arm64': '
 CONFIG_CMDLINE_PARTITION                        policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'n'}>
 #
 CONFIG_PARTITION_ADVANCED                       flag<REVIEW>
+CONFIG_ATARI_PARTITION                          mark<ENFORCED> note<LP:1908264>
 
 # Menu: Enable the block layer >> Partition Types >> Advanced partition selection >> Acorn partition support
 CONFIG_ACORN_PARTITION                          policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 'ppc64el': 'n', 's390x': 'n'}>
