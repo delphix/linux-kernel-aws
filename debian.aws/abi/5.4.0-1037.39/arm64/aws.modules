@@ -403,7 +403,6 @@ ath10k_core
 ath10k_pci
 ath10k_sdio
 ath10k_usb
-ath3k
 ath5k
 ath6kl_core
 ath6kl_sdio
@@ -492,7 +491,6 @@ bcm-pdc-mailbox
 bcm-phy-lib
 bcm-sba-raid
 bcm-sf2
-bcm203x
 bcm2835
 bcm2835-rng
 bcm2835-v4l2
@@ -530,7 +528,6 @@ berlin2-adc
 bfa
 bfq
 bfs
-bfusb
 bh1750
 bh1770glc
 bh1780
@@ -541,8 +538,6 @@ blocklayoutdriver
 blowfish_common
 blowfish_generic
 bluefield_edac
-bluetooth
-bluetooth_6lowpan
 bma150
 bma180
 bma220_spi
@@ -566,7 +561,6 @@ bmp280
 bmp280-i2c
 bmp280-spi
 bna
-bnep
 bnx2
 bnx2fc
 bnx2i
@@ -574,7 +568,6 @@ bnx2x
 bnxt_en
 bnxt_re
 bonding
-bpa10x
 bpfilter
 bpqether
 bq2415x_charger
@@ -602,22 +595,9 @@ bt819
 bt856
 bt866
 bt878
-btbcm
 btcoexist
-btintel
-btmrvl
-btmrvl_sdio
-btmtksdio
-btmtkuart
-btqca
-btqcomsmd
 btrfs
-btrsi
-btrtl
-btsdio
 bttv
-btusb
-btwilink
 bu21013_ts
 bu21029_ts
 budget
@@ -783,7 +763,6 @@ cma3000_d0x
 cma3000_d0x_i2c
 cmac
 cmdlinepart
-cmtp
 cnic
 cobra
 coda
@@ -1655,9 +1634,6 @@ hampshire
 hanwang
 hbmc-am654
 hci
-hci_nokia
-hci_uart
-hci_vhci
 hclge
 hclgevf
 hd44780
@@ -1809,7 +1785,6 @@ hid-xinmo
 hid-zpff
 hid-zydacron
 hideep
-hidp
 hih6130
 hinic
 hip04_eth
@@ -3932,7 +3907,6 @@ retu-pwrbutton
 retu_wdt
 rfc1051
 rfc1201
-rfcomm
 rfd77402
 rfd_ftl
 rfkill-gpio
