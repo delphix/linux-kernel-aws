@@ -1132,7 +1132,7 @@ void iscsi_target_login_sess_out(struct iscsit_conn *conn,
 	if (!new_sess)
 		goto old_sess_out;
 
-	pr_err("iSCSI Login negotiation failed.\n");
+	pr_debug("iSCSI Login negotiation failed.\n");
 	iscsit_collect_login_stats(conn, ISCSI_STATUS_CLS_INITIATOR_ERR,
 				   ISCSI_LOGIN_STATUS_INIT_ERR);
 	if (!zero_tsih || !conn->sess)
