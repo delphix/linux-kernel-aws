@@ -1181,7 +1181,7 @@ get_target:
 	 */
 	tiqn = iscsit_get_tiqn_for_login(t_buf);
 	if (!tiqn) {
-		pr_err("Unable to locate Target IQN: %s in"
+		pr_debug("Unable to locate Target IQN: %s in"
 			" Storage Node\n", t_buf);
 		iscsit_tx_login_rsp(conn, ISCSI_STATUS_CLS_TARGET_ERR,
 				ISCSI_LOGIN_STATUS_SVC_UNAVAILABLE);
