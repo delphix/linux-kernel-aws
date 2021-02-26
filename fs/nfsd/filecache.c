@@ -634,8 +634,8 @@ nfsd_file_cache_init(void)
 	if (!nfsd_filecache_wq)
 		goto out;
 
-	nfsd_file_hashtbl = kvcalloc(NFSD_FILE_HASH_SIZE,
-				sizeof(*nfsd_file_hashtbl), GFP_KERNEL);
+	nfsd_file_hashtbl = kvzalloc(array_size(NFSD_FILE_HASH_SIZE,
+				sizeof(*nfsd_file_hashtbl)), GFP_KERNEL);
 	if (!nfsd_file_hashtbl) {
 		pr_err("nfsd: unable to allocate nfsd_file_hashtbl\n");
 		goto out_err;
