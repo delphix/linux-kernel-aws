@@ -849,7 +849,7 @@ static void target_abort_work(struct work_struct *work)
 	target_handle_abort(cmd);
 }
 
-static bool target_cmd_interrupted(struct se_cmd *cmd)
+bool target_cmd_interrupted(struct se_cmd *cmd)
 {
 	int post_ret;
 
@@ -868,6 +868,7 @@ static bool target_cmd_interrupted(struct se_cmd *cmd)
 
 	return false;
 }
+EXPORT_SYMBOL(target_cmd_interrupted);
 
 /* May be called from interrupt context so must not sleep. */
 void target_complete_cmd_with_sense(struct se_cmd *cmd, u8 scsi_status,
