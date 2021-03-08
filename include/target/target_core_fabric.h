@@ -176,6 +176,7 @@ sense_reason_t	transport_generic_new_cmd(struct se_cmd *);
 
 void	target_put_cmd_and_wait(struct se_cmd *cmd);
 void	target_execute_cmd(struct se_cmd *cmd);
+bool	target_cmd_interrupted(struct se_cmd *cmd);
 
 int	transport_generic_free_cmd(struct se_cmd *, int);
 
