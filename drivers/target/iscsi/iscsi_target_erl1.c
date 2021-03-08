@@ -1102,6 +1102,18 @@ void iscsit_handle_dataout_timeout(struct timer_list *t)
 
 	iscsit_inc_conn_usage_count(conn);
 
+	/*
+	 * If the command was aborted, for instance following a LUN RESET,
+	 * a dataout timeout might be normal.
+	 */
+	if (target_cmd_interrupted(&cmd->se_cmd)) {
+		pr_debug("DataOut timeout on interrupted cmd with"
+			" ITT[0x%08llx]\n", cmd->se_cmd.tag);
+		cmd->dataout_timer_flags &= ~ISCSI_TF_RUNNING;
+		iscsit_dec_conn_usage_count(conn);
+		return;
+	}
+
 	spin_lock_bh(&cmd->dataout_timeout_lock);
 	if (cmd->dataout_timer_flags & ISCSI_TF_STOP) {
 		spin_unlock_bh(&cmd->dataout_timeout_lock);
@@ -1115,19 +1127,22 @@ void iscsit_handle_dataout_timeout(struct timer_list *t)
 	if (!sess->sess_ops->ErrorRecoveryLevel) {
 		pr_err("Unable to recover from DataOut timeout while"
 			" in ERL=0, closing iSCSI connection for I_T Nexus"
-			" %s,i,0x%6phN,%s,t,0x%02x\n",
+			" %s,i,0x%6phN,%s,t,0x%02x, cmd ITT[0x%08llx]\n",
 			sess->sess_ops->InitiatorName, sess->isid,
-			sess->tpg->tpg_tiqn->tiqn, (u32)sess->tpg->tpgt);
+			sess->tpg->tpg_tiqn->tiqn, (u32)sess->tpg->tpgt,
+			cmd->se_cmd.tag);
 		goto failure;
 	}
 
 	if (++cmd->dataout_timeout_retries == na->dataout_timeout_retries) {
 		pr_err("Command ITT: 0x%08x exceeded max retries"
 			" for DataOUT timeout %u, closing iSCSI connection for"
-			" I_T Nexus %s,i,0x%6phN,%s,t,0x%02x\n",
+			" I_T Nexus %s,i,0x%6phN,%s,t,0x%02x,"
+			" cmd ITT[0x%08llx]\n",
 			cmd->init_task_tag, na->dataout_timeout_retries,
 			sess->sess_ops->InitiatorName, sess->isid,
-			sess->tpg->tpg_tiqn->tiqn, (u32)sess->tpg->tpgt);
+			sess->tpg->tpg_tiqn->tiqn, (u32)sess->tpg->tpgt,
+			cmd->se_cmd.tag);
 		goto failure;
 	}
 
