@@ -1,3 +1,9 @@
+linux-aws (5.11.0-1000.0) hirsute; urgency=medium
+
+  * Empty entry.
+
+ -- Seth Forshee <seth.forshee@canonical.com>  Tue, 09 Mar 2021 13:51:11 -0600
+
 linux-aws (5.8.0-1025.27) groovy; urgency=medium
 
   * groovy/linux-aws: 5.8.0-1025.27 -proposed tracker (LP: #1916128)
