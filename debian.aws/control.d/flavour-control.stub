@@ -137,7 +137,7 @@ Description: Linux kernel version specific cloud tools for version PKGVER-ABINUM
  =HUMAN=.
 
 Package: linux-udebs-FLAVOUR
-Build-Profiles: <!stage1>
+Build-Profiles: <!stage1> <!noudeb> <!cross> <!autopkgtest>
 XC-Package-Type: udeb
 Section: debian-installer
 Architecture: ARCH
