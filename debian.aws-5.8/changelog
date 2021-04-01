@@ -1,4 +1,4 @@
-linux-aws-5.8 (5.8.0-1028.30~20.04.1) focal; urgency=medium
+linux-aws-5.8 (5.8.0-1028.30~20.04.2) focal; urgency=medium
 
   * focal/linux-aws-5.8: 5.8.0-1028.30~20.04.1 -proposed tracker (LP: #1921756)
 
