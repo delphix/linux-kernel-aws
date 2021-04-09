@@ -7,7 +7,6 @@ build_image	= Image.gz
 kernel_file	= arch/$(build_arch)/boot/Image.gz
 install_file	= vmlinuz
 no_dumpfile = true
-loader		= grub
 vdso		= vdso_install
 no_dumpfile    = true
 do_tools_usbip  = true
