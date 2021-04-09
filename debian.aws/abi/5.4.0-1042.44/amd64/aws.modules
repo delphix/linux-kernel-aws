@@ -393,6 +393,7 @@ bnx2i
 bnx2x
 bnxt_en
 bnxt_re
+bochs-drm
 bonding
 bpck
 bpfilter
