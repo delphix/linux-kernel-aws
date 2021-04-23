@@ -13,3 +13,10 @@ CFG=${DEBIAN}/config/config.common.ubuntu
 sed -i '/CONFIG_DEBUG_INFO_BTF/d' ${ANN}
 echo "CONFIG_DEBUG_INFO_BTF                           policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'ppc64el': 'n', 's390x': 'n'}>" >> ${ANN}
 sed  -i 's/CONFIG_DEBUG_INFO_BTF=y/# CONFIG_DEBUG_INFO_BTF is not set/' ${CFG}
+
+# Do not enforce CONFIG_ARM64_BTI_KERNEL in Focal, as it depends on a newer
+# gcc version. Note that the config itself is already removed in an earlier
+# stage when 'make' is run, updating config 'GCC_VERSION' and removing
+# 'ARM64_BTI_KERNEL'.
+sed -i "/CONFIG_ARM64_BTI_KERNEL                         policy<{'arm64': 'y'}>/d" ${DEBIAN}/config/annotations
+
