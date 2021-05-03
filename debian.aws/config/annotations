@@ -9719,6 +9719,8 @@ CONFIG_TEST_PARMAN                              flag<TESTING>
 
 # Menu: Kernel hacking >> Sample kernel code
 CONFIG_SAMPLES                                  policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 'ppc64el': 'n', 's390x': 'n'}>
+CONFIG_SAMPLE_TRACE_PRINTK                      policy<{'amd64': '-', 'arm64': '-', 'armhf': 'm', 'i386': 'm', 'ppc64el': 'm', 's390x': 'm'}>
+CONFIG_SAMPLE_TRACE_PRINTK                      mark<ENFORCED> note<disabled for linux-aws>
 
 # Menu: Kernel hacking >> Tracers
 CONFIG_FTRACE                                   policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'y'}>
