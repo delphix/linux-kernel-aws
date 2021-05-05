@@ -751,6 +751,8 @@ nfsd_file_find_locked(struct inode *inode, unsigned int may_flags,
 			continue;
 		if (!nfsd_match_cred(nf->nf_cred, current_cred()))
 			continue;
+		if (!test_bit(NFSD_FILE_HASHED, &nf->nf_flags))
+			continue;
 		if (nfsd_file_get(nf) != NULL)
 			return nf;
 	}
@@ -816,6 +818,9 @@ retry:
 	if (!new) {
 		trace_nfsd_file_acquire(rqstp, hashval, inode, may_flags,
 					NULL, nfserr_jukebox);
+		pr_warn_ratelimited("nfsd: nfsd_file_acquire alloc failed XID, "
+				"%08x, nfserr_jukebox\n",
+				be32_to_cpu(rqstp->rq_xid));
 		return nfserr_jukebox;
 	}
 
@@ -833,6 +838,10 @@ wait_for_construction:
 	if (!test_bit(NFSD_FILE_HASHED, &nf->nf_flags)) {
 		if (!retry) {
 			status = nfserr_jukebox;
+			pr_warn_ratelimited("nfsd: nfsd_file_acquire "
+					"construction failed, XID %08x, "
+					"nfserr_jukebox\n",
+					be32_to_cpu(rqstp->rq_xid));
 			goto out;
 		}
 		retry = false;
@@ -882,11 +891,15 @@ open_file:
 	atomic_long_inc(&nfsd_filecache_count);
 
 	nf->nf_mark = nfsd_file_mark_find_or_create(nf);
-	if (nf->nf_mark)
+	if (nf->nf_mark) {
 		status = nfsd_open_verified(rqstp, fhp, S_IFREG,
 				may_flags, &nf->nf_file);
-	else
+	} else {
+		pr_warn_ratelimited("nfsd: nfsd_file_acquire no file mark, XID "
+				"%08x, nfserr_jukebox\n",
+				be32_to_cpu(rqstp->rq_xid));
 		status = nfserr_jukebox;
+	}
 	/*
 	 * If construction failed, or we raced with a call to unlink()
 	 * then unhash.
