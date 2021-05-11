@@ -2434,7 +2434,7 @@ CONFIG_HWSPINLOCK_SPRD                          policy<{'arm64': 'm'}>
 # Menu: Device Drivers >> I2C support
 
 # Menu: Device Drivers >> I2C support >> I2C support
-CONFIG_I2C                                      policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'n'}>
+CONFIG_I2C                                      policy<{'amd64': 'm', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'n'}>
 CONFIG_ACPI_I2C_OPREGION                        policy<{'amd64': 'y', 'arm64': 'y', 'i386': 'y'}>
 CONFIG_I2C_COMPAT                               policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y'}>
 CONFIG_I2C_CHARDEV                              policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y'}>
@@ -2448,7 +2448,7 @@ CONFIG_I2C_DEBUG_CORE                           policy<{'amd64': 'n', 'arm64': '
 CONFIG_I2C_DEBUG_ALGO                           policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 'ppc64el': 'n'}>
 CONFIG_I2C_DEBUG_BUS                            policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 'ppc64el': 'n'}>
 #
-CONFIG_I2C                                      mark<ENFORCE> note<s390x lacks hw support for i2c>
+CONFIG_I2C                                      mark<ENFORCED> note<s390x lacks hw support for i2c>
 CONFIG_I2C_CHARDEV                              note<LP:1417032>
 
 # Menu: Device Drivers >> I2C support >> I2C support >> I2C Algorithms
@@ -3847,11 +3847,11 @@ CONFIG_MTD_SPI_NOR_USE_4K_SECTORS               policy<{'amd64': 'y', 'arm64': '
 CONFIG_SPI_CADENCE_QUADSPI                      policy<{'arm64': 'm', 'armhf': 'm'}>
 CONFIG_SPI_FSL_QUADSPI                          policy<{'arm64': 'm', 'armhf-generic': 'm'}>
 CONFIG_SPI_HISI_SFC                             policy<{'arm64': 'm', 'armhf': 'm'}>
-CONFIG_SPI_INTEL_SPI_PCI                        policy<{'amd64': 'n', 'i386': 'n'}>
-CONFIG_SPI_INTEL_SPI_PLATFORM                   policy<{'amd64': 'n', 'i386': 'n'}>
+CONFIG_SPI_INTEL_SPI_PCI                        policy<{'amd64': '-', 'i386': 'n'}>
+CONFIG_SPI_INTEL_SPI_PLATFORM                   policy<{'amd64': '-', 'i386': 'n'}>
 #
-CONFIG_SPI_INTEL_SPI_PCI                        mark<ENFORCE> note<LP:1734147>
-CONFIG_SPI_INTEL_SPI_PLATFORM                   mark<ENFORCE> note<LP:1734147>
+CONFIG_SPI_INTEL_SPI_PCI                        mark<ENFORCED> note<LP:1734147>
+CONFIG_SPI_INTEL_SPI_PLATFORM                   mark<ENFORCED> note<LP:1734147>
 
 # Menu: Device Drivers >> Memory Technology Device (MTD) support >> Self-contained MTD device drivers
 CONFIG_MTD_PMC551                               policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'i386': 'm', 'ppc64el': 'm'}>
@@ -4095,7 +4095,7 @@ CONFIG_MFD_WM8994                               policy<{'amd64': 'm', 'arm64': '
 CONFIG_MFD_VEXPRESS_SYSREG                      policy<{'arm64': 'y', 'armhf': 'y'}>
 #
 CONFIG_MFD_SM501                                note<boot essential on OMAP4>
-CONFIG_MFD_TPS65217                             mark<ENFORCE> note<boot essential on AM335x>
+CONFIG_MFD_TPS65217                             mark<ENFORCED> note<boot essential on AM335x>
 
 # Menu: Device Drivers >> Multifunction device drivers >> Multimedia Capabilities Port drivers
 
@@ -6387,8 +6387,8 @@ CONFIG_SCSI_SCAN_ASYNC                          policy<{'amd64': 'y', 'arm64': '
 #
 CONFIG_SCSI                                     flag<REVIEW>
 CONFIG_CHR_DEV_SG                               note<not autoloadable>
-CONFIG_BLK_DEV_SD                               mark<ENFORCED> note <LP:1627330>
-CONFIG_BLK_DEV_SR                               mark<ENFORCED> note <LP:1627330>
+CONFIG_BLK_DEV_SD                               mark<ENFORCED> note<LP:1627330>
+CONFIG_BLK_DEV_SR                               mark<ENFORCED> note<LP:1627330>
 
 # Menu: Device Drivers >> SCSI device support >> SCSI device support >> OSD-Initiator library
 CONFIG_SCSI_OSD_INITIATOR                       policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'i386': 'm', 'ppc64el': 'm', 's390x': 'm'}>
@@ -7967,7 +7967,7 @@ CONFIG_USB_OHCI_HCD_PCI                         policy<{'amd64': 'y', 'arm64': '
 CONFIG_USB_OHCI_EXYNOS                          policy<{'armhf': 'y'}>
 CONFIG_USB_OHCI_HCD_PLATFORM                    policy<{'amd64': 'y', 'arm64': 'm', 'armhf-generic': 'm', 'armhf-generic-lpae': 'n', 'i386': 'y', 'ppc64el': 'm'}>
 #
-CONFIG_USB_OHCI_HCD                             mark<ENFORCED>note<ensures USB 2.0/1.1 probe ordering>
+CONFIG_USB_OHCI_HCD                             mark<ENFORCED> note<ensures USB 2.0/1.1 probe ordering>
 CONFIG_USB_OHCI_HCD_PPC_OF_LE                   flag<REVIEW>
 
 # Menu: Device Drivers >> USB support >> Support for Host-side USB >> USB DSL modem support
@@ -8232,8 +8232,8 @@ CONFIG_VFIO_PCI_VGA                             policy<{'amd64': 'y', 'i386': 'y
 CONFIG_VFIO_MDEV                                policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'i386': 'm', 'ppc64el': 'm', 's390x': 'm'}>
 CONFIG_VFIO_MDEV_DEVICE                         policy<{'amd64': 'm', 'arm64': 'm', 'armhf': 'm', 'i386': 'm', 'ppc64el': 'm', 's390x': 'm'}>
 #
-CONFIG_VFIO                                     mark<ENFORCED>note<LP#1636733>
-CONFIG_VFIO_PCI                                 mark<ENFORCED>note<LP#1636733>
+CONFIG_VFIO                                     mark<ENFORCED> note<LP#1636733>
+CONFIG_VFIO_PCI                                 mark<ENFORCED> note<LP#1636733>
 
 # Menu: Device Drivers >> VFIO Non-Privileged userspace driver framework >> VFIO support for platform devices
 CONFIG_VFIO_PLATFORM                            policy<{'arm64': 'm', 'armhf': 'm'}>
@@ -11627,7 +11627,7 @@ CONFIG_SECURITY_SELINUX_AVC_STATS               policy<{'amd64': 'y', 'arm64': '
 CONFIG_SECURITY_SELINUX_CHECKREQPROT_VALUE      policy<{'amd64': '1', 'arm64': '1', 'armhf': '1', 'i386': '1', 'ppc64el': '1', 's390x': '1'}>
 #
 CONFIG_SECURITY_SELINUX                         mark<ENFORCED>
-CONFIG_SECURITY_SELINUX_DISABLE                 mark<ENFORCED>note<LP#1680315>
+CONFIG_SECURITY_SELINUX_DISABLE                 mark<ENFORCED> note<LP#1680315>
 
 # Menu: Security options >> Enable different security models >> Simplified Mandatory Access Control Kernel Support
 CONFIG_SECURITY_SMACK                           policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'y'}>
@@ -12018,7 +12018,7 @@ CONFIG_MACH_OMAP_GENERIC                        policy<{'armhf': 'y'}>
 # Menu: Ubuntu Supplied Third-Party Device Drivers
 CONFIG_HIO                                      policy<{'amd64': 'm', 'arm64': 'n', 'armhf': 'n', 'i386': 'm', 'ppc64el': 'n'}>
 #
-CONFIG_HIO                                      mark<ENFORCED> note <LP:1635594>
+CONFIG_HIO                                      mark<ENFORCED> note<LP:1635594>
 
 # Menu: Virtualization
 CONFIG_VIRTUALIZATION                           policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'y'}>
@@ -12028,7 +12028,7 @@ CONFIG_VHOST_VSOCK                              policy<{'amd64': 'm', 'arm64': '
 CONFIG_VHOST_CROSS_ENDIAN_LEGACY                policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 'ppc64el': 'n', 's390x': 'n'}>
 CONFIG_KVM                                      policy<{'amd64': 'm', 'arm64': 'y', 'armhf-generic-lpae': 'y', 'i386': 'm', 'ppc64el': 'y', 's390x': 'y'}>
 #
-CONFIG_KVM                                      note <LP:1532886>
+CONFIG_KVM                                      note<LP:1532886>
 
 # Menu: Virtualization >> Architecture: powerpc
 CONFIG_KVM_BOOK3S_64                            policy<{'ppc64el': 'm'}>
