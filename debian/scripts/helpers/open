@@ -174,21 +174,28 @@ if [ -d "$DEBIAN/abi" ]; then
 	new=$(dpkg-parsechangelog -l"$DEBIAN/changelog" -SVersion)
 
 	if [ "$reuse_abi" -ne 0 ]; then
-		# Get the old ABI directory:
-		old=$(find "$DEBIAN/abi/" -mindepth 1 -maxdepth 1 -type d | \
-				  grep -P '/abi/[0-9]+\.[0-9]+\.[0-9]+-[0-9]+\.[0-9]+')
-		if [ -z "${old}" ] ; then
-			echo "Failed to find the previous ABI directory." \
-				 "Please check \"$DEBIAN/abi/\"!" >&2
-			exit 1
-		elif [ "$(echo "$old" | wc -l)" -gt 1 ]; then
-			echo "Failed to rename the current ABI directory." \
-			     "Multiple directories found. Please check \"$DEBIAN/abi/\"!" >&2
-			exit 1
+		if [ -f "$DEBIAN/abi/version" ]; then
+			# This is an unversioned ABI directory, so simply update the
+			# version file
+			echo "$new" > "$DEBIAN/abi/version"
+			git add "$DEBIAN/abi/version"
+		else
+			# Get the old ABI directory:
+			old=$(find "$DEBIAN/abi/" -mindepth 1 -maxdepth 1 -type d | \
+					  grep -P '/abi/[0-9]+\.[0-9]+\.[0-9]+-[0-9]+\.[0-9]+')
+			if [ -z "${old}" ] ; then
+				echo "Failed to find the previous ABI directory." \
+					 "Please check \"$DEBIAN/abi/\"!" >&2
+				exit 1
+			elif [ "$(echo "$old" | wc -l)" -gt 1 ]; then
+				echo "Failed to rename the current ABI directory." \
+					 "Multiple directories found. Please check \"$DEBIAN/abi/\"!" >&2
+				exit 1
+			fi
+			new="$DEBIAN/abi/$new"
+			# Rename the ABI directory
+			run git mv "$old" "$new"
 		fi
-		new="$DEBIAN/abi/$new"
-		# Rename the ABI directory
-		run git mv "$old" "$new"
 	else
 		# Call in-tree getabis:
 		# Use the single argument form since getabis is now
