@@ -4,6 +4,9 @@
 
 include ../../debian.master/config/annotations
 
+CONFIG_SYSTEM_REVOCATION_LIST                   policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_SYSTEM_REVOCATION_LIST                   mark<ENFORCED> note<LP:#1936242>
+
 # Mark debugging symbols.
 #  exceptions
 CONFIG_DEBUG_FS                                 note<required debug option>
