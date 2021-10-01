@@ -28,3 +28,4 @@ do_dtbs		= false
 do_common_headers_indep = false
 do_dkms_nvidia  = false
 do_dkms_nvidia_server = false
+do_tools_perf_jvmti = true
