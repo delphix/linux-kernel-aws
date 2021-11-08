@@ -507,7 +507,7 @@ acpi_status acpi_release_memory(acpi_handle handle, struct resource *res,
 int acpi_resources_are_enforced(void);
 
 #ifdef CONFIG_HIBERNATION
-extern int acpi_check_s4_hw_signature;
+void __init acpi_check_s4_hw_signature(int check);
 #endif
 
 #ifdef CONFIG_PM_SLEEP
