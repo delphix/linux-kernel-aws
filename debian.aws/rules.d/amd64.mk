@@ -29,3 +29,4 @@ do_dtbs		= false
 do_common_headers_indep = false
 do_dkms_wireguard = true
 do_tools_perf_jvmti = true
+uefi_signed     = true
