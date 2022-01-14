@@ -1,5 +1,6 @@
 # Recreate any symlinks created since the orig.
 # Remove any files deleted from the orig.
+rm -f 'arch/hexagon/include/asm/timer-regs.h'
 rm -f 'arch/parisc/lib/string.S'
 rm -f 'arch/powerpc/kernel/syscall_64.c'
 rm -f 'arch/riscv/kernel/vdso/so2s.sh'
@@ -7,6 +8,7 @@ rm -f 'arch/um/kernel/gmon_syms.c'
 rm -f 'drivers/net/can/dev.c'
 rm -f 'drivers/net/can/rx-offload.c'
 rm -f 'drivers/pci/pcie/bw_notification.c'
+rm -f 'drivers/staging/most/dim2/sysfs.c'
 rm -f 'drivers/staging/mt7621-dma/mtk-hsdma.c'
 rm -f 'tools/testing/radix-tree/linux/compiler_types.h'
 rm -f 'tools/testing/selftests/bpf/progs/btf__core_reloc_existence___err_wrong_arr_kind.c'
