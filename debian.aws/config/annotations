@@ -169,7 +169,6 @@ CONFIG_SND_SOC_INTEL_SOF_DA7219_MAX98373_MACH      policy<{'amd64': '-'}>
 CONFIG_TYPEC_TCPCI_MAXIM                           policy<{'amd64': 'n', 'arm64': 'n'}> 
 CONFIG_SND_SOC_FSL_MICFIL                          policy<{'amd64': '-', 'arm64': '-'}> 
 CONFIG_SND_OXYGEN                                  policy<{'amd64': '-', 'arm64': '-'}> 
-CONFIG_BPF_LSM                                     policy<{'amd64': 'n', 'arm64': 'n'}> 
 CONFIG_SND_SEQUENCER                               policy<{'amd64': '-', 'arm64': '-'}> 
 CONFIG_SND_SOC_WM8960                              policy<{'amd64': '-', 'arm64': '-'}> 
 CONFIG_SERIAL_8250_RUNTIME_UARTS                   policy<{'amd64': '4', 'arm64': '32'}> 
