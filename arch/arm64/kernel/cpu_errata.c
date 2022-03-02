@@ -6,6 +6,7 @@
  */
 
 #include <linux/arm-smccc.h>
+#include <linux/psci.h>
 #include <linux/types.h>
 #include <linux/cpu.h>
 #include <asm/cpu.h>
@@ -1120,12 +1121,12 @@ static enum mitigation_state spectre_bhb_get_cpu_fw_mitigation_state(void)
 		return SPECTRE_VULNERABLE;
 
 	switch (psci_ops.conduit) {
-	case PSCI_CONDUIT_HVC:
+	case SMCCC_CONDUIT_HVC:
 		arm_smccc_1_1_hvc(ARM_SMCCC_ARCH_FEATURES_FUNC_ID,
 				  ARM_SMCCC_ARCH_WORKAROUND_3, &res);
 		break;
 
-	case PSCI_CONDUIT_SMC:
+	case SMCCC_CONDUIT_SMC:
 		arm_smccc_1_1_smc(ARM_SMCCC_ARCH_FEATURES_FUNC_ID,
 				  ARM_SMCCC_ARCH_WORKAROUND_3, &res);
 		break;
