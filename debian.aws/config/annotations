@@ -9215,6 +9215,7 @@ CONFIG_SCHED_AUTOGROUP                          policy<{'amd64': 'y', 'arm64': '
 CONFIG_SYSFS_DEPRECATED                         policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 'ppc64el': 'n', 's390x': 'n'}>
 CONFIG_RELAY                                    policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'y'}>
 CONFIG_BPF_SYSCALL                              policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'y'}>
+CONFIG_BPF_UNPRIV_DEFAULT_OFF                   policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'y'}>
 CONFIG_BPF_JIT_ALWAYS_ON                        policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'ppc64el': 'y', 's390x': 'y'}>
 CONFIG_USERFAULTFD                              policy<{'amd64': 'y', 'arm64': 'y', 'armhf': 'y', 'i386': 'y', 'ppc64el': 'y', 's390x': 'y'}>
 CONFIG_EMBEDDED                                 policy<{'amd64': 'n', 'arm64': 'n', 'armhf': 'n', 'i386': 'n', 'ppc64el': 'n', 's390x': 'n'}>
@@ -11400,6 +11401,7 @@ CONFIG_MVIAC7                                   policy<{'i386': 'n'}>
 CONFIG_MPSC                                     policy<{'amd64': 'n'}>
 CONFIG_MCORE2                                   policy<{'amd64': 'n', 'i386': 'n'}>
 CONFIG_MATOM                                    policy<{'amd64': 'n', 'i386': 'n'}>
+CONFIG_MITIGATE_SPECTRE_BRANCH_HISTORY          policy<{'arm64': 'y'}>
 
 # Menu: Processor type and features >> Processor type >> Architecture: s390
 CONFIG_MARCH_Z900                               policy<{'s390x': 'n'}>
