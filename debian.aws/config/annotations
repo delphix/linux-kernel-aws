@@ -880,56 +880,56 @@ CONFIG_SND_SOC_WCD938X_SDW                         policy<{'amd64': '-', 'arm64'
 CONFIG_SND_VIRTIO                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_SOC_TFA989X                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_HDA_CODEC_CS8409                        policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_SSM2518 policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_INTEL_SOF_CS42L42_MACH policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_TLV320AIC3X_SPI policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_FSL_RPMSG policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_RT715_SDCA_SDW policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_SDW_MOCKUP policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_RK817 policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_RT1316_SDW policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_RZ policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_HDA_CODEC_CS8409 policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_RT711_SDCA_SDW policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_MT8195_MT6359_RT1019_RT5682 policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_SSM2518 policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_RT715_SDCA_SDW policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_MT6359_ACCDET policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_FSL_RPMSG policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_SDW_MOCKUP policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_IMX_CARD policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_TFA989X policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_ICS43432 policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_WCD938X_SDW policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_TLV320AIC3X_SPI policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_MT8195 policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_VIRTIO policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_IMX_RPMSG policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SURFACE_KBD policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SURFACE_AGGREGATOR_REGISTRY policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SURFACE_DTX policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SURFACE_PLATFORM_PROFILE policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SURFACE_HID policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SURFACE_KBD policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SURFACE_PLATFORM_PROFILE policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SURFACE_DTX policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SURFACE_HID policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_BATTERY_SURFACE policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SPARX5_SWITCH policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_BT_AOSPEXT policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_BT_VIRTIO policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_BT_VIRTIO policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_BT_AOSPEXT policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_MOST_SND policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_PCIE_VISCONTI_HOST policy<{'arm64': '-'}>
-CONFIG_PWM_VISCONTI policy<{'arm64': '-'}>
-CONFIG_PHY_SPARX5_SERDES policy<{'arm64': '-'}>
-CONFIG_RESET_MCHP_SPARX5 policy<{'arm64': '-'}>
-CONFIG_MTD_OF_PARTS_LINKSYS_NS policy<{'arm64': '-'}>
-CONFIG_GPIO_AAEON policy<{'amd64': '-'}>
-CONFIG_AAEON_IWMI_WDT policy<{'amd64': '-'}>
-CONFIG_MFD_AAEON policy<{'amd64': '-'}>
-CONFIG_LEDS_AAEON policy<{'amd64': '-'}>
-CONFIG_SENSORS_AAEON policy<{'amd64': '-'}>
-CONFIG_COMEDI_TESTS_NI_ROUTES policy<{'amd64': 'm', 'arm64': 'm'}>
-CONFIG_COMEDI_TESTS_EXAMPLE policy<{'amd64': 'm', 'arm64': 'm'}>
+CONFIG_SND_SOC_SSM2518                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_INTEL_SOF_CS42L42_MACH              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_TLV320AIC3X_SPI                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_FSL_RPMSG                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_RT715_SDCA_SDW                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_SDW_MOCKUP                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_RK817                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_RT1316_SDW                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_RZ                                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_HDA_CODEC_CS8409                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_RT711_SDCA_SDW                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_MT8195_MT6359_RT1019_RT5682         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_SSM2518                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_RT715_SDCA_SDW                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_MT6359_ACCDET                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_FSL_RPMSG                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_SDW_MOCKUP                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_IMX_CARD                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_TFA989X                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_ICS43432                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_WCD938X_SDW                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_TLV320AIC3X_SPI                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_MT8195                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_VIRTIO                                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_IMX_RPMSG                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SURFACE_KBD                                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SURFACE_AGGREGATOR_REGISTRY                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SURFACE_DTX                                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SURFACE_PLATFORM_PROFILE                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SURFACE_HID                                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SURFACE_KBD                                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SURFACE_PLATFORM_PROFILE                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SURFACE_DTX                                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SURFACE_HID                                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BATTERY_SURFACE                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SPARX5_SWITCH                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BT_AOSPEXT                                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BT_VIRTIO                                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BT_VIRTIO                                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BT_AOSPEXT                                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_MOST_SND                                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_PCIE_VISCONTI_HOST                          policy<{'arm64': '-'}>
+CONFIG_PWM_VISCONTI                                policy<{'arm64': '-'}>
+CONFIG_PHY_SPARX5_SERDES                           policy<{'arm64': '-'}>
+CONFIG_RESET_MCHP_SPARX5                           policy<{'arm64': '-'}>
+CONFIG_MTD_OF_PARTS_LINKSYS_NS                     policy<{'arm64': '-'}>
+CONFIG_GPIO_AAEON                                  policy<{'amd64': '-'}>
+CONFIG_AAEON_IWMI_WDT                              policy<{'amd64': '-'}>
+CONFIG_MFD_AAEON                                   policy<{'amd64': '-'}>
+CONFIG_LEDS_AAEON                                  policy<{'amd64': '-'}>
+CONFIG_SENSORS_AAEON                               policy<{'amd64': '-'}>
+CONFIG_COMEDI_TESTS_NI_ROUTES                      policy<{'amd64': 'm', 'arm64': 'm'}>
+CONFIG_COMEDI_TESTS_EXAMPLE                        policy<{'amd64': 'm', 'arm64': 'm'}>
