@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+# Actions to take during cranky open
+#
+
+. debian/debian.env
+
+ANN=${DEBIAN}/config/annotations
+CFG=${DEBIAN}/config/config.common.ubuntu
+
+# KCSAN cannot be enabled in focal, so make sure it's disabled in the
+# annotations file as well for all arches.
+sed -i /CONFIG_KCSAN/d "${DEBIAN}/config/annotations"
+echo "CONFIG_KCSAN policy<{'amd64': '-', 'arm64': '-'}>" >> "${DEBIAN}/config/annotations"
+
+# Do not enforce CONFIG_ARM64_BTI_KERNEL in Focal, as it depends on a newer
+# gcc version. Note that the config itself is already removed in an earlier
+# stage when 'make' is run, updating config 'GCC_VERSION' and removing
+# 'ARM64_BTI_KERNEL'.
+echo "CONFIG_ARM64_BTI_KERNEL                            policy<{'arm64': '-'}" >> "${DEBIAN}/config/annotations"
+
+# We are still supporting AUFS in focal, so make sure to re-enable it.
+cat << EOF >> ${DEBIAN}/config/config.common.ubuntu
+CONFIG_AUFS_BDEV_LOOP=y
+# CONFIG_AUFS_BRANCH_MAX_1023 is not set
+CONFIG_AUFS_BRANCH_MAX_127=y
+# CONFIG_AUFS_BRANCH_MAX_32767 is not set
+# CONFIG_AUFS_BRANCH_MAX_511 is not set
+# CONFIG_AUFS_BR_FUSE is not set
+CONFIG_AUFS_BR_HFSPLUS=y
+# CONFIG_AUFS_BR_RAMFS is not set
+# CONFIG_AUFS_DEBUG is not set
+CONFIG_AUFS_DIRREN=y
+CONFIG_AUFS_EXPORT=y
+# CONFIG_AUFS_FHSM is not set
+CONFIG_AUFS_FS=m
+# CONFIG_AUFS_HNOTIFY is not set
+CONFIG_AUFS_INO_T_64=y
+# CONFIG_AUFS_RDU is not set
+CONFIG_AUFS_SBILIST=y
+# CONFIG_AUFS_SHWH is not set
+CONFIG_AUFS_XATTR=y
+EOF
+
+# Ensure AUFS policy agrees with the configs
+sed -i /CONFIG_AUFS_FS/d "${DEBIAN}/config/annotations"
+echo "CONFIG_AUFS_FS policy<{'amd64': 'm', 'arm64': 'm'}>" >> "${DEBIAN}/config/annotations"
