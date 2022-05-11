@@ -5918,7 +5918,6 @@ CONFIG_PARPORT_PC_PCMCIA                        policy<{'amd64': 'm', 'i386': 'm
 
 # Menu: Device Drivers >> Performance monitor support
 CONFIG_ARM_PMU                                  policy<{'arm64': 'y', 'armhf': 'y'}>
-CONFIG_HISI_PMU                                 policy<{'arm64': 'y'}>
 CONFIG_QCOM_L2_PMU                              policy<{'arm64': 'y'}>
 CONFIG_QCOM_L3_PMU                              policy<{'arm64': 'y'}>
 CONFIG_XGENE_PMU                                policy<{'arm64': 'y'}>
