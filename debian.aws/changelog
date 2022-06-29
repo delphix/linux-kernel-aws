@@ -1,3 +1,9 @@
+linux-aws (5.19.0-1000.0) kinetic; urgency=medium
+
+  * Dummy entry
+
+ -- Paolo Pisati <paolo.pisati@canonical.com>  Wed, 29 Jun 2022 09:54:24 +0200
+
 linux-aws (5.18.0-1001.1) kinetic; urgency=medium
 
   * kinetic/linux-aws: 5.18.0-1001.1 -proposed tracker (LP: #1975961)
