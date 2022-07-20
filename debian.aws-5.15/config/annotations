@@ -1005,6 +1005,12 @@ CONFIG_SND_PORTMAN2X4                              policy<{'amd64': 'n', 'arm64'
 CONFIG_SND_VIRMIDI                                 policy<{'amd64': 'm', 'arm64': 'm'}>
 CONFIG_SND_MTS64                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SND_PCSP                                    policy<{'amd64': 'n'}>
+
+#
+# LP: #1949245 - AMD ACP 6.x DMIC is not enabled.
+#
+CONFIG_SND_SOC_AMD_YC_MACH                         policy<{'amd64': '-'}>
+CONFIG_SND_SOC_AMD_ACP6x                           policy<{'amd64': '-'}
 CONFIG_KCSAN policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARM64_BTI_KERNEL                            policy<{'arm64': '-'}
 CONFIG_AUFS_FS policy<{'amd64': 'm', 'arm64': 'm'}>
