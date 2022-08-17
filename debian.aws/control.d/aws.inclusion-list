@@ -75,6 +75,7 @@ drivers/leds/leds-powernv.ko
 drivers/gpu/drm/drm.ko
 drivers/gpu/drm/drm_kms_helper.ko
 drivers/md/*
+drivers/media/v4l2-core/*
 drivers/message/fusion*
 drivers/misc/cxl/*
 drivers/misc/eeprom/at24.ko
