@@ -2471,7 +2471,6 @@ lib80211_crypt_wep
 libahci
 libahci_platform
 libarc4
-libblake2s
 libceph
 libchacha
 libchacha20poly1305
@@ -4974,6 +4973,7 @@ v4l2-flash-led-class
 v4l2-fwnode
 v4l2-mem2mem
 v4l2-tpg
+v4l2loopback
 vboxguest
 vboxsf
 vboxvideo
