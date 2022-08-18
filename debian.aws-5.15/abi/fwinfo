@@ -1580,6 +1580,8 @@ firmware:       radeon/verde_me.bin
 firmware:       radeon/verde_pfp.bin
 firmware:       radeon/verde_rlc.bin
 firmware:       radeon/verde_smc.bin
+firmware:       regulatory.db
+firmware:       regulatory.db.p7s
 firmware:       renesas_usb_fw.mem
 firmware:       rockchip/dptx.bin
 firmware:       rp2.fw
