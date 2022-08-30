@@ -6256,7 +6256,6 @@ EXPORT_SYMBOL	 vmlinux 0x39991865	icmp_global_allow
 EXPORT_SYMBOL	 vmlinux 0x399ad043	__kfifo_dma_out_finish_r
 EXPORT_SYMBOL	 vmlinux 0x39a7704d	dev_pick_tx_cpu_id
 EXPORT_SYMBOL	 vmlinux 0x39b52d19	__bitmap_and
-EXPORT_SYMBOL	 vmlinux 0x39d82c58	blk_mq_complete_request
 EXPORT_SYMBOL	 vmlinux 0x39dd3d68	vmf_insert_pfn
 EXPORT_SYMBOL	 vmlinux 0x39e9e839	__page_cache_alloc
 EXPORT_SYMBOL	 vmlinux 0x39ef3fcf	ab3100_event_register
@@ -7886,6 +7885,7 @@ EXPORT_SYMBOL	 vmlinux 0x86e350b7	dec_zone_page_state
 EXPORT_SYMBOL	 vmlinux 0x86fb9b05	bitmap_parse_user
 EXPORT_SYMBOL	 vmlinux 0x86fe0aef	__lookup_constant
 EXPORT_SYMBOL	 vmlinux 0x8708ac89	tcf_action_set_ctrlact
+EXPORT_SYMBOL	 vmlinux 0x8727db7c	blk_mq_complete_request
 EXPORT_SYMBOL	 vmlinux 0x87409c67	__check_sticky
 EXPORT_SYMBOL	 vmlinux 0x87528f38	netdev_class_create_file_ns
 EXPORT_SYMBOL	 vmlinux 0x8761c87b	rps_needed
