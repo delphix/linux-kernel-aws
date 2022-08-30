@@ -4732,6 +4732,7 @@ EXPORT_SYMBOL	 vmlinux 0x2a434fc6	inet_csk_reqsk_queue_add
 EXPORT_SYMBOL	 vmlinux 0x2a45fa63	rt_dst_clone
 EXPORT_SYMBOL	 vmlinux 0x2a6ca714	netdev_lower_state_changed
 EXPORT_SYMBOL	 vmlinux 0x2a758690	dma_virt_ops
+EXPORT_SYMBOL	 vmlinux 0x2a886df4	blk_mq_complete_request
 EXPORT_SYMBOL	 vmlinux 0x2a9a3905	vme_master_get
 EXPORT_SYMBOL	 vmlinux 0x2aa0843e	mempool_resize
 EXPORT_SYMBOL	 vmlinux 0x2aa35777	dev_uc_sync
@@ -8794,7 +8795,6 @@ EXPORT_SYMBOL	 vmlinux 0xed656e30	udp_encap_disable
 EXPORT_SYMBOL	 vmlinux 0xed88fb0f	blk_mq_init_sq_queue
 EXPORT_SYMBOL	 vmlinux 0xed93aa6f	security_inode_setsecctx
 EXPORT_SYMBOL	 vmlinux 0xedb02ba6	__skb_try_recv_datagram
-EXPORT_SYMBOL	 vmlinux 0xedb63954	blk_mq_complete_request
 EXPORT_SYMBOL	 vmlinux 0xedb94751	kthread_create_on_node
 EXPORT_SYMBOL	 vmlinux 0xedbaee5e	nla_strcmp
 EXPORT_SYMBOL	 vmlinux 0xedc03953	iounmap
