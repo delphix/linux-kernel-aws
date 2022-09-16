@@ -2,8 +2,10 @@
 # Remove any files deleted from the orig.
 rm -f 'arch/parisc/kernel/module.lds'
 rm -f 'arch/parisc/lib/string.S'
+rm -f 'arch/powerpc/include/uapi/asm/bpf_perf_event.h'
 rm -f 'arch/um/kernel/gmon_syms.c'
 rm -f 'arch/x86/events/intel/rapl.c'
+rm -f 'arch/x86/include/asm/refcount.h'
 rm -f 'drivers/crypto/hisilicon/sgl.h'
 rm -f 'drivers/gpu/drm/amd/display/dc/calcs/dcn_calc_math.h'
 rm -f 'drivers/input/serio/i8042-ppcio.h'
