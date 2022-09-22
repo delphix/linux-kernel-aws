@@ -586,8 +586,6 @@ bh1780
 binder_linux
 binfmt_misc
 blake2b_generic
-blake2s-x86_64
-blake2s_generic
 block2mtd
 blocklayoutdriver
 blowfish-x86_64
@@ -2360,7 +2358,6 @@ iwl3945
 iwl4965
 iwldvm
 iwlegacy
-iwlmei
 iwlmvm
 iwlwifi
 ix2505v
@@ -5080,6 +5077,7 @@ v4l2-flash-led-class
 v4l2-fwnode
 v4l2-mem2mem
 v4l2-tpg
+v4l2loopback
 vboxguest
 vboxsf
 vboxvideo
