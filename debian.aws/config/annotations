@@ -940,3 +940,5 @@ CONFIG_COMEDI_TESTS_EXAMPLE policy<{'amd64': 'm', 'arm64': 'm'}>
 CONFIG_NTFS_RW policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SPI_ROCKCHIP policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_GPIO_CDEV_V1 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SND_SOC_AMD_PS policy<{'amd64': '-'}>
+CONFIG_SND_SOC_AMD_PS_MACH policy<{'amd64': '-'}>
