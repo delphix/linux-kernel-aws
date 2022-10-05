@@ -108,12 +108,20 @@ do
 	esac
 done
 
-cleanup
-setup
+ip nexthop help 2>&1 | grep -q "unknown"
+if [ $? -eq 0 ]; then
+	echo "SKIP: ip nexthop: ip command too old"
+	ret=0
+else
 
-run_cmd ip -netns h1 route get 192.168.1.1
-log_test $? 0 "nexthop: get route with nexthop without gw"
-run_cmd ip netns exec h1 ping -c1 192.168.1.1
-log_test $? 0 "nexthop: ping through nexthop without gw"
+	cleanup
+	setup
+
+	run_cmd ip -netns h1 route get 192.168.1.1
+	log_test $? 0 "nexthop: get route with nexthop without gw"
+	run_cmd ip netns exec h1 ping -c1 192.168.1.1
+	log_test $? 0 "nexthop: ping through nexthop without gw"
+
+fi
 
 exit $ret
