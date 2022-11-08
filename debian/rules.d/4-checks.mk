@@ -16,7 +16,7 @@ retpoline-check-%: install-%
 	$(SHELL) $(DROOT)/scripts/retpoline-check "$*" \
 		"$(prev_abidir)" "$(abidir)" "$(skipretpoline)" "$(builddir)/build-$*"
 
-checks-%: module-check-% abi-check-% retpoline-check-%
+checks-%: abi-check-% retpoline-check-%
 	@echo Debug: $@
 
 # Check the config against the known options list.
