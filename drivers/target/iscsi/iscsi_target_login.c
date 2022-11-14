@@ -647,6 +647,7 @@ int iscsit_start_kthreads(struct iscsi_conn *conn)
 		ret = PTR_ERR(conn->tx_thread);
 		goto out_bitmap;
 	}
+	wait_for_completion(&conn->kthr_start_comp);
 	conn->tx_thread_active = true;
 
 	conn->rx_thread = kthread_run(iscsi_target_rx_thread, conn,
@@ -656,6 +657,7 @@ int iscsit_start_kthreads(struct iscsi_conn *conn)
 		ret = PTR_ERR(conn->rx_thread);
 		goto out_tx;
 	}
+	wait_for_completion(&conn->kthr_start_comp);
 	conn->rx_thread_active = true;
 
 	return 0;
@@ -1104,6 +1106,7 @@ static struct iscsi_conn *iscsit_alloc_conn(struct iscsi_np *np)
 	init_completion(&conn->rx_half_close_comp);
 	init_completion(&conn->tx_half_close_comp);
 	init_completion(&conn->rx_login_comp);
+	init_completion(&conn->kthr_start_comp);
 	spin_lock_init(&conn->cmd_lock);
 	spin_lock_init(&conn->conn_usage_lock);
 	spin_lock_init(&conn->immed_queue_lock);
