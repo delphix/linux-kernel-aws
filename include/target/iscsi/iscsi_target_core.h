@@ -552,6 +552,7 @@ struct iscsi_conn {
 	struct completion	conn_logout_comp;
 	struct completion	tx_half_close_comp;
 	struct completion	rx_half_close_comp;
+	struct completion	kthr_start_comp;
 	/* socket used by this connection */
 	struct socket		*sock;
 	void			(*orig_data_ready)(struct sock *);
