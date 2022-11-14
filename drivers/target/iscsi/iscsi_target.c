@@ -3922,6 +3922,7 @@ int iscsi_target_tx_thread(void *arg)
 	 * connection recovery / failure event can be triggered externally.
 	 */
 	allow_signal(SIGINT);
+	complete(&conn->kthr_start_comp);
 
 	while (!kthread_should_stop()) {
 		/*
@@ -4170,6 +4171,7 @@ int iscsi_target_rx_thread(void *arg)
 	 * connection recovery / failure event can be triggered externally.
 	 */
 	allow_signal(SIGINT);
+	complete(&conn->kthr_start_comp);
 	/*
 	 * Wait for iscsi_post_login_handler() to complete before allowing
 	 * incoming iscsi/tcp socket I/O, and/or failing the connection.
