@@ -504,6 +504,8 @@ endif
 		$(pkgdir_bldinfo)/usr/lib/linux/$(abi_release)-$*/retpoline
 	install -m644 $(abidir)/$*.compiler \
 		$(pkgdir_bldinfo)/usr/lib/linux/$(abi_release)-$*/compiler
+	install -m644 $(DROOT)/canonical-certs.pem $(pkgdir_bldinfo)/usr/lib/linux/$(abi_release)-$*/canonical-certs.pem
+	install -m644 $(DROOT)/canonical-revoked-certs.pem $(pkgdir_bldinfo)/usr/lib/linux/$(abi_release)-$*/canonical-revoked-certs.pem
 
 headers_tmp := $(CURDIR)/debian/tmp-headers
 headers_dir := $(CURDIR)/debian/linux-libc-dev
