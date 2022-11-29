@@ -118,9 +118,10 @@ static int xen_suspend(void *data)
 static void do_suspend(void)
 {
 	int err;
+	unsigned int sleep_flags;
 	struct suspend_info si;
 
-	lock_system_sleep();
+	sleep_flags = lock_system_sleep();
 
 	suspend_mode = XEN_SUSPEND;
 
@@ -199,7 +200,7 @@ out:
 
 	suspend_mode = NO_SUSPEND;
 
-	unlock_system_sleep();
+	unlock_system_sleep(sleep_flags);
 }
 #endif	/* CONFIG_HIBERNATE_CALLBACKS */
 
