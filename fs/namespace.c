@@ -163,7 +163,7 @@ void mnt_release_group_id(struct mount *mnt)
 /*
  * vfsmount lock must be held for read
  */
-static inline void mnt_add_count(struct mount *mnt, int n)
+static noinline __noclone void mnt_add_count(struct mount *mnt, int n)
 {
 #ifdef CONFIG_SMP
 	this_cpu_add(mnt->mnt_pcp->mnt_count, n);
@@ -1590,7 +1590,8 @@ static int do_umount_root(struct super_block *sb)
 	return ret;
 }
 
-static int do_umount(struct mount *mnt, int flags)
+/* force a bpftrace dynamic function probe here */
+static noinline __noclone int do_umount(struct mount *mnt, int flags)
 {
 	struct super_block *sb = mnt->mnt.mnt_sb;
 	int retval;
