@@ -248,7 +248,7 @@ void mnt_release_group_id(struct mount *mnt)
 	mnt->mnt_group_id = 0;
 }
 
-static inline void mnt_inc_count(struct mount *mnt)
+static noinline __noclone void mnt_inc_count(struct mount *mnt)
 {
 #ifdef CONFIG_SMP
 	this_cpu_inc(mnt->mnt_pcp->mnt_gets);
@@ -259,7 +259,7 @@ static inline void mnt_inc_count(struct mount *mnt)
 #endif
 }
 
-static inline void mnt_dec_count(struct mount *mnt)
+static noinline __noclone void mnt_dec_count(struct mount *mnt)
 {
 #ifdef CONFIG_SMP
 	this_cpu_inc(mnt->mnt_pcp->mnt_puts);
@@ -1882,7 +1882,8 @@ static int do_umount_root(struct super_block *sb)
 	return ret;
 }
 
-static int do_umount(struct mount *mnt, int flags)
+/* force a bpftrace dynamic function probe here */
+static noinline __noclone int do_umount(struct mount *mnt, int flags)
 {
 	struct super_block *sb = mnt->mnt.mnt_sb;
 	int retval;
