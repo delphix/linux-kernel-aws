@@ -9566,6 +9566,7 @@ EXPORT_SYMBOL_GPL	 vmlinux 0x0e795732	devres_close_group
 EXPORT_SYMBOL_GPL	 vmlinux 0x0e93524b	iommu_domain_set_attr
 EXPORT_SYMBOL_GPL	 vmlinux 0x0ea7bb5f	virtqueue_add_sgs
 EXPORT_SYMBOL_GPL	 vmlinux 0x0ed372b3	paste_selection
+EXPORT_SYMBOL_GPL	 vmlinux 0x0edb8cff	debugfs_lookup_and_remove
 EXPORT_SYMBOL_GPL	 vmlinux 0x0f1496cb	xfrm_state_mtu
 EXPORT_SYMBOL_GPL	 vmlinux 0x0f163b1d	tcp_reno_undo_cwnd
 EXPORT_SYMBOL_GPL	 vmlinux 0x0f1e69ad	klist_add_head
