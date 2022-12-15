@@ -5,6 +5,11 @@
 
 include "../../debian.master/config/annotations"
 
+CONFIG_IOMMU_DEFAULT_DMA_LAZY                   policy<{'amd64-aws': 'y', 'arm64-aws': 'y'}>
+CONFIG_IOMMU_DEFAULT_DMA_LAZY                   note<LP: #1806488>
+CONFIG_IOMMU_DEFAULT_DMA_STRICT                 policy<{'amd64-aws': 'n', 'arm64-aws': 'n'}>
+CONFIG_IOMMU_DEFAULT_DMA_STRICT                 note<LP: #1806488>
+
 CONFIG_842_COMPRESS                             policy<{'amd64-aws': 'm', 'amd64-generic': 'm', 'arm64-aws': 'm', 'arm64-generic': 'm', 'arm64-generic-64k': 'm', 'armhf-generic': 'm', 'armhf-generic-lpae': 'm', 'ppc64el-generic': 'm', 'riscv64-generic': 'm', 's390x-generic': 'm'}>
 CONFIG_842_DECOMPRESS                           policy<{'amd64-aws': 'm', 'amd64-generic': 'm', 'arm64-aws': 'm', 'arm64-generic': 'm', 'arm64-generic-64k': 'm', 'armhf-generic': 'm', 'armhf-generic-lpae': 'm', 'ppc64el-generic': 'm', 'riscv64-generic': 'm', 's390x-generic': 'm'}>
 CONFIG_A64FX_DIAG                               policy<{'arm64-aws': 'y', 'arm64-generic': 'y', 'arm64-generic-64k': 'y'}>
