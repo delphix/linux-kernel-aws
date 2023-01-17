@@ -4,6 +4,11 @@
 
 include ../../debian.master/config/annotations
 
+CONFIG_IOMMU_DEFAULT_DMA_STRICT                    policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_IOMMU_DEFAULT_DMA_STRICT                    note<LP: #1806488>
+CONFIG_IOMMU_DEFAULT_DMA_LAZY                      policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_IOMMU_DEFAULT_DMA_LAZY                      note<LP: #1806488>
+
 CONFIG_NITRO_ENCLAVES                              policy<{'amd64': 'm', 'arm64': 'm'}>
 CONFIG_ACCESSIBILITY                               policy<{'amd64': 'n', 'arm64': 'n'}> 
 CONFIG_SPEAKUP                                     policy<{'amd64': '-', 'arm64': '-'}> 
