@@ -5,6 +5,27 @@
 
 include "../../debian.master/config/annotations"
 
+CONFIG_CMA                                      policy<{'amd64-aws': 'n', 'arm64-aws': 'n'}> <note
+CONFIG_CMA                                      note<LP: #1990167>
+CONFIG_CMA_SIZE_SEL_MBYTES                      policy<{'arm64': '-'}>
+CONFIG_CMA_SIZE_SEL_PERCENTAGE                  policy<{'arm64': '-'}>
+CONFIG_CMA_SIZE_SEL_MIN                         policy<{'arm64': '-'}>
+CONFIG_CMA_SIZE_SEL_MAX                         policy<{'arm64': '-'}>
+CONFIG_CMA_DEBUG                                policy<{'arm64': '-'}>
+CONFIG_DMA_PERNUMA_CMA                          policy<{'arm64': '-'}>
+CONFIG_DMA_CMA                                  policy<{'arm64': '-'}>
+CONFIG_DMABUF_HEAPS_CMA                         policy<{'arm64': '-'}>
+CONFIG_CMA_AREAS                                policy<{'arm64': '-'}>
+CONFIG_CMA_SYSFS                                policy<{'arm64': '-'}>
+CONFIG_CMA_DEBUGFS                              policy<{'arm64': '-'}>
+CONFIG_CMA_ALIGNMENT                            policy<{'arm64': '-'}>
+CONFIG_CMA_SIZE_MBYTES                          policy<{'arm64': '-'}>
+
+CONFIG_DRM_ETNAVIV                              policy<{'amd64-aws': 'n', 'arm64-aws': 'n'}>
+CONFIG_DRM_ETNAVIV                              note<LP: #1990167>
+CONFIG_DRM_ETNAVIV_THERMAL                      policy<{'arm64': '-'}>
+CONFIG_DRM_ETNAVIV_THERMAL                      note<LP: #1990167>
+
 CONFIG_IOMMU_DEFAULT_DMA_LAZY                   policy<{'amd64-aws': 'y', 'arm64-aws': 'y'}>
 CONFIG_IOMMU_DEFAULT_DMA_LAZY                   note<LP: #1806488>
 CONFIG_IOMMU_DEFAULT_DMA_STRICT                 policy<{'amd64-aws': 'n', 'arm64-aws': 'n'}>
