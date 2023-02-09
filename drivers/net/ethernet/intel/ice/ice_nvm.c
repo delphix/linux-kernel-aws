@@ -289,6 +289,18 @@ enum ice_status ice_init_nvm(struct ice_hw *hw)
 
 	hw->nvm.eetrack = (eetrack_hi << 16) | eetrack_lo;
 
+	/* the following devices do not have boot_cfg_tlv yet */
+	if (hw->device_id == ICE_DEV_ID_E822C_BACKPLANE ||
+	    hw->device_id == ICE_DEV_ID_E822C_QSFP ||
+	    hw->device_id == ICE_DEV_ID_E822C_10G_BASE_T ||
+	    hw->device_id == ICE_DEV_ID_E822C_SGMII ||
+	    hw->device_id == ICE_DEV_ID_E822C_SFP ||
+	    hw->device_id == ICE_DEV_ID_E822X_BACKPLANE ||
+	    hw->device_id == ICE_DEV_ID_E822L_SFP ||
+	    hw->device_id == ICE_DEV_ID_E822L_10G_BASE_T ||
+	    hw->device_id == ICE_DEV_ID_E822L_SGMII)
+		return status;
+
 	return status;
 }
 
