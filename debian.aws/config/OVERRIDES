@@ -75,6 +75,7 @@ CONFIG_UIO=n
 CONFIG_USB_SUPPORT=n
 CONFIG_VFIO=n
 CONFIG_W1=n
+CONFIG_WLAN=n
 
 #
 # Disable various filesystem which we don't use.
