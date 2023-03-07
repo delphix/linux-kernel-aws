@@ -472,12 +472,18 @@ static int iscsi_target_do_login(struct iscsit_conn *, struct iscsi_login *);
 
 static bool __iscsi_target_sk_check_close(struct sock *sk)
 {
-	if (sk->sk_state == TCP_CLOSE_WAIT || sk->sk_state == TCP_CLOSE) {
-		pr_debug("__iscsi_target_sk_check_close: TCP_CLOSE_WAIT|TCP_CLOSE,"
+	switch (sk->sk_state) {
+	case TCP_FIN_WAIT1:
+	case TCP_FIN_WAIT2:
+	case TCP_CLOSE_WAIT:
+	case TCP_LAST_ACK:
+	case TCP_CLOSE:
+		pr_debug("__iscsi_target_sk_check_close: socket closing,"
 			"returning TRUE\n");
 		return true;
+	default:
+		return false;
 	}
-	return false;
 }
 
 static bool iscsi_target_sk_check_close(struct iscsit_conn *conn)
@@ -639,6 +645,7 @@ static void iscsi_target_do_login_rx(struct work_struct *work)
 	} else if (rc == 1) {
 		iscsit_stop_login_timer(conn);
 		cancel_delayed_work(&conn->login_work);
+		iscsit_stop_login_timer(conn);
 		iscsi_target_nego_release(conn);
 		iscsi_post_login_handler(np, conn, zero_tsih);
 		iscsit_deaccess_np(np, tpg, tpg_np);
@@ -649,6 +656,7 @@ err:
 	iscsi_target_restore_sock_callbacks(conn);
 	iscsit_stop_login_timer(conn);
 	cancel_delayed_work(&conn->login_work);
+	iscsit_stop_login_timer(conn);
 	iscsi_target_login_drop(conn, login);
 	iscsit_deaccess_np(np, tpg, tpg_np);
 }
@@ -1352,6 +1360,9 @@ int iscsi_target_start_negotiation(
 		set_bit(LOGIN_FLAGS_INITIAL_PDU, &conn->login_flags);
 		write_unlock_bh(&sk->sk_callback_lock);
 	}
+
+	iscsit_start_login_timer(conn);
+
 	/*
 	 * If iscsi_target_do_login returns zero to signal more PDU
 	 * exchanges are required to complete the login, go ahead and
