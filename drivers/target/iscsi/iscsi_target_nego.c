@@ -471,12 +471,18 @@ static int iscsi_target_do_login(struct iscsi_conn *, struct iscsi_login *);
 
 static bool __iscsi_target_sk_check_close(struct sock *sk)
 {
-	if (sk->sk_state == TCP_CLOSE_WAIT || sk->sk_state == TCP_CLOSE) {
-		pr_debug("__iscsi_target_sk_check_close: TCP_CLOSE_WAIT|TCP_CLOSE,"
+	switch (sk->sk_state) {
+	case TCP_FIN_WAIT1:
+	case TCP_FIN_WAIT2:
+	case TCP_CLOSE_WAIT:
+	case TCP_LAST_ACK:
+	case TCP_CLOSE:
+		pr_debug("__iscsi_target_sk_check_close: socket closing,"
 			"returning TRUE\n");
 		return true;
+	default:
+		return false;
 	}
-	return false;
 }
 
 static bool iscsi_target_sk_check_close(struct iscsi_conn *conn)
@@ -534,25 +540,6 @@ static void iscsi_target_login_drop(struct iscsi_conn *conn, struct iscsi_login 
 	iscsi_target_login_sess_out(conn, zero_tsih, true);
 }
 
-struct conn_timeout {
-	struct timer_list timer;
-	struct iscsi_conn *conn;
-};
-
-static void iscsi_target_login_timeout(struct timer_list *t)
-{
-	struct conn_timeout *timeout = from_timer(timeout, t, timer);
-	struct iscsi_conn *conn = timeout->conn;
-
-	pr_debug("Entering iscsi_target_login_timeout >>>>>>>>>>>>>>>>>>>\n");
-
-	if (conn->login_kworker) {
-		pr_debug("Sending SIGINT to conn->login_kworker %s/%d\n",
-			 conn->login_kworker->comm, conn->login_kworker->pid);
-		send_sig(SIGINT, conn->login_kworker, 1);
-	}
-}
-
 static void iscsi_target_do_login_rx(struct work_struct *work)
 {
 	struct iscsi_conn *conn = container_of(work,
@@ -561,7 +548,6 @@ static void iscsi_target_do_login_rx(struct work_struct *work)
 	struct iscsi_np *np = login->np;
 	struct iscsi_portal_group *tpg = conn->tpg;
 	struct iscsi_tpg_np *tpg_np = conn->tpg_np;
-	struct conn_timeout timeout;
 	int rc, zero_tsih = login->zero_tsih;
 	bool state;
 
@@ -599,14 +585,7 @@ static void iscsi_target_do_login_rx(struct work_struct *work)
 	conn->login_kworker = current;
 	allow_signal(SIGINT);
 
-	timeout.conn = conn;
-	timer_setup_on_stack(&timeout.timer, iscsi_target_login_timeout, 0);
-	mod_timer(&timeout.timer, jiffies + TA_LOGIN_TIMEOUT * HZ);
-	pr_debug("Starting login timer for %s/%d\n", current->comm, current->pid);
-
 	rc = conn->conn_transport->iscsit_get_login_rx(conn, login);
-	del_timer_sync(&timeout.timer);
-	destroy_timer_on_stack(&timeout.timer);
 	flush_signals(current);
 	conn->login_kworker = NULL;
 
@@ -647,6 +626,7 @@ static void iscsi_target_do_login_rx(struct work_struct *work)
 			goto err;
 	} else if (rc == 1) {
 		cancel_delayed_work(&conn->login_work);
+		iscsit_stop_login_timer(conn);
 		iscsi_target_nego_release(conn);
 		iscsi_post_login_handler(np, conn, zero_tsih);
 		iscsit_deaccess_np(np, tpg, tpg_np);
@@ -656,6 +636,7 @@ static void iscsi_target_do_login_rx(struct work_struct *work)
 err:
 	iscsi_target_restore_sock_callbacks(conn);
 	cancel_delayed_work(&conn->login_work);
+	iscsit_stop_login_timer(conn);
 	iscsi_target_login_drop(conn, login);
 	iscsit_deaccess_np(np, tpg, tpg_np);
 }
@@ -1299,6 +1280,9 @@ int iscsi_target_start_negotiation(
 		set_bit(LOGIN_FLAGS_INITIAL_PDU, &conn->login_flags);
 		write_unlock_bh(&sk->sk_callback_lock);
 	}
+
+	iscsit_start_login_timer(conn);
+
 	/*
 	 * If iscsi_target_do_login returns zero to signal more PDU
 	 * exchanges are required to complete the login, go ahead and
@@ -1317,8 +1301,10 @@ int iscsi_target_start_negotiation(
 		iscsi_target_restore_sock_callbacks(conn);
 		iscsi_remove_failed_auth_entry(conn);
 	}
-	if (ret != 0)
+	if (ret != 0) {
+		iscsit_stop_login_timer(conn);
 		iscsi_target_nego_release(conn);
+	}
 
 	return ret;
 }
