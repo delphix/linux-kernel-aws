@@ -701,6 +701,7 @@ CONFIG_SND_HDA_CODEC_VIA                        policy<{'amd64': '-', 'arm64': '
 CONFIG_SND_HDA_COMPONENT                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_HDA_CORE                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_HDA_CS_DSP_CONTROLS                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_HDA_CTL_DEV_ID                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_HDA_DSP_LOADER                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_HDA_EXT_CORE                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_HDA_GENERIC                          policy<{'amd64': '-', 'arm64': '-'}>
