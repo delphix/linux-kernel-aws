@@ -41,6 +41,9 @@ CONFIG_IOMMU_DEFAULT_DMA_STRICT                 note<'LP: #1806488'>
 CONFIG_KERNEL_ZSTD                              policy<{'amd64': 'y', 'arm64': 'n'}>
 CONFIG_KERNEL_ZSTD                              note<'LP: #1931725'>
 
+CONFIG_RUST                                     policy<{'amd64': 'n'}>
+CONFIG_RUST                                     note<'required to enable Rust support, LP: #1993183'>
+
 CONFIG_SND                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SND                                      note<'not autoloadable on omap'>
 
@@ -199,6 +202,7 @@ CONFIG_BCM_VIDEOCORE                            policy<{'arm64': 'm'}>
 CONFIG_BCM_VK_TTY                               policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_BGMAC                                    policy<{'arm64': 'y'}>
 CONFIG_BGMAC_PLATFORM                           policy<{'arm64': 'y'}>
+CONFIG_BINDGEN_VERSION_TEXT                     policy<{'amd64': '-'}>
 CONFIG_BLK_DEV_UBLK                             policy<{'amd64': 'm', 'arm64': 'm'}>
 CONFIG_BRCMSTB_DPFE                             policy<{'arm64': 'y'}>
 CONFIG_BRCMSTB_L2_IRQ                           policy<{'arm64': 'y'}>
@@ -295,6 +299,7 @@ CONFIG_CMA_SIZE_SEL_PERCENTAGE                  policy<{'arm64': '-'}>
 CONFIG_CMA_SYSFS                                policy<{'arm64': '-'}>
 CONFIG_COMMON_CLK_IPROC                         policy<{'arm64': 'y'}>
 CONFIG_COMMON_CLK_VISCONTI                      policy<{'arm64': '-'}>
+CONFIG_CONSTRUCTORS                             policy<{'amd64': '-'}>
 CONFIG_CPU_FREQ_DEFAULT_GOV_ONDEMAND            policy<{'arm64': 'n'}>
 CONFIG_CPU_FREQ_DEFAULT_GOV_SCHEDUTIL           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_DEV_BCM_SPU                       policy<{'arm64': 'm'}>
@@ -576,11 +581,16 @@ CONFIG_ROCKCHIP_DTPM                            policy<{'arm64': '-'}>
 CONFIG_RSI_COEX                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_BRCMSTB                          policy<{'arm64': 'm'}>
 CONFIG_RTC_DRV_TEGRA                            policy<{'arm64': '-'}>
+CONFIG_RUSTC_VERSION_TEXT                       policy<{'amd64': '-'}>
+CONFIG_RUST_BUILD_ASSERT_ALLOW                  policy<{'amd64': '-'}>
+CONFIG_RUST_DEBUG_ASSERTIONS                    policy<{'amd64': '-'}>
+CONFIG_RUST_OVERFLOW_CHECKS                     policy<{'amd64': '-'}>
 CONFIG_RV                                       policy<{'amd64': 'y', 'arm64': 'n'}>
 CONFIG_RV_MON_WWNR                              policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_RV_REACTORS                              policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_RV_REACT_PANIC                           policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_RV_REACT_PRINTK                          policy<{'amd64': 'y', 'arm64': '-'}>
+CONFIG_SAMPLES_RUST                             policy<{'amd64': '-'}>
 CONFIG_SCD30_CORE                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCD30_I2C                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SCD30_SERIAL                             policy<{'amd64': '-', 'arm64': '-'}>
