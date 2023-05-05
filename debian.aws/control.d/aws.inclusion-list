@@ -183,6 +183,7 @@ drivers/vhost/*
 drivers/video/fbdev/*
 drivers/video/vgastate.ko
 drivers/virtio/*
+drivers/virt/coco/sev-guest/*
 drivers/watchdog/softdog.ko
 drivers/xen/*
 ! find sound/core -name oss -prune -o -name *.ko -print
