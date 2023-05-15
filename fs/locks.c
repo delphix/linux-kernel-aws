@@ -194,7 +194,7 @@ static int target_leasetype(struct file_lock *fl)
 	return fl->fl_type;
 }
 
-int leases_enable = 1;
+int leases_enable = 0;
 int lease_break_time = 45;
 
 /*
