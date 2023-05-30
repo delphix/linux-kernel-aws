@@ -1,8 +1,10 @@
 # Menu: HEADER
-# FORMAT: 3
-# ARCH: x86 arm arm64 s390 powerpc
+# FORMAT: 4
+# ARCH: amd64 arm64
+# FLAVOUR: amd64-aws arm64-aws
+# FLAVOUR_DEP: {'amd64-aws': 'amd64-generic', 'arm64-aws': 'arm64-generic'}
 
-include ../../debian.master/config/annotations
+include "../../debian.master/config/annotations"
 
 CONFIG_CMA                                         policy<{'amd64': 'n', 'arm64': 'n'}> note<LP: #1990167>
 CONFIG_CMA_SIZE_SEL_MBYTES                         policy<{'arm64': '-'}>
@@ -935,7 +937,7 @@ CONFIG_VIDEO_OV01A10                               policy<{'amd64': 'n', 'arm64'
 CONFIG_I2C_LJCA                                    policy<{'amd64': '-'}>
 CONFIG_GPIO_LJCA                                   policy<{'amd64': '-'}>
 CONFIG_SND_HDA_SCODEC_CS35L41                      policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_CS35L41_SPI                         policy<{'amd64': '-', 'arm64': '-'
+CONFIG_SND_SOC_CS35L41_SPI                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SPEAKUP_SYNTH_AUDPTR                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INTEL_VSC_CSI                               policy<{'amd64': '-'}>
 CONFIG_SERIAL_8250_MID                             policy<{'amd64': 'm'}>
@@ -971,7 +973,7 @@ CONFIG_SPEAKUP_SYNTH_DECTLK                        policy<{'amd64': '-', 'arm64'
 # This block of annotations are related to LP: #1970586
 #
 CONFIG_SND                                         policy<{'amd64': 'm', 'arm64': 'm'}>
-CONFIG_SND                                         mark<ENFORCED> note<LP: #1970586>
+CONFIG_SND                                          note<LP: #1970586>
 CONFIG_SND_HRTIMER                                 policy<{'amd64': 'm', 'arm64': 'm'}>
 CONFIG_SND_USB                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MOST_SND                                    policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -1032,4 +1034,4 @@ CONFIG_SND_PCSP                                    policy<{'amd64': 'n'}>
 # LP: #1949245 - AMD ACP 6.x DMIC is not enabled.
 #
 CONFIG_SND_SOC_AMD_YC_MACH                         policy<{'amd64': '-'}>
-CONFIG_SND_SOC_AMD_ACP6x                           policy<{'amd64': '-'}
+CONFIG_SND_SOC_AMD_ACP6x                           policy<{'amd64': '-'}>
