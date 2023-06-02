@@ -33,7 +33,7 @@ rsync -avc --delete "${DEBIAN_MASTER}/d-i/" "${DEBIAN}/d-i"
 #
 # Update configs from master
 #
-rsync -avc --delete "${DEBIAN_MASTER}/config/" "${DEBIAN}/config"
+#rsync -avc --delete "${DEBIAN_MASTER}/config/" "${DEBIAN}/config"
 
 #
 # Update package and DTB settings from master.
