@@ -1,3 +1,9 @@
+linux-aws (6.5.0-1000.0) mantic; urgency=medium
+
+  * Empty entry
+
+ -- Andrea Righi <andrea.righi@canonical.com>  Tue, 01 Aug 2023 15:54:44 +0200
+
 linux-aws (6.2.0-1004.4) lunar; urgency=medium
 
   * lunar/linux-aws: 6.2.0-1004.4 -proposed tracker (LP: #2016251)
