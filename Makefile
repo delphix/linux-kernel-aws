@@ -549,9 +549,6 @@ LINUXINCLUDE    := \
 		-I$(objtree)/include \
 		$(USERINCLUDE)
 
-# UBUNTU: Include our third party driver stuff too
-LINUXINCLUDE   += -I$(srctree)/ubuntu/include
-
 KBUILD_AFLAGS   := -D__ASSEMBLY__ -fno-PIE
 
 KBUILD_CFLAGS :=
@@ -738,8 +735,11 @@ endif
 
 ifeq ($(KBUILD_EXTMOD),)
 # Objects we will link into vmlinux / subdirs we need to visit
-core-y		:=
-drivers-y	:=
+core-y		:= init/ usr/ arch/$(SRCARCH)/
+drivers-y	:= drivers/ sound/
+drivers-$(CONFIG_SAMPLES) += samples/
+drivers-$(CONFIG_NET) += net/
+drivers-y	+= virt/
 libs-y		:= lib/
 endif # KBUILD_EXTMOD
 
@@ -1297,7 +1297,6 @@ headers: $(version_h) scripts_unifdef uapi-asm-generic archheaders archscripts
 	$(if $(filter um, $(SRCARCH)), $(error Headers not exportable for UML))
 	$(Q)$(MAKE) $(hdr-inst)=include/uapi
 	$(Q)$(MAKE) $(hdr-inst)=arch/$(SRCARCH)/include/uapi
-	$(Q)$(MAKE) $(hdr-inst)=ubuntu/include dst=include oldheaders=
 
 ifdef CONFIG_HEADERS_INSTALL
 prepare: headers
