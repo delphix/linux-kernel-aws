@@ -1,3 +1,9 @@
+# Check ABI for package against last release (if not same abinum)
+abi-check-%: $(stampdir)/stamp-install-%
+	@echo Debug: $@
+	@perl -f $(DROOT)/scripts/abi-check "$*" "$(prev_abinum)" "$(abinum)" \
+		"$(prev_abidir)" "$(abidir)" "$(skipabi)"
+
 # Check the signature of staging modules
 module-signature-check-%: $(stampdir)/stamp-install-%
 	@echo Debug: $@
@@ -5,7 +11,13 @@ module-signature-check-%: $(stampdir)/stamp-install-%
 		"$(DROOT)/$(mods_pkg_name)-$*" \
 		"$(DROOT)/$(mods_extra_pkg_name)-$*"
 
-checks-%: module-signature-check-%
+# Check the reptoline jmp/call functions against the last release.
+retpoline-check-%: $(stampdir)/stamp-install-%
+	@echo Debug: $@
+	$(SHELL) $(DROOT)/scripts/retpoline-check "$*" \
+		"$(prev_abidir)" "$(abidir)" "$(skipretpoline)" "$(builddir)/build-$*"
+
+checks-%: abi-check-% retpoline-check-%
 	@echo Debug: $@
 
 # Check the config against the known options list.
