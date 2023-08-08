@@ -20,7 +20,7 @@ shlibdeps_opts = $(if $(CROSS_COMPILE),-- -l$(CROSS_COMPILE:%-=/usr/%)/lib)
 debian/scripts/fix-filenames: debian/scripts/fix-filenames.c
 	$(CC) -o $@ $^
 
-$(stampdir)/stamp-prepare-%: config-prepare-check-%
+$(stampdir)/stamp-prepare-%: $(stampdir)/stamp-prepare-tree-%
 	@echo Debug: $@
 	@touch $@
 $(stampdir)/stamp-prepare-tree-%: target_flavour = $*
