@@ -214,7 +214,6 @@ CONFIG_BT_RTL                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_BT_SELFTEST                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BT_VIRTIO                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CAPI_TRACE                               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_CC_VERSION_TEXT                          policy<{'amd64': '"x86_64-linux-gnu-gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"', 'arm64': '"aarch64-linux-gnu-gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"'}>
 CONFIG_CEC_CH7322                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CEC_TEGRA                                policy<{'arm64': '-'}>
 CONFIG_CHARGER_BQ2515X                          policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -277,7 +276,6 @@ CONFIG_FB_HYPERV                                policy<{'amd64': 'n', 'arm64': '
 CONFIG_FORCE_MAX_ZONEORDER                      policy<{'arm64': '13'}>
 CONFIG_GADGET_UAC1                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GADGET_UAC1_LEGACY                       policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_GCC_VERSION                              policy<{'amd64': '110400', 'arm64': '110400'}>
 CONFIG_GPIO_AAEON                               policy<{'amd64': '-'}>
 CONFIG_GPIO_LJCA                                policy<{'amd64': '-'}>
 CONFIG_GPIO_PCA9570                             policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -348,7 +346,6 @@ CONFIG_NOUVEAU_PLATFORM_DRIVER                  policy<{'arm64': '-'}>
 CONFIG_NVEC_PAZ00                               policy<{'arm64': '-'}>
 CONFIG_NVEC_POWER                               policy<{'arm64': '-'}>
 CONFIG_NVME_CORE                                policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_PAHOLE_VERSION                           policy<{'amd64': '125', 'arm64': '125'}>
 CONFIG_PCIE_KEEMBAY                             policy<{'arm64': '-'}>
 CONFIG_PCIE_KEEMBAY_EP                          policy<{'arm64': '-'}>
 CONFIG_PCIE_KEEMBAY_HOST                        policy<{'arm64': '-'}>
