@@ -166,7 +166,6 @@ CONFIG_ARM_TEGRA194_CPUFREQ                     policy<{'arm64': '-'}>
 CONFIG_ARM_TEGRA20_CPUFREQ                      policy<{'arm64': '-'}>
 CONFIG_ARM_TEGRA_DEVFREQ                        policy<{'arm64': '-'}>
 CONFIG_AS73211                                  policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_AS_VERSION                               policy<{'amd64': '24100', 'arm64': '24100'}>
 CONFIG_BACKLIGHT_KTD253                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BATTERY_SAMSUNG_SDI                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BATTERY_SURFACE                          policy<{'amd64': '-', 'arm64': '-'}>
@@ -262,7 +261,6 @@ CONFIG_BT_VIRTIO                                policy<{'amd64': '-', 'arm64': '
 CONFIG_BUILD_BIN2C                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CACHEFILES_ERROR_INJECTION               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CAPI_TRACE                               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_CC_VERSION_TEXT                          policy<{'amd64': '"x86_64-linux-gnu-gcc-13 (Ubuntu 13.2.0-1ubuntu1) 13.2.0"', 'arm64': '"aarch64-linux-gnu-gcc-13 (Ubuntu 13.1.0-8ubuntu1) 13.1.0"'}>
 CONFIG_CEC_CH7322                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CEC_GPIO                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CEC_PIN                                  policy<{'amd64': '-', 'arm64': '-'}>
@@ -355,7 +353,6 @@ CONFIG_FW_CS_DSP                                policy<{'amd64': '-', 'arm64': '
 CONFIG_GADGET_UAC1                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GADGET_UAC1_LEGACY                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GCC_SUPPORTS_DYNAMIC_FTRACE_WITH_REGS    policy<{'arm64': '-'}>
-CONFIG_GCC_VERSION                              policy<{'amd64': '130200', 'arm64': '130100'}>
 CONFIG_GENERIC_MSI_IRQ_DOMAIN                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_AAEON                               policy<{'amd64': '-'}>
 CONFIG_GPIO_BCM_XGS_IPROC                       policy<{'arm64': 'm'}>
@@ -440,7 +437,6 @@ CONFIG_KEYBOARD_CYPRESS_SF                      policy<{'amd64': 'n', 'arm64': '
 CONFIG_KEYBOARD_NVEC                            policy<{'arm64': '-'}>
 CONFIG_KEYBOARD_TEGRA                           policy<{'arm64': '-'}>
 CONFIG_KHADAS_MCU_FAN_THERMAL                   policy<{'arm64': '-'}>
-CONFIG_LD_VERSION                               policy<{'amd64': '24100', 'arm64': '24100'}>
 CONFIG_LEDS_AAEON                               policy<{'amd64': '-'}>
 CONFIG_LEDS_LP50XX                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LEDS_RT8515                              policy<{'amd64': 'n', 'arm64': 'n'}>
