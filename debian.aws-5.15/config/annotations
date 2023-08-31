@@ -175,21 +175,6 @@ CONFIG_VIDEO_VIMC                               note<'LP#1831482'>
 # ---- Annotations without notes ----
 
 CONFIG_6LOWPAN                                  policy<{'amd64': 'n'}>
-CONFIG_6LOWPAN_DEBUGFS                          policy<{'amd64': '-'}>
-CONFIG_6LOWPAN_GHC_EXT_HDR_DEST                 policy<{'amd64': '-'}>
-CONFIG_6LOWPAN_GHC_EXT_HDR_FRAG                 policy<{'amd64': '-'}>
-CONFIG_6LOWPAN_GHC_EXT_HDR_HOP                  policy<{'amd64': '-'}>
-CONFIG_6LOWPAN_GHC_EXT_HDR_ROUTE                policy<{'amd64': '-'}>
-CONFIG_6LOWPAN_GHC_ICMPV6                       policy<{'amd64': '-'}>
-CONFIG_6LOWPAN_GHC_UDP                          policy<{'amd64': '-'}>
-CONFIG_6LOWPAN_NHC                              policy<{'amd64': '-'}>
-CONFIG_6LOWPAN_NHC_DEST                         policy<{'amd64': '-'}>
-CONFIG_6LOWPAN_NHC_FRAGMENT                     policy<{'amd64': '-'}>
-CONFIG_6LOWPAN_NHC_HOP                          policy<{'amd64': '-'}>
-CONFIG_6LOWPAN_NHC_IPV6                         policy<{'amd64': '-'}>
-CONFIG_6LOWPAN_NHC_MOBILITY                     policy<{'amd64': '-'}>
-CONFIG_6LOWPAN_NHC_ROUTING                      policy<{'amd64': '-'}>
-CONFIG_6LOWPAN_NHC_UDP                          policy<{'amd64': '-'}>
 CONFIG_6PACK                                    policy<{'amd64': '-'}>
 CONFIG_88EU_AP_MODE                             policy<{'amd64': '-'}>
 CONFIG_9P_FS                                    policy<{'amd64': '-'}>
