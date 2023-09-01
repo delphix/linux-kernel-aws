@@ -1,0 +1,8 @@
+# Menu: HEADER
+# FORMAT: 4
+# ARCH: amd64
+# FLAVOUR: amd64-aws
+
+include "../../debian.aws/config/annotations"
+
+#CONFIG_6LOWPAN                            policy<{'amd64': 'n', 'arm64': 'n'}>

@@ -3,7 +3,7 @@
 # ARCH: amd64
 # FLAVOUR: amd64-aws
 
-include "../../debian.aws/config/annotations"
+include "../../debian.aws/config/delphix_annotations"
 
 CONFIG_ARM64_BTI_KERNEL                         policy<{'arm64': '-'}>
 CONFIG_ARM64_BTI_KERNEL                         note<'Do not enforce CONFIG_ARM64_BTI_KERNEL in Focal, as it depends on a newer gcc version.'>
