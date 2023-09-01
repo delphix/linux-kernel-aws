@@ -5,4 +5,4 @@
 
 include "../../debian.aws/config/annotations"
 
-#CONFIG_6LOWPAN                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_6LOWPAN                            policy<{'amd64': 'n', 'arm64': 'n'}>
