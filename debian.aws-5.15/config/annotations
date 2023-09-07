@@ -48,3 +48,5 @@ CONFIG_LD_VERSION                               policy<{'amd64': '23400', 'arm64
 CONFIG_PAHOLE_VERSION                           policy<{'amd64': '121', 'arm64': '121'}>
 CONFIG_SLS                                      policy<{'amd64': '-'}>
 CONFIG_ZERO_CALL_USED_REGS                      policy<{'amd64': '-', 'arm64': '-'}>
+
+include "../../debian.delphix/config/annotations"
