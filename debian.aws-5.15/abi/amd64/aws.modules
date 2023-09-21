@@ -4553,6 +4553,7 @@ surface3_spi
 svc-i3c-master
 svgalib
 switchtec
+sx8654
 sx9310
 sx9500
 sym53c500_cs
