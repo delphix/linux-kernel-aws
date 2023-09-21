@@ -4917,7 +4917,6 @@ sfp
 sgi_w1
 sgp30
 sgp40
-sh-sci
 sh_eth
 sh_mmcif
 sh_mobile_lcdcfb
@@ -5285,6 +5284,7 @@ surface3_spi
 svc-i3c-master
 svgalib
 switchtec
+sx8654
 sx9310
 sx9500
 sy8106a-regulator
