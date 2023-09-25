@@ -41,7 +41,7 @@ CONFIG_IOMMU_DEFAULT_DMA_STRICT                 note<'LP: #1806488'>
 CONFIG_KERNEL_ZSTD                              policy<{'amd64': 'y', 'arm64': 'n'}>
 CONFIG_KERNEL_ZSTD                              note<'LP: #1931725'>
 
-CONFIG_RUST                                     policy<{'amd64': '-'}>
+CONFIG_RUST                                     policy<{'amd64': 'n'}>
 CONFIG_RUST                                     note<'required to enable Rust support, LP: #1993183'>
 
 CONFIG_SND                                      policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -97,6 +97,9 @@ CONFIG_SND_SOC_SOF_HDA_LINK                     note<'LP: #1848490'>
 
 CONFIG_SOUND_OSS_CORE_PRECLAIM                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SOUND_OSS_CORE_PRECLAIM                  note<'LP: #1385510'>
+
+CONFIG_SUN6I_RTC_CCU                            policy<{'arm64': 'y'}>
+CONFIG_SUN6I_RTC_CCU                            note<'needed by Allwinner D1 pinctrl/gpio'>
 
 
 # ---- Annotations without notes ----
@@ -261,6 +264,7 @@ CONFIG_BT_VIRTIO                                policy<{'amd64': '-', 'arm64': '
 CONFIG_BUILD_BIN2C                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CACHEFILES_ERROR_INJECTION               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CAPI_TRACE                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CC_VERSION_TEXT                          policy<{'amd64': '"x86_64-linux-gnu-gcc-13 (Ubuntu 13.2.0-4ubuntu2) 13.2.0"', 'arm64': '"aarch64-linux-gnu-gcc-13 (Ubuntu 13.2.0-2ubuntu1) 13.2.0"'}>
 CONFIG_CEC_CH7322                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CEC_GPIO                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CEC_PIN                                  policy<{'amd64': '-', 'arm64': '-'}>
@@ -341,7 +345,6 @@ CONFIG_DTPM_DEVFREQ                             policy<{'arm64': '-'}>
 CONFIG_DWMAC_INTEL_PLAT                         policy<{'arm64': 'n'}>
 CONFIG_DWMAC_TEGRA                              policy<{'arm64': '-'}>
 CONFIG_DWMAC_VISCONTI                           policy<{'arm64': '-'}>
-CONFIG_EFI_ZBOOT                                policy<{'arm64': 'y'}>
 CONFIG_EROFS_FS_ZIP_LZMA                        policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_EXTCON_USBC_TUSB320                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_FB_ARMCLCD                               policy<{'arm64': 'y'}>
@@ -368,12 +371,6 @@ CONFIG_GPIO_ZYNQMP_MODEPIN                      policy<{'arm64': 'y'}>
 CONFIG_GREYBUS_AUDIO                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GREYBUS_AUDIO_APB_CODEC                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HARDENED_USERCOPY_FALLBACK               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_HAVE_KERNEL_GZIP                         policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_HAVE_KERNEL_LZ4                          policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_HAVE_KERNEL_LZMA                         policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_HAVE_KERNEL_LZO                          policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_HAVE_KERNEL_XZ                           policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_HAVE_KERNEL_ZSTD                         policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_HDC2010                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HDMI_LPE_AUDIO                           policy<{'amd64': '-'}>
 CONFIG_HID_NVIDIA_SHIELD                        policy<{'amd64': '-', 'arm64': '-'}>
@@ -429,10 +426,6 @@ CONFIG_ISDN_CAPI_MIDDLEWARE                     policy<{'amd64': '-', 'arm64': '
 CONFIG_JOYSTICK_ADC                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_KEEMBAY_WATCHDOG                         policy<{'arm64': '-'}>
 CONFIG_KERNEL_GZIP                              policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_KERNEL_LZ4                               policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_KERNEL_LZMA                              policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_KERNEL_LZO                               policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_KERNEL_XZ                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_KEYBOARD_CYPRESS_SF                      policy<{'amd64': 'n', 'arm64': 'm'}>
 CONFIG_KEYBOARD_NVEC                            policy<{'arm64': '-'}>
 CONFIG_KEYBOARD_TEGRA                           policy<{'arm64': '-'}>
@@ -1502,7 +1495,6 @@ CONFIG_SPI_TEGRA20_SFLASH                       policy<{'arm64': '-'}>
 CONFIG_SPI_TEGRA20_SLINK                        policy<{'arm64': '-'}>
 CONFIG_SPI_TEGRA210_QUAD                        policy<{'arm64': '-'}>
 CONFIG_SPMI_HISI3670                            policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_SUN6I_RTC_CCU                            policy<{'arm64': 'y'}>
 CONFIG_SURFACE3_WMI                             policy<{'amd64': '-'}>
 CONFIG_SURFACE_3_BUTTON                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SURFACE_3_POWER_OPREGION                 policy<{'amd64': '-', 'arm64': '-'}>
