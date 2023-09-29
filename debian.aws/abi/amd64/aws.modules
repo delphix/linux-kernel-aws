@@ -2272,6 +2272,7 @@ iptable_mangle
 iptable_nat
 iptable_raw
 iptable_security
+ipu-bridge
 ipu3-cio2
 ipu3-imgu
 ipvlan
@@ -4442,7 +4443,6 @@ sgp30
 sgp40
 sha1-ssse3
 sha256-ssse3
-sha512-ssse3
 shark2
 shiftfs
 sht15
