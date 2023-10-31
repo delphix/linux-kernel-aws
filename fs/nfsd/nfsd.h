@@ -29,7 +29,7 @@
 
 #undef ifdebug
 #ifdef CONFIG_SUNRPC_DEBUG
-# define ifdebug(flag)		if (nfsd_debug & NFSDDBG_##flag)
+# define ifdebug(flag)		if (1)
 #else
 # define ifdebug(flag)		if (0)
 #endif
