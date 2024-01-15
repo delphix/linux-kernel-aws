@@ -5188,6 +5188,7 @@ wm8994-regulator
 wmi
 wmi-bmof
 wp512
+wwan
 wwan_hwsim
 x25
 x38_edac
