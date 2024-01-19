@@ -278,6 +278,7 @@ CONFIG_GADGET_UAC1                              policy<{'amd64': '-', 'arm64': '
 CONFIG_GADGET_UAC1_LEGACY                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_AAEON                               policy<{'amd64': '-'}>
 CONFIG_GPIO_LJCA                                policy<{'amd64': '-'}>
+CONFIG_GPIO_M058SSAN                            policy<{'amd64': '-'}>
 CONFIG_GPIO_PCA9570                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_GPIO_REGMAP                              policy<{'arm64': '-'}>
 CONFIG_GPIO_SL28CPLD                            policy<{'arm64': '-'}>
