@@ -396,6 +396,7 @@ CONFIG_RESET_MCHP_SPARX5                        policy<{'arm64': '-'}>
 CONFIG_RESET_TEGRA_BPMP                         policy<{'arm64': '-'}>
 CONFIG_RN5T618_POWER                            policy<{'arm64': 'n'}>
 CONFIG_RSI_COEX                                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RTC_DRV_PCF85263                         policy<{'amd64': '-'}>
 CONFIG_RTC_DRV_TEGRA                            policy<{'arm64': '-'}>
 CONFIG_SCD30_CORE                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCD30_I2C                                policy<{'amd64': '-', 'arm64': '-'}>
