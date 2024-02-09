@@ -1,3 +1,9 @@
+linux-aws (6.8.0-1000.0) noble; urgency=medium
+
+  * Empty entry
+
+ -- Andrea Righi <andrea.righi@canonical.com>  Fri, 09 Feb 2024 12:52:39 +0100
+
 linux-aws (6.6.0-1001.1) noble; urgency=medium
 
   * noble/linux-aws: 6.6.0-1001.1 -proposed tracker (LP: #2045254)
