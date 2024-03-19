@@ -37,6 +37,7 @@ drivers/char/raw.ko
 drivers/char/virtio_console.ko
 drivers/crypto/nx/*
 drivers/crypto/vmx/vmx-crypto.ko
+drivers/firmware/dmi-sysfs.ko
 drivers/firmware/efi/*
 drivers/firmware/iscsi_ibft.ko
 drivers/gpu/drm/ast/ast.ko
