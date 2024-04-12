@@ -41,6 +41,9 @@ CONFIG_IOMMU_DEFAULT_DMA_STRICT                 note<'LP: #1806488'>
 CONFIG_KERNEL_ZSTD                              policy<{'amd64': 'y', 'arm64': 'n'}>
 CONFIG_KERNEL_ZSTD                              note<'LP: #1931725'>
 
+CONFIG_PREEMPT_DYNAMIC                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_PREEMPT_DYNAMIC                          note<'LP: #2051342'>
+
 CONFIG_RUST                                     policy<{'amd64': 'n'}>
 CONFIG_RUST                                     note<'TODO: update note'>
 
@@ -170,7 +173,6 @@ CONFIG_ARM_TEGRA194_CPUFREQ                     policy<{'arm64': '-'}>
 CONFIG_ARM_TEGRA20_CPUFREQ                      policy<{'arm64': '-'}>
 CONFIG_ARM_TEGRA_DEVFREQ                        policy<{'arm64': '-'}>
 CONFIG_AS73211                                  policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_AS_VERSION                               policy<{'amd64': '24200', 'arm64': '24200'}>
 CONFIG_AX88796B_RUST_PHY                        policy<{'amd64': '-'}>
 CONFIG_BACKLIGHT_KTD253                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BATTERY_SAMSUNG_SDI                      policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -269,7 +271,7 @@ CONFIG_BT_VIRTIO                                policy<{'amd64': '-', 'arm64': '
 CONFIG_BUILD_BIN2C                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CACHEFILES_ERROR_INJECTION               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CAPI_TRACE                               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_CC_VERSION_TEXT                          policy<{'amd64': '"x86_64-linux-gnu-gcc-13 (Ubuntu 13.2.0-13ubuntu1) 13.2.0"', 'arm64': '"aarch64-linux-gnu-gcc-13 (Ubuntu 13.2.0-11ubuntu1) 13.2.0"'}>
+CONFIG_CC_VERSION_TEXT                          policy<{'amd64': '"x86_64-linux-gnu-gcc-13 (Ubuntu 13.2.0-23ubuntu3) 13.2.0"', 'arm64': '"aarch64-linux-gnu-gcc-13 (Ubuntu 13.2.0-23ubuntu2) 13.2.0"'}>
 CONFIG_CEC_CH7322                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CEC_GPIO                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CEC_PIN                                  policy<{'amd64': '-', 'arm64': '-'}>
@@ -437,7 +439,6 @@ CONFIG_KEYBOARD_CYPRESS_SF                      policy<{'amd64': 'n', 'arm64': '
 CONFIG_KEYBOARD_NVEC                            policy<{'arm64': '-'}>
 CONFIG_KEYBOARD_TEGRA                           policy<{'arm64': '-'}>
 CONFIG_KHADAS_MCU_FAN_THERMAL                   policy<{'arm64': '-'}>
-CONFIG_LD_VERSION                               policy<{'amd64': '24200', 'arm64': '24200'}>
 CONFIG_LEDS_AAEON                               policy<{'amd64': '-'}>
 CONFIG_LEDS_BCM63138                            policy<{'arm64': 'm'}>
 CONFIG_LEDS_LP50XX                              policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -526,7 +527,6 @@ CONFIG_POWER_RESET_OCELOT_RESET                 policy<{'arm64': '-'}>
 CONFIG_PREEMPTION                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PREEMPT_BUILD                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PREEMPT_COUNT                            policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_PREEMPT_DYNAMIC                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PREEMPT_RCU                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PREEMPT_TRACER                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PREEMPT_VOLUNTARY_BUILD                  policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -1611,7 +1611,7 @@ CONFIG_TYPEC_MT6360                             policy<{'amd64': 'n', 'arm64': '
 CONFIG_TYPEC_STUSB160X                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TYPEC_TCPCI_MAXIM                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TYPEC_WCOVE                              policy<{'amd64': 'n'}>
-CONFIG_UBUNTU_ODM_DRIVERS                       policy<{'amd64': '-'}>
+CONFIG_UBUNTU_ODM_DRIVERS                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UCB1400_CORE                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UNINLINE_SPIN_UNLOCK                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_AUDIO                                policy<{'amd64': '-', 'arm64': '-'}>
