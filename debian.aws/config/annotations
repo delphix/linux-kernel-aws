@@ -8,6 +8,9 @@ include "../../debian.master/config/annotations"
 CONFIG_ACCESSIBILITY                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ACCESSIBILITY                            note<'LP: #1967702'>
 
+CONFIG_ARCH_HIBERNATION_HEADER                  policy<{'amd64': 'y', 'arm64':'y'}>
+CONFIG_ARCH_HIBERNATION_HEADER                  note<'LP:lp2060992'>
+
 CONFIG_BLK_DEV_NVME                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_BLK_DEV_NVME                             note<'LP:#1759893'>
 
@@ -23,6 +26,16 @@ CONFIG_DMA_CMA                                  note<'LP:1803206'>
 
 CONFIG_DRM_ETNAVIV                              policy<{'amd64': 'n', 'arm64': 'n'}> note<'LP: #1990167'>
 CONFIG_DRM_ETNAVIV_THERMAL                      policy<{'arm64': '-'}> note<'LP: #1990167'>
+
+CONFIG_HIBERNATION                              policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_HIBERNATION                              note<'LP:lp2060992'>
+
+CONFIG_HIBERNATE_CALLBACKS                      policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_HIBERNATE_CALLBACKS                      note<'LP:lp2060992'>
+
+CONFIG_HIBERNATION_SNAPSHOT_DEV                 policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_HIBERNATION_SNAPSHOT_DEV                 note<'LP:lp2060992'>
+
 CONFIG_IOMMU_DEFAULT_DMA_LAZY                   policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_IOMMU_DEFAULT_DMA_LAZY                   note<'LP: #1806488'>
 
@@ -31,6 +44,9 @@ CONFIG_IOMMU_DEFAULT_DMA_STRICT                 note<'LP: #1806488'>
 
 CONFIG_PCI_MESON                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PCI_MESON                                note<'LP: #2007745'>
+
+CONFIG_PM_STD_PARTITION                         policy<{'amd64': '""', 'arm64': '""'}>
+CONFIG_PM_STD_PARTITION                         note<'LP:lp2060992'>
 
 CONFIG_SERIAL_MULTI_INSTANTIATE                 policy<{'amd64': 'n'}>
 CONFIG_SERIAL_MULTI_INSTANTIATE                 note<'LP:#1965496'>
@@ -116,6 +132,8 @@ CONFIG_SOUND_OSS_CORE_PRECLAIM                  note<'LP#1105230 LP#1385510'>
 CONFIG_SPEAKUP                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SPEAKUP                                  note<'LP: #1967702'>
 
+CONFIG_TRANS_TABLE                              policy<{'amd64': '-', 'arm64':'y'}>                 
+CONFIG_TRANS_TABLE                              note<'LP:lp2060992'>
 
 # ---- Annotations without notes ----
 
