@@ -8,7 +8,7 @@ include "../../debian.master/config/annotations"
 CONFIG_ACCESSIBILITY                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ACCESSIBILITY                            note<'LP: #1967702'>
 
-CONFIG_ARCH_HIBERNATION_HEADER                  policy<{'amd64': 'y', 'arm64':'y'}>
+CONFIG_ARCH_HIBERNATION_HEADER                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_ARCH_HIBERNATION_HEADER                  note<'LP:lp2060992'>
 
 CONFIG_BLK_DEV_NVME                             policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -35,11 +35,11 @@ CONFIG_DRM_ETNAVIV_THERMAL                      note<'LP: #1990167'>
 CONFIG_GPIO_CDEV_V1                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_GPIO_CDEV_V1                             note<'LP: #1953613'>
 
-CONFIG_HIBERNATION                              policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_HIBERNATION                              note<'LP:lp2060992'>
-
 CONFIG_HIBERNATE_CALLBACKS                      policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_HIBERNATE_CALLBACKS                      note<'LP:lp2060992'>
+
+CONFIG_HIBERNATION                              policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_HIBERNATION                              note<'LP:lp2060992'>
 
 CONFIG_HIBERNATION_SNAPSHOT_DEV                 policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_HIBERNATION_SNAPSHOT_DEV                 note<'LP:lp2060992'>
@@ -286,6 +286,7 @@ CONFIG_BT_VIRTIO                                policy<{'amd64': '-', 'arm64': '
 CONFIG_BUILD_BIN2C                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CACHEFILES_ERROR_INJECTION               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CAPI_TRACE                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CC_VERSION_TEXT                          policy<{'amd64': '"x86_64-linux-gnu-gcc-13 (Ubuntu 13.2.0-17ubuntu2) 13.2.0"', 'arm64': '"aarch64-linux-gnu-gcc-13 (Ubuntu 13.2.0-11ubuntu1) 13.2.0"'}>
 CONFIG_CEC_CH7322                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CEC_GPIO                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CEC_PIN                                  policy<{'amd64': '-', 'arm64': '-'}>
