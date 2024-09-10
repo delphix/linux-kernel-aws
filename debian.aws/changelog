@@ -1,3 +1,9 @@
+linux-aws (6.11.0-1000.0) oracular; urgency=medium
+
+  * Dummy entry.
+
+ -- Timo Aaltonen <timo.aaltonen@canonical.com>  Tue, 10 Sep 2024 12:42:29 +0300
+
 linux-aws (6.8.0-1016.17) noble; urgency=medium
 
   * noble/linux-aws: 6.8.0-1016.17 -proposed tracker (LP: #2078072)
