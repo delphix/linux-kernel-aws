@@ -17,7 +17,6 @@ do_tools_bpftool = true
 do_tools_hyperv	= false
 do_extras_package = true
 ship_extras_package = true
-do_tools_common = false
 do_tools_acpidbg = false
 do_zfs		= true
 do_libc_dev_package = false
