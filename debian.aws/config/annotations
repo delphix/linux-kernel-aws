@@ -59,7 +59,7 @@ CONFIG_PM_STD_PARTITION                         note<'LP:lp2060992'>
 CONFIG_PREEMPT_DYNAMIC                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PREEMPT_DYNAMIC                          note<'LP: #2051342'>
 
-CONFIG_RUST                                     policy<{'amd64': '-'}>
+CONFIG_RUST                                     policy<{'amd64': 'n'}>
 CONFIG_RUST                                     note<'TODO: update note'>
 
 CONFIG_SND                                      policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -219,6 +219,7 @@ CONFIG_BCM_VK_TTY                               policy<{'amd64': 'n', 'arm64': '
 CONFIG_BGMAC                                    policy<{'arm64': 'y'}>
 CONFIG_BGMAC_PLATFORM                           policy<{'arm64': 'y'}>
 CONFIG_BINDGEN_VERSION_TEXT                     policy<{'amd64': '-'}>
+CONFIG_BLK_DEV_RUST_NULL                        policy<{'amd64': '-'}>
 CONFIG_BRCMSTB_DPFE                             policy<{'arm64': 'y'}>
 CONFIG_BRCMSTB_GISB_ARB                         policy<{'arm64': 'm'}>
 CONFIG_BRCMSTB_L2_IRQ                           policy<{'arm64': 'y'}>
@@ -291,7 +292,6 @@ CONFIG_BT_VIRTIO                                policy<{'amd64': '-', 'arm64': '
 CONFIG_BUILD_BIN2C                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CACHEFILES_ERROR_INJECTION               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CAPI_TRACE                               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_CC_VERSION_TEXT                          policy<{'amd64': '"x86_64-linux-gnu-gcc-14 (Ubuntu 14.2.0-4ubuntu2) 14.2.0"', 'arm64': '"aarch64-linux-gnu-gcc-14 (Ubuntu 14.1.0-5ubuntu1) 14.1.0"'}>
 CONFIG_CEC_CH7322                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CEC_GPIO                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CEC_PIN                                  policy<{'amd64': '-', 'arm64': '-'}>
@@ -602,6 +602,7 @@ CONFIG_RTC_DRV_TEGRA                            policy<{'arm64': '-'}>
 CONFIG_RUSTC_VERSION_TEXT                       policy<{'amd64': '-'}>
 CONFIG_RUST_BUILD_ASSERT_ALLOW                  policy<{'amd64': '-'}>
 CONFIG_RUST_DEBUG_ASSERTIONS                    policy<{'amd64': '-'}>
+CONFIG_RUST_FW_LOADER_ABSTRACTIONS              policy<{'amd64': '-'}>
 CONFIG_RUST_OVERFLOW_CHECKS                     policy<{'amd64': '-'}>
 CONFIG_RUST_PHYLIB_ABSTRACTIONS                 policy<{'amd64': '-'}>
 CONFIG_RV                                       policy<{'amd64': 'y', 'arm64': 'n'}>
