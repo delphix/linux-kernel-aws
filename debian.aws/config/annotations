@@ -59,7 +59,7 @@ CONFIG_PM_STD_PARTITION                         note<'LP:lp2060992'>
 CONFIG_PREEMPT_DYNAMIC                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PREEMPT_DYNAMIC                          note<'LP: #2051342'>
 
-CONFIG_RUST                                     policy<{'amd64': 'n'}>
+CONFIG_RUST                                     policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_RUST                                     note<'TODO: update note'>
 
 CONFIG_SND                                      policy<{'amd64': 'n', 'arm64': 'n'}>
