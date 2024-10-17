@@ -201,7 +201,7 @@ kmake = make ARCH=$(build_arch) \
 	KERNELRELEASE=$(abi_release)-$(target_flavour) \
 	CONFIG_DEBUG_SECTION_MISMATCH=y \
 	KBUILD_BUILD_VERSION="$(uploadnum)" \
-	CFLAGS_MODULE="-DPKG_ABI=$(abinum)" \
+	CFLAGS_MODULE='-DPKG_ABI=\"$(abinum)\"' \
 	PYTHON=$(PYTHON)
 ifneq ($(LOCAL_ENV_CC),)
 kmake += CC="$(LOCAL_ENV_CC)" DISTCC_HOSTS="$(LOCAL_ENV_DISTCC_HOSTS)"
