@@ -17,6 +17,7 @@
 #ifndef _ASM_GENERIC_MSHYPERV_H
 #define _ASM_GENERIC_MSHYPERV_H
 
+#include <linux/kernel.h>
 #include <linux/types.h>
 #include <linux/atomic.h>
 #include <linux/bitops.h>
@@ -159,7 +160,7 @@ static inline u64 hv_do_rep_hypercall_ex(u16 code, u16 rep_count,
  * Preserve the ability to 'make deb-pkg' since PKG_ABI is provided
  * by the Ubuntu build rules.
  */
-#define PKG_ABI 0
+#define PKG_ABI "0"
 #endif
 
 /* For the typical case where rep_start is 0 */
@@ -177,7 +178,15 @@ static inline u64 hv_generate_guest_id(u64 kernel_version)
 
 	guest_id = (((u64)HV_LINUX_VENDOR_ID) << 48);
 	guest_id |= (kernel_version << 16);
-	guest_id |= PKG_ABI;
+	/*
+	 * Delphix mutates the ABI number by appending a date and the commit hash. Strip it.
+	 */
+	char *token;
+	char *pkg_abi_str = PKG_ABI;
+	token = strsep(&pkg_abi_str, "-");
+	unsigned long abi_number = simple_strtoul(token, NULL, 10);
+	guest_id |= (abi_number << 8);
+
 
 	return guest_id;
 }
