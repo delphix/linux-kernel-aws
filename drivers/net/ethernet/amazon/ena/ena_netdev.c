@@ -2181,16 +2181,20 @@ static void ena_setup_mgmnt_intr(struct ena_adapter *adapter)
 
 static void ena_setup_io_intr(struct ena_adapter *adapter)
 {
+	const struct cpumask *affinity = cpu_online_mask;
+	int irq_idx, i, cpu, io_queue_count, node;
 	struct net_device *netdev;
-	int irq_idx, i, cpu;
-	int io_queue_count;
 
 	netdev = adapter->netdev;
 	io_queue_count = adapter->num_io_queues + adapter->xdp_num_queues;
 
+	node = dev_to_node(adapter->ena_dev->dmadev);
+
+	if (node != NUMA_NO_NODE)
+		affinity = cpumask_of_node(node);
 	for (i = 0; i < io_queue_count; i++) {
 		irq_idx = ENA_IO_IRQ_IDX(i);
-		cpu = i % num_online_cpus();
+		cpu = cpumask_local_spread(i, node);
 
 		snprintf(adapter->irq_tbl[irq_idx].name, ENA_IRQNAME_SIZE,
 			 "%s-Tx-Rx-%d", netdev->name, i);
@@ -2200,8 +2204,7 @@ static void ena_setup_io_intr(struct ena_adapter *adapter)
 			pci_irq_vector(adapter->pdev, irq_idx);
 		adapter->irq_tbl[irq_idx].cpu = cpu;
 
-		cpumask_set_cpu(cpu,
-				&adapter->irq_tbl[irq_idx].affinity_hint_mask);
+		cpumask_copy(&adapter->irq_tbl[irq_idx].affinity_hint_mask, affinity);
 	}
 }
 
@@ -2224,7 +2227,7 @@ static int ena_request_mgmnt_irq(struct ena_adapter *adapter)
 		  "Set affinity hint of mgmnt irq.to 0x%lx (irq vector: %d)\n",
 		  irq->affinity_hint_mask.bits[0], irq->vector);
 
-	irq_set_affinity_hint(irq->vector, &irq->affinity_hint_mask);
+	irq_update_affinity_hint(irq->vector, &irq->affinity_hint_mask);
 
 	return rc;
 }
@@ -2257,7 +2260,7 @@ static int ena_request_io_irq(struct ena_adapter *adapter)
 			  "Set affinity hint of irq. index %d to 0x%lx (irq vector: %d)\n",
 			  i, irq->affinity_hint_mask.bits[0], irq->vector);
 
-		irq_set_affinity_hint(irq->vector, &irq->affinity_hint_mask);
+		irq_update_affinity_hint(irq->vector, &irq->affinity_hint_mask);
 	}
 
 	return rc;
@@ -2277,7 +2280,7 @@ static void ena_free_mgmnt_irq(struct ena_adapter *adapter)
 
 	irq = &adapter->irq_tbl[ENA_MGMNT_IRQ_IDX];
 	synchronize_irq(irq->vector);
-	irq_set_affinity_hint(irq->vector, NULL);
+	irq_update_affinity_hint(irq->vector, NULL);
 	free_irq(irq->vector, irq->data);
 }
 
@@ -2296,7 +2299,7 @@ static void ena_free_io_irq(struct ena_adapter *adapter)
 
 	for (i = ENA_IO_IRQ_FIRST_IDX; i < ENA_MAX_MSIX_VEC(io_queue_count); i++) {
 		irq = &adapter->irq_tbl[i];
-		irq_set_affinity_hint(irq->vector, NULL);
+		irq_update_affinity_hint(irq->vector, NULL);
 		free_irq(irq->vector, irq->data);
 	}
 }
