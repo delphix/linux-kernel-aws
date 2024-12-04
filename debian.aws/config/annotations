@@ -14,6 +14,9 @@ CONFIG_ARCH_HIBERNATION_HEADER                  note<'LP:lp2060992'>
 CONFIG_BLK_DEV_NVME                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_BLK_DEV_NVME                             note<'LP:#1759893'>
 
+CONFIG_BT_HS                                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BT_HS                                    note<'https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00435.html'>
+
 CONFIG_CMA                                      policy<{'amd64': 'n', 'arm64': 'n'}> note<'LP: #1990167'>
 CONFIG_CMA_SIZE_MBYTES                          policy<{'arm64': '-'}>
 CONFIG_CMA_SIZE_MBYTES                          note<'LP:1823753'>
@@ -215,7 +218,6 @@ CONFIG_BT_HCIUART_RTL                           policy<{'amd64': '-', 'arm64': '
 CONFIG_BT_HCIUART_SERDEV                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BT_HCIVHCI                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BT_HIDP                                  policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_BT_HS                                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BT_INTEL                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BT_LE                                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BT_LEDS                                  policy<{'amd64': '-', 'arm64': '-'}>
