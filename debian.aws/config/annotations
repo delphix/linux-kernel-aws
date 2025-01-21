@@ -1720,6 +1720,7 @@ CONFIG_VIDEO_IVTV_ALSA                          policy<{'amd64': '-', 'arm64': '
 CONFIG_VIDEO_MAX9286                            policy<{'arm64': 'n'}>
 CONFIG_VIDEO_OV02A10                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_VIDEO_OV9734                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_VIDEO_RASPBERRYPI_PISP_BE                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_VIDEO_RDACM20                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_VIDEO_SAA7134_ALSA                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VIDEO_SAA7134_GO7007                     policy<{'amd64': '-', 'arm64': '-'}>
