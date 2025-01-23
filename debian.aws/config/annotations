@@ -492,6 +492,7 @@ CONFIG_NVMEM_BCM_OCOTP                          policy<{'arm64': 'm'}>
 CONFIG_NVME_AUTH                                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NVME_COMMON                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NVME_CORE                                policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_NVME_KEYRING                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_OMAP_GPMC                                policy<{'arm64': 'm'}>
 CONFIG_PCIE_BRCMSTB                             policy<{'arm64': 'm'}>
 CONFIG_PCIE_IPROC                               policy<{'arm64': 'm'}>
