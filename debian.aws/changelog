@@ -1,3 +1,9 @@
+linux-aws (6.12.0-1000.0) plucky; urgency=medium
+
+  * Empty entry
+
+ -- Paolo Pisati <paolo.pisati@canonical.com>  Tue, 28 Jan 2025 10:47:43 +0100
+
 linux-aws (6.11.0-1005.5) oracular; urgency=medium
 
   * oracular/linux-aws: 6.11.0-1005.5 -proposed tracker (LP: #2084414)
