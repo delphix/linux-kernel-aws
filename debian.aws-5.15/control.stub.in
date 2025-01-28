@@ -38,6 +38,7 @@ Build-Depends:
  uuid-dev <!stage1>,
  libnuma-dev [amd64 arm64 ppc64el s390x] <!stage1>,
  dkms <!stage1>,
+ dwarfdump <!stage1>,
  curl <!stage1>,
  zstd [amd64 s390x] <!stage1>,
  dwarves (>= 1.19) [amd64 arm64 armhf ppc64el s390x] <!stage1>,
@@ -99,4 +100,3 @@ Description: Linux kernel version specific cloud tools for version PKGVER-ABINUM
  version locked tools for cloud tools for version PKGVER-ABINUM on
  =HUMAN=.
  You probably want to install linux-cloud-tools-PKGVER-ABINUM-<flavour>.
-
