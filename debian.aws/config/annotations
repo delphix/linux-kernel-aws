@@ -1590,6 +1590,7 @@ CONFIG_TEGRA20_APB_DMA                          policy<{'arm64': '-'}>
 CONFIG_TEGRA210_ADMA                            policy<{'arm64': '-'}>
 CONFIG_TEGRA210_EMC                             policy<{'arm64': '-'}>
 CONFIG_TEGRA210_EMC_TABLE                       policy<{'arm64': '-'}>
+CONFIG_TEGRA241_CMDQV                           policy<{'arm64': 'y'}>
 CONFIG_TEGRA_ACONNECT                           policy<{'arm64': '-'}>
 CONFIG_TEGRA_AHB                                policy<{'arm64': '-'}>
 CONFIG_TEGRA_BPMP                               policy<{'arm64': '-'}>
