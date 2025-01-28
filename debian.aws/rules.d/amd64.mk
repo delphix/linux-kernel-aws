@@ -19,7 +19,6 @@ do_extras_package = true
 ship_extras_package = true
 do_tools_acpidbg = false
 do_zfs		= true
-do_source_package = false
 do_dtbs		= false
 do_common_headers_indep = false
 do_tools_perf_jvmti = true
