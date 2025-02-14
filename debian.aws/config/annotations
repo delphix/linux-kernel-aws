@@ -192,7 +192,6 @@ CONFIG_ARM_TEGRA194_CPUFREQ                     policy<{'arm64': '-'}>
 CONFIG_ARM_TEGRA20_CPUFREQ                      policy<{'arm64': '-'}>
 CONFIG_ARM_TEGRA_DEVFREQ                        policy<{'arm64': '-'}>
 CONFIG_AS73211                                  policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_AS_VERSION                               policy<{'amd64': '24390', 'arm64': '24390'}>
 CONFIG_AX88796B_RUST_PHY                        policy<{'amd64': '-'}>
 CONFIG_BACKLIGHT_KTD253                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BATTERY_LENOVO_YOGA_C630                 policy<{'arm64': 'm'}>
@@ -475,7 +474,6 @@ CONFIG_KEYBOARD_CYPRESS_SF                      policy<{'amd64': 'n', 'arm64': '
 CONFIG_KEYBOARD_NVEC                            policy<{'arm64': '-'}>
 CONFIG_KEYBOARD_TEGRA                           policy<{'arm64': '-'}>
 CONFIG_KHADAS_MCU_FAN_THERMAL                   policy<{'arm64': '-'}>
-CONFIG_LD_VERSION                               policy<{'amd64': '24390', 'arm64': '24390'}>
 CONFIG_LEDS_AAEON                               policy<{'amd64': '-'}>
 CONFIG_LEDS_BCM63138                            policy<{'arm64': 'm'}>
 CONFIG_LEDS_LP50XX                              policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -606,8 +604,6 @@ CONFIG_ROCKCHIP_DTPM                            policy<{'arm64': '-'}>
 CONFIG_RSI_COEX                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_BRCMSTB                          policy<{'arm64': 'm'}>
 CONFIG_RTC_DRV_TEGRA                            policy<{'arm64': '-'}>
-CONFIG_RUSTC_LLVM_VERSION                       policy<{'amd64': '190106', 'arm64': '190106'}>
-CONFIG_RUSTC_VERSION                            policy<{'amd64': '108400', 'arm64': '108400'}>
 CONFIG_RUSTC_VERSION_TEXT                       policy<{'amd64': '-'}>
 CONFIG_RUST_BUILD_ASSERT_ALLOW                  policy<{'amd64': '-'}>
 CONFIG_RUST_DEBUG_ASSERTIONS                    policy<{'amd64': '-'}>
