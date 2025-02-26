@@ -1,0 +1,6 @@
+16a0ba1ff47e UBUNTU: SAUCE: arm64: Use SYSTEM_OFF2 PSCI call to power off for hibernate
+1b3d1357dee0 UBUNTU: SAUCE: KVM: arm64: nvhe: Pass through PSCI v1.3 SYSTEM_OFF2 call
+ee242fabeed8 UBUNTU: SAUCE: KVM: selftests: Add test for PSCI SYSTEM_OFF2
+b27ff4a5e6cd UBUNTU: SAUCE: KVM: arm64: Add support for PSCI v1.2 and v1.3
+26887aa18bd4 UBUNTU: SAUCE: KVM: arm64: Add PSCI v1.3 SYSTEM_OFF2 function for hibernation
+4b1ce4fc3a60 UBUNTU: SAUCE: firmware/psci: Add definitions for PSCI v1.3 specification (ALPHA)
