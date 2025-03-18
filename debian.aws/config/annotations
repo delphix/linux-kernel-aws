@@ -250,6 +250,7 @@ CONFIG_BT_HCIBT3C                               policy<{'amd64': '-'}>
 CONFIG_BT_HCIBTSDIO                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BT_HCIBTUSB                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BT_HCIBTUSB_AUTOSUSPEND                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BT_HCIBTUSB_AUTO_ISOC_ALT                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BT_HCIBTUSB_BCM                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BT_HCIBTUSB_MTK                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BT_HCIBTUSB_POLL_SYNC                    policy<{'amd64': '-', 'arm64': '-'}>
