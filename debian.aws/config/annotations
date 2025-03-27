@@ -59,7 +59,7 @@ CONFIG_PM_STD_PARTITION                         note<'LP:lp2060992'>
 CONFIG_PREEMPT_DYNAMIC                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PREEMPT_DYNAMIC                          note<'LP: #2051342'>
 
-CONFIG_RUST                                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RUST                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RUST                                     note<'TODO: update note'>
 
 CONFIG_SND                                      policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -194,7 +194,7 @@ CONFIG_ARM_TEGRA194_CPUFREQ                     policy<{'arm64': '-'}>
 CONFIG_ARM_TEGRA20_CPUFREQ                      policy<{'arm64': '-'}>
 CONFIG_ARM_TEGRA_DEVFREQ                        policy<{'arm64': '-'}>
 CONFIG_AS73211                                  policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_AX88796B_RUST_PHY                        policy<{'amd64': '-'}>
+CONFIG_AX88796B_RUST_PHY                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BACKLIGHT_KTD253                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BATTERY_LENOVO_YOGA_C630                 policy<{'arm64': 'm'}>
 CONFIG_BATTERY_SAMSUNG_SDI                      policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -221,8 +221,8 @@ CONFIG_BCM_VIDEOCORE                            policy<{'arm64': 'm'}>
 CONFIG_BCM_VK_TTY                               policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_BGMAC                                    policy<{'arm64': 'y'}>
 CONFIG_BGMAC_PLATFORM                           policy<{'arm64': 'y'}>
-CONFIG_BINDGEN_VERSION_TEXT                     policy<{'amd64': '-'}>
-CONFIG_BLK_DEV_RUST_NULL                        policy<{'amd64': '-'}>
+CONFIG_BINDGEN_VERSION_TEXT                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BLK_DEV_RUST_NULL                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BRCMSTB_DPFE                             policy<{'arm64': 'y'}>
 CONFIG_BRCMSTB_GISB_ARB                         policy<{'arm64': 'm'}>
 CONFIG_BRCMSTB_L2_IRQ                           policy<{'arm64': 'y'}>
@@ -369,7 +369,7 @@ CONFIG_DRM_PANEL_NOVATEK_NT36672A               policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_SAMSUNG_SOFEF00                policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_SITRONIX_ST7703                policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_TDO_TL070WSH30                 policy<{'arm64': 'n'}>
-CONFIG_DRM_PANIC_SCREEN_QR_CODE                 policy<{'amd64': '-'}>
+CONFIG_DRM_PANIC_SCREEN_QR_CODE                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DRM_STM_LVDS                             policy<{'arm64': 'm'}>
 CONFIG_DRM_TEGRA                                policy<{'arm64': '-'}>
 CONFIG_DRM_TEGRA_DEBUG                          policy<{'arm64': '-'}>
@@ -612,18 +612,18 @@ CONFIG_ROCKCHIP_DTPM                            policy<{'arm64': '-'}>
 CONFIG_RSI_COEX                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_BRCMSTB                          policy<{'arm64': 'm'}>
 CONFIG_RTC_DRV_TEGRA                            policy<{'arm64': '-'}>
-CONFIG_RUSTC_VERSION_TEXT                       policy<{'amd64': '-'}>
-CONFIG_RUST_BUILD_ASSERT_ALLOW                  policy<{'amd64': '-'}>
-CONFIG_RUST_DEBUG_ASSERTIONS                    policy<{'amd64': '-'}>
-CONFIG_RUST_FW_LOADER_ABSTRACTIONS              policy<{'amd64': '-'}>
-CONFIG_RUST_OVERFLOW_CHECKS                     policy<{'amd64': '-'}>
-CONFIG_RUST_PHYLIB_ABSTRACTIONS                 policy<{'amd64': '-'}>
+CONFIG_RUSTC_VERSION_TEXT                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RUST_BUILD_ASSERT_ALLOW                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RUST_DEBUG_ASSERTIONS                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RUST_FW_LOADER_ABSTRACTIONS              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RUST_OVERFLOW_CHECKS                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RUST_PHYLIB_ABSTRACTIONS                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RV                                       policy<{'amd64': 'y', 'arm64': 'n'}>
 CONFIG_RV_MON_WWNR                              policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_RV_REACTORS                              policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_RV_REACT_PANIC                           policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_RV_REACT_PRINTK                          policy<{'amd64': 'y', 'arm64': '-'}>
-CONFIG_SAMPLES_RUST                             policy<{'amd64': '-'}>
+CONFIG_SAMPLES_RUST                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SCD30_CORE                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCD30_I2C                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SCD30_SERIAL                             policy<{'amd64': '-', 'arm64': '-'}>
