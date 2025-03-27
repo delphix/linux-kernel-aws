@@ -185,6 +185,7 @@ drivers/video/vgastate.ko
 drivers/virtio/*
 drivers/virt/coco/sev-guest/*
 drivers/watchdog/softdog.ko
+drivers/watchdog/wdat_wdt.ko
 drivers/xen/*
 ! find sound/core -name oss -prune -o -name *.ko -print
 fs/9p/*
