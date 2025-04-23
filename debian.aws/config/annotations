@@ -333,7 +333,7 @@ CONFIG_CRYPTO_DEV_KEEMBAY_OCS_HCU_HMAC_SHA224   policy<{'arm64': '-'}>
 CONFIG_CRYPTO_DEV_TEGRA                         policy<{'arm64': '-'}>
 CONFIG_CRYPTO_GF128MUL                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CXL_SUSPEND                              policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_CZNIC_PLATFORMS                          policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_CZNIC_PLATFORMS                          policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_DA_MON_EVENTS                            policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_DA_MON_EVENTS_ID                         policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_DEBUG_PREEMPT                            policy<{'amd64': '-', 'arm64': '-'}>
