@@ -1,8 +1,8 @@
 # Menu: HEADER
 # FORMAT: 4
-# ARCH: amd64 arm64
-# FLAVOUR: amd64-aws arm64-aws arm64-aws-64k
-# FLAVOUR_DEP: {'amd64-aws': 'amd64-generic', 'arm64-aws': 'arm64-generic', 'arm64-aws-64k': 'arm64-generic-64k'}
+# ARCH: amd64
+# FLAVOUR: amd64-aws
+# FLAVOUR_DEP: {'amd64-aws': 'amd64-generic'}
 
 include "../../debian.master/config/annotations"
 
