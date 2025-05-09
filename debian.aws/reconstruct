@@ -34,4 +34,5 @@ chmod +x 'debian/tests/ubuntu-regression-suite'
 chmod +x 'drivers/watchdog/f71808e_wdt.c'
 chmod +x 'tools/testing/selftests/gpio/gpio-aggregator.sh'
 # Remove any files deleted from the orig.
+rm -f 'arch/um/kernel/maccess.c'
 exit 0
