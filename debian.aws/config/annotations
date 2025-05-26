@@ -1,7 +1,8 @@
 # Menu: HEADER
 # FORMAT: 4
 # ARCH: amd64 arm64
-# FLAVOUR: amd64-aws arm64-aws
+# FLAVOUR: amd64-aws arm64-aws arm64-aws-64k
+# FLAVOUR_DEP: {'amd64-aws': 'amd64-generic', 'arm64-aws': 'arm64-generic', 'arm64-aws-64k': 'arm64-generic-64k'}
 
 include "../../debian.master/config/annotations"
 
@@ -414,7 +415,7 @@ CONFIG_GPIO_ZYNQMP_MODEPIN                      policy<{'arm64': 'y'}>
 CONFIG_GREYBUS_AUDIO                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GREYBUS_AUDIO_APB_CODEC                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HARDENED_USERCOPY_FALLBACK               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_HAVE_PAGE_SIZE_4KB                       policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_HAVE_PAGE_SIZE_4KB                       policy<{'amd64': 'y', 'arm64': 'y', 'arm64-aws-64k': '-'}>
 CONFIG_HDC2010                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HDMI_LPE_AUDIO                           policy<{'amd64': '-'}>
 CONFIG_HIBERNATION_COMP_LZ4                     policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -425,7 +426,7 @@ CONFIG_HID_PRODIKEYS                            policy<{'amd64': '-', 'arm64': '
 CONFIG_HISI_HIKEY_USB                           policy<{'arm64': 'n'}>
 CONFIG_HTE_TEGRA194                             policy<{'arm64': '-'}>
 CONFIG_HTE_TEGRA194_TEST                        policy<{'arm64': '-'}>
-CONFIG_HUGETLB_PMD_PAGE_TABLE_SHARING           policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_HUGETLB_PMD_PAGE_TABLE_SHARING           policy<{'amd64': 'y', 'arm64': 'y', 'arm64-aws-64k': '-'}>
 CONFIG_HW_RANDOM_BCM2835                        policy<{'arm64': 'm'}>
 CONFIG_HW_RANDOM_BCM74110                       policy<{'arm64': 'm'}>
 CONFIG_HW_RANDOM_CN10K                          policy<{'arm64': 'y'}>
@@ -522,8 +523,8 @@ CONFIG_NVME_COMMON                              policy<{'amd64': '-', 'arm64': '
 CONFIG_NVME_CORE                                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NVME_KEYRING                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_OMAP_GPMC                                policy<{'arm64': 'm'}>
-CONFIG_PAGE_SHIFT                               policy<{'amd64': '12', 'arm64': '12'}>
-CONFIG_PAGE_SIZE_4KB                            policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_PAGE_SHIFT                               policy<{'amd64': '12', 'arm64': '12', 'arm64-aws-64k': '16'}>
+CONFIG_PAGE_SIZE_4KB                            policy<{'amd64': 'y', 'arm64': 'y', 'arm64-aws-64k': '-'}>
 CONFIG_PCIE_BRCMSTB                             policy<{'arm64': 'm'}>
 CONFIG_PCIE_IPROC                               policy<{'arm64': 'm'}>
 CONFIG_PCIE_IPROC_MSI                           policy<{'arm64': 'y'}>
