@@ -2,5 +2,28 @@
 # FORMAT: 4
 # ARCH: amd64 arm64
 # FLAVOUR: amd64-aws arm64-aws arm64-aws-64k
+# FLAVOUR_DEP: {'amd64-aws': 'amd64-generic', 'arm64-aws': 'arm64-generic', 'arm64-aws-64k': 'arm64-generic-64k'}
 
 include "../../debian.aws/config/annotations"
+
+CONFIG_RUST                                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RUST                                     note<'Only available if rustc ≥ 1.81'>
+
+
+# ---- Annotations without notes ----
+
+CONFIG_AS_VERSION                               policy<{'amd64': '24200', 'arm64': '24200'}>
+CONFIG_CC_HAS_KASAN_SW_TAGS                     policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_CC_HAS_MIN_FUNCTION_ALIGNMENT            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CC_HAS_SANE_FUNCTION_ALIGNMENT           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CC_VERSION_TEXT                          policy<{'amd64': '"x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0"', 'arm64': '"aarch64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0"'}>
+CONFIG_GCC_VERSION                              policy<{'amd64': '130300', 'arm64': '130300'}>
+CONFIG_HAVE_RUST                                policy<{'amd64': 'y', 'arm64': '-'}>
+CONFIG_LD_VERSION                               policy<{'amd64': '24200', 'arm64': '24200'}>
+CONFIG_PAHOLE_VERSION                           policy<{'amd64': '125', 'arm64': '125'}>
+CONFIG_RELR                                     policy<{'arm64': '-'}>
+CONFIG_RUSTC_HAS_COERCE_POINTEE                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RUSTC_LLVM_VERSION                       policy<{'amd64': '180103', 'arm64': '180103'}>
+CONFIG_RUSTC_SUPPORTS_ARM64                     policy<{'arm64': '-'}>
+CONFIG_RUSTC_VERSION                            policy<{'amd64': '108001', 'arm64': '108001'}>
+CONFIG_TOOLS_SUPPORT_RELR                       policy<{'amd64': 'y', 'arm64': '-'}>
