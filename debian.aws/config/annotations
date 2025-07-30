@@ -392,7 +392,6 @@ CONFIG_DWMAC_VISCONTI                           policy<{'arm64': '-'}>
 CONFIG_EC_LENOVO_YOGA_C630                      policy<{'arm64': 'm'}>
 CONFIG_EXTCON_USBC_TUSB320                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_FB_ARMCLCD                               policy<{'arm64': '-'}>
-CONFIG_FB_HYPERV                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_FB_IOMEM_HELPERS_DEFERRED                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FORCE_MAX_ZONEORDER                      policy<{'arm64': '-'}>
 CONFIG_FPGA_M10_BMC_SEC_UPDATE                  policy<{'amd64': 'm', 'arm64': 'm'}>
