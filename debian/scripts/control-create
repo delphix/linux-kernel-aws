@@ -73,8 +73,8 @@ gen_per_flavour () {
 	if [ "${#signed_arch[@]}" != 0 ]; then
 		sed "${sed_common_patterns[@]}" \
 		    -e "s/ARCH/${signed_arch[*]}/g" \
-		    -e "s/=SIGN-ME-PKG=/-unsigned/g" \
-		    -e "s/=SIGN-ME-TXT=/ unsigned/g" \
+		    -e "s/=SIGN-ME-PKG=//g" \
+		    -e "s/=SIGN-ME-TXT=//g" \
 		    -e "s/=SIGN-PEER-PKG=//g" \
 		  "${DEBIAN}/control.d/flavour-signed-control.stub"
 	fi
@@ -82,8 +82,8 @@ gen_per_flavour () {
 	if [ "${#unsigned_arch[@]}" != 0 ]; then
 		sed "${sed_common_patterns[@]}" \
 		    -e "s/ARCH/${unsigned_arch[*]}/g" \
-		    -e "s/=SIGN-ME-PKG=//g" \
-		    -e "s/=SIGN-ME-TXT=//g" \
+		    -e "s/=SIGN-ME-PKG=/-unsigned/g" \
+		    -e "s/=SIGN-ME-TXT=/ unsigned/g" \
 		    -e "s/=SIGN-PEER-PKG=/-unsigned/g" \
 		    "${DEBIAN}/control.d/flavour-signed-control.stub"
 	fi
