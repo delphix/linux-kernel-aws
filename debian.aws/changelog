@@ -1,3 +1,9 @@
+linux-aws (6.16.0-1000.0) questing; urgency=medium
+
+  * Empty entry
+
+ -- Paolo Pisati <paolo.pisati@canonical.com>  Fri, 15 Aug 2025 08:40:33 +0200
+
 linux-aws (6.14.0-1007.7) plucky; urgency=medium
 
   * plucky/linux-aws: 6.14.0-1007.7 -proposed tracker (LP: #2110641)
