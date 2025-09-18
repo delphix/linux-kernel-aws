@@ -41,24 +41,6 @@ Description: Linux kernel extra modules for version PKGVER on DESC
  the linux-FLAVOUR meta-package, which will ensure that upgrades work
  correctly, and that supporting packages are also installed.
 
-Package: linux-modules-extra-PKGVER-ABINUM-FLAVOUR
-Build-Profiles: <!stage1>
-Architecture: ARCH
-Section: kernel
-Priority: optional
-Depends: ${misc:Depends}, ${shlibs:Depends}, wireless-regdb, linux-modules-PKGVER-ABINUM-FLAVOUR
-Description: Linux kernel extra modules for version PKGVER on DESC
- This package contains the Linux kernel extra modules for version PKGVER on
- DESC.
- .
- Supports SUPPORTED processors.
- .
- TARGET
- .
- You likely do not want to install this package directly. Instead, install
- the linux-modules-extra-FLAVOUR meta-package, which will ensure that upgrades
- work correctly, and that supporting packages are also installed.
-
 Package: linux-headers-PKGVER-ABINUM-FLAVOUR
 Build-Profiles: <!stage1>
 Architecture: ARCH
