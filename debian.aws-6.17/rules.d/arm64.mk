@@ -21,3 +21,4 @@ do_dtbs                = false
 do_common_headers_indep = false
 do_tools_perf_jvmti = true
 uefi_signed     = true
+do_extras_package = true
