@@ -1,6 +1,7 @@
 do_tools_common         = false
 do_tools_host           = false
 do_tools_noble_hwe      = true
+do_tools_bpftool        = true
 do_lib_rust             = false
 gcc                     = gcc-13
 rustc                   = rustc-1.82
