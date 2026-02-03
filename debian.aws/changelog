@@ -1,4 +1,4 @@
-linux-aws (6.17.0-1003.3) questing; urgency=medium
+linux-aws (6.17.0-1003.3) resolute; urgency=medium
 
   * questing/linux-aws: 6.17.0-1003.3 -proposed tracker (LP: #2126041)
 
