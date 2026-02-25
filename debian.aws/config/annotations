@@ -131,7 +131,7 @@ CONFIG_ACPI_PLATFORM_PROFILE                    policy<{'amd64': 'm', 'arm64': '
 CONFIG_ADXRS290                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_AHCI_BRCM                                policy<{'arm64': 'm'}>
 CONFIG_AHCI_TEGRA                               policy<{'arm64': '-'}>
-CONFIG_AMCC_QT2025_PHY                          policy<{'amd64': '-'}>
+CONFIG_AMCC_QT2025_PHY                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_AMD_MP2_STB                              policy<{'amd64': '-'}>
 CONFIG_AMD_PMC                                  policy<{'amd64': '-'}>
 CONFIG_APPLE_MAILBOX                            policy<{'arm64': 'y'}>
@@ -501,6 +501,7 @@ CONFIG_MTD_OF_PARTS_LINKSYS_NS                  policy<{'arm64': 'y'}>
 CONFIG_NFC_S3FWRN82_UART                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NFSD_V2_ACL                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NOUVEAU_PLATFORM_DRIVER                  policy<{'arm64': '-'}>
+CONFIG_NOVA_CORE                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NPCM7XX_WATCHDOG                         policy<{'arm64': 'm'}>
 CONFIG_NVEC_PAZ00                               policy<{'arm64': '-'}>
 CONFIG_NVEC_POWER                               policy<{'arm64': '-'}>
@@ -1238,6 +1239,7 @@ CONFIG_SND_SOC_MT8365                           policy<{'arm64': '-'}>
 CONFIG_SND_SOC_MT8365_MT6357                    policy<{'arm64': '-'}>
 CONFIG_SND_SOC_MTK_BTCVSD                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_SOC_NAU8315                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_NAU8325                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_SOC_NAU8540                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_SOC_NAU8810                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_SOC_NAU8821                          policy<{'amd64': '-', 'arm64': '-'}>
