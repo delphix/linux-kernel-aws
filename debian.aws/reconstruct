@@ -35,4 +35,7 @@ chmod -x 'drivers/edac/mem_repair.c'
 chmod -x 'drivers/edac/scrub.c'
 chmod +x 'drivers/watchdog/f71808e_wdt.c'
 # Remove any files deleted from the orig.
+rm -f 'drivers/staging/most/i2c/Kconfig'
+rm -f 'drivers/staging/most/i2c/Makefile'
+rm -f 'drivers/staging/most/i2c/i2c.c'
 exit 0
