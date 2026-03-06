@@ -2832,7 +2832,7 @@ out:
 	st->last_pos = *pos;
 	return rc;
 }
-EXPORT_IPV6_MOD(tcp_seq_start);
+EXPORT_SYMBOL(tcp_seq_start);
 
 void *tcp_seq_next(struct seq_file *seq, void *v, loff_t *pos)
 {
@@ -2863,7 +2863,7 @@ out:
 	st->last_pos = *pos;
 	return rc;
 }
-EXPORT_IPV6_MOD(tcp_seq_next);
+EXPORT_SYMBOL(tcp_seq_next);
 
 void tcp_seq_stop(struct seq_file *seq, void *v)
 {
@@ -2881,7 +2881,7 @@ void tcp_seq_stop(struct seq_file *seq, void *v)
 		break;
 	}
 }
-EXPORT_IPV6_MOD(tcp_seq_stop);
+EXPORT_SYMBOL(tcp_seq_stop);
 
 static void get_openreq4(const struct request_sock *req,
 			 struct seq_file *f, int i)
