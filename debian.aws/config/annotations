@@ -144,32 +144,32 @@ CONFIG_ARCH_BCM4908                             policy<{'arm64': '-'}>
 CONFIG_ARCH_BCMBCA                              policy<{'arm64': 'y'}>
 CONFIG_ARCH_BCM_IPROC                           policy<{'arm64': 'y'}>
 CONFIG_ARCH_BRCMSTB                             policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_READ_LOCK                    policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_READ_LOCK_BH                 policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_READ_LOCK_IRQ                policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_READ_LOCK_IRQSAVE            policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_READ_UNLOCK                  policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_READ_UNLOCK_BH               policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_READ_UNLOCK_IRQ              policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_READ_UNLOCK_IRQRESTORE       policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_SPIN_LOCK                    policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_SPIN_LOCK_BH                 policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_SPIN_LOCK_IRQ                policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_SPIN_LOCK_IRQSAVE            policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_SPIN_TRYLOCK                 policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_SPIN_TRYLOCK_BH              policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_SPIN_UNLOCK                  policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_SPIN_UNLOCK_BH               policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_SPIN_UNLOCK_IRQ              policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_SPIN_UNLOCK_IRQRESTORE       policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_WRITE_LOCK                   policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_WRITE_LOCK_BH                policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_WRITE_LOCK_IRQ               policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_WRITE_LOCK_IRQSAVE           policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_WRITE_UNLOCK                 policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_WRITE_UNLOCK_BH              policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_WRITE_UNLOCK_IRQ             policy<{'arm64': 'y'}>
-CONFIG_ARCH_INLINE_WRITE_UNLOCK_IRQRESTORE      policy<{'arm64': 'y'}>
+CONFIG_ARCH_INLINE_READ_LOCK                    policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_READ_LOCK_BH                 policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_READ_LOCK_IRQ                policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_READ_LOCK_IRQSAVE            policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_READ_UNLOCK                  policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_READ_UNLOCK_BH               policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_READ_UNLOCK_IRQ              policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_READ_UNLOCK_IRQRESTORE       policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_SPIN_LOCK                    policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_SPIN_LOCK_BH                 policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_SPIN_LOCK_IRQ                policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_SPIN_LOCK_IRQSAVE            policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_SPIN_TRYLOCK                 policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_SPIN_TRYLOCK_BH              policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_SPIN_UNLOCK                  policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_SPIN_UNLOCK_BH               policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_SPIN_UNLOCK_IRQ              policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_SPIN_UNLOCK_IRQRESTORE       policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_WRITE_LOCK                   policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_WRITE_LOCK_BH                policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_WRITE_LOCK_IRQ               policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_WRITE_LOCK_IRQSAVE           policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_WRITE_UNLOCK                 policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_WRITE_UNLOCK_BH              policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_WRITE_UNLOCK_IRQ             policy<{'arm64': '-'}>
+CONFIG_ARCH_INLINE_WRITE_UNLOCK_IRQRESTORE      policy<{'arm64': '-'}>
 CONFIG_ARCH_KEEMBAY                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_NR_GPIO                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCH_SPARX5                              policy<{'arm64': 'n'}>
@@ -300,10 +300,8 @@ CONFIG_BT_VIRTIO                                policy<{'amd64': '-', 'arm64': '
 CONFIG_BUILD_BIN2C                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CACHEFILES_ERROR_INJECTION               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CAPI_TRACE                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CC_VERSION_TEXT                          policy<{'amd64': '"x86_64-linux-gnu-gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0"', 'arm64': '"aarch64-linux-gnu-gcc (Ubuntu 15.2.0-15ubuntu2) 15.2.0"'}>
 CONFIG_CEC_CH7322                               policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_CEC_GPIO                                 policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_CEC_PIN                                  policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_CEC_PIN_ERROR_INJ                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CEC_TEGRA                                policy<{'arm64': '-'}>
 CONFIG_CHARGER_BQ2515X                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CHARGER_BQ25980                          policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -339,7 +337,6 @@ CONFIG_CXL_SUSPEND                              policy<{'amd64': '-', 'arm64': '
 CONFIG_DA_MON_EVENTS                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DA_MON_EVENTS_ID                         policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_DA_MON_EVENTS_IMPLICIT                   policy<{'amd64': '-', 'arm64-aws': '-'}>
-CONFIG_DEBUG_PREEMPT                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DELL_WMI_SYSMAN                          policy<{'amd64': 'n'}>
 CONFIG_DMA_BCM2835                              policy<{'arm64': 'y'}>
 CONFIG_DMA_PERNUMA_CMA                          policy<{'arm64': '-'}>
@@ -431,31 +428,31 @@ CONFIG_I2C_BRCMSTB                              policy<{'arm64': 'm'}>
 CONFIG_I2C_TEGRA                                policy<{'arm64': '-'}>
 CONFIG_I2C_TEGRA_BPMP                           policy<{'arm64': '-'}>
 CONFIG_I8K                                      policy<{'amd64': 'n'}>
-CONFIG_INLINE_READ_LOCK                         policy<{'arm64': 'y'}>
-CONFIG_INLINE_READ_LOCK_BH                      policy<{'arm64': 'y'}>
-CONFIG_INLINE_READ_LOCK_IRQ                     policy<{'arm64': 'y'}>
-CONFIG_INLINE_READ_LOCK_IRQSAVE                 policy<{'arm64': 'y'}>
-CONFIG_INLINE_READ_UNLOCK                       policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_INLINE_READ_UNLOCK_BH                    policy<{'arm64': 'y'}>
-CONFIG_INLINE_READ_UNLOCK_IRQ                   policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_INLINE_READ_UNLOCK_IRQRESTORE            policy<{'arm64': 'y'}>
-CONFIG_INLINE_SPIN_LOCK                         policy<{'arm64': 'y'}>
-CONFIG_INLINE_SPIN_LOCK_BH                      policy<{'arm64': 'y'}>
-CONFIG_INLINE_SPIN_LOCK_IRQ                     policy<{'arm64': 'y'}>
-CONFIG_INLINE_SPIN_LOCK_IRQSAVE                 policy<{'arm64': 'y'}>
-CONFIG_INLINE_SPIN_TRYLOCK                      policy<{'arm64': 'y'}>
-CONFIG_INLINE_SPIN_TRYLOCK_BH                   policy<{'arm64': 'y'}>
-CONFIG_INLINE_SPIN_UNLOCK_BH                    policy<{'arm64': 'y'}>
-CONFIG_INLINE_SPIN_UNLOCK_IRQ                   policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_INLINE_SPIN_UNLOCK_IRQRESTORE            policy<{'arm64': 'y'}>
-CONFIG_INLINE_WRITE_LOCK                        policy<{'arm64': 'y'}>
-CONFIG_INLINE_WRITE_LOCK_BH                     policy<{'arm64': 'y'}>
-CONFIG_INLINE_WRITE_LOCK_IRQ                    policy<{'arm64': 'y'}>
-CONFIG_INLINE_WRITE_LOCK_IRQSAVE                policy<{'arm64': 'y'}>
-CONFIG_INLINE_WRITE_UNLOCK                      policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_INLINE_WRITE_UNLOCK_BH                   policy<{'arm64': 'y'}>
-CONFIG_INLINE_WRITE_UNLOCK_IRQ                  policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_INLINE_WRITE_UNLOCK_IRQRESTORE           policy<{'arm64': 'y'}>
+CONFIG_INLINE_READ_LOCK                         policy<{'arm64': '-'}>
+CONFIG_INLINE_READ_LOCK_BH                      policy<{'arm64': '-'}>
+CONFIG_INLINE_READ_LOCK_IRQ                     policy<{'arm64': '-'}>
+CONFIG_INLINE_READ_LOCK_IRQSAVE                 policy<{'arm64': '-'}>
+CONFIG_INLINE_READ_UNLOCK                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INLINE_READ_UNLOCK_BH                    policy<{'arm64': '-'}>
+CONFIG_INLINE_READ_UNLOCK_IRQ                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INLINE_READ_UNLOCK_IRQRESTORE            policy<{'arm64': '-'}>
+CONFIG_INLINE_SPIN_LOCK                         policy<{'arm64': '-'}>
+CONFIG_INLINE_SPIN_LOCK_BH                      policy<{'arm64': '-'}>
+CONFIG_INLINE_SPIN_LOCK_IRQ                     policy<{'arm64': '-'}>
+CONFIG_INLINE_SPIN_LOCK_IRQSAVE                 policy<{'arm64': '-'}>
+CONFIG_INLINE_SPIN_TRYLOCK                      policy<{'arm64': '-'}>
+CONFIG_INLINE_SPIN_TRYLOCK_BH                   policy<{'arm64': '-'}>
+CONFIG_INLINE_SPIN_UNLOCK_BH                    policy<{'arm64': '-'}>
+CONFIG_INLINE_SPIN_UNLOCK_IRQ                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INLINE_SPIN_UNLOCK_IRQRESTORE            policy<{'arm64': '-'}>
+CONFIG_INLINE_WRITE_LOCK                        policy<{'arm64': '-'}>
+CONFIG_INLINE_WRITE_LOCK_BH                     policy<{'arm64': '-'}>
+CONFIG_INLINE_WRITE_LOCK_IRQ                    policy<{'arm64': '-'}>
+CONFIG_INLINE_WRITE_LOCK_IRQSAVE                policy<{'arm64': '-'}>
+CONFIG_INLINE_WRITE_UNLOCK                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INLINE_WRITE_UNLOCK_BH                   policy<{'arm64': '-'}>
+CONFIG_INLINE_WRITE_UNLOCK_IRQ                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INLINE_WRITE_UNLOCK_IRQRESTORE           policy<{'arm64': '-'}>
 CONFIG_INPUT_ARIZONA_HAPTICS                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INPUT_DA7280_HAPTICS                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_INPUT_XEN_KBDDEV_FRONTEND                policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -518,6 +515,7 @@ CONFIG_NVME_KEYRING                             policy<{'amd64': 'y', 'arm64': '
 CONFIG_OMAP_GPMC                                policy<{'arm64': 'm'}>
 CONFIG_PAGE_SHIFT                               policy<{'amd64': '12', 'arm64': '12', 'arm64-aws-64k': '16'}>
 CONFIG_PAGE_SIZE_4KB                            policy<{'amd64': 'y', 'arm64': 'y', 'arm64-aws-64k': '-'}>
+CONFIG_PAHOLE_VERSION                           policy<{'amd64': '131', 'arm64': '131'}>
 CONFIG_PCIE_BRCMSTB                             policy<{'arm64': 'm'}>
 CONFIG_PCIE_IPROC                               policy<{'arm64': 'm'}>
 CONFIG_PCIE_IPROC_MSI                           policy<{'arm64': 'y'}>
@@ -565,12 +563,8 @@ CONFIG_PM_TEST_SUSPEND                          policy<{'amd64': '-', 'arm64': '
 CONFIG_POWER_RESET_BRCMSTB                      policy<{'arm64': 'y'}>
 CONFIG_POWER_RESET_LINKSTATION                  policy<{'arm64': 'n'}>
 CONFIG_POWER_RESET_OCELOT_RESET                 policy<{'arm64': '-'}>
-CONFIG_PREEMPTION                               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_PREEMPT_BUILD                            policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_PREEMPT_COUNT                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PREEMPT_RCU                              policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_PREEMPT_TRACER                           policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_PREEMPT_VOLUNTARY_BUILD                  policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_PREEMPT_VOLUNTARY_BUILD                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PRU_REMOTEPROC                           policy<{'arm64': '-'}>
 CONFIG_PTE_MARKER                               policy<{'amd64': '-'}>
 CONFIG_PTP_1588_CLOCK_DTE                       policy<{'arm64': 'm'}>
@@ -607,7 +601,9 @@ CONFIG_RN5T618_POWER                            policy<{'arm64': 'n'}>
 CONFIG_ROCKCHIP_DTPM                            policy<{'arm64': '-'}>
 CONFIG_RSI_COEX                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_BRCMSTB                          policy<{'arm64': 'm'}>
+CONFIG_RTC_DRV_NVIDIA_VRS10                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_TEGRA                            policy<{'arm64': '-'}>
+CONFIG_RUSTC_VERSION                            policy<{'amd64': '109301', 'arm64': '109301'}>
 CONFIG_RUSTC_VERSION_TEXT                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RUST_BITMAP_HARDENED                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RUST_BUILD_ASSERT_ALLOW                  policy<{'amd64': '-', 'arm64': '-'}>
@@ -912,6 +908,7 @@ CONFIG_SND_SOC_AC97_BUS                         policy<{'amd64': '-', 'arm64': '
 CONFIG_SND_SOC_AC97_CODEC                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_SOC_ACPI                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_SOC_ACPI_AMD_MATCH                   policy<{'amd64': '-'}>
+CONFIG_SND_SOC_ACPI_AMD_SDCA_QUIRKS             policy<{'amd64': '-'}>
 CONFIG_SND_SOC_ACPI_INTEL_MATCH                 policy<{'amd64': '-'}>
 CONFIG_SND_SOC_ACPI_INTEL_SDCA_QUIRKS           policy<{'amd64': '-'}>
 CONFIG_SND_SOC_ADAU1372                         policy<{'amd64': '-', 'arm64': '-'}>
@@ -1041,6 +1038,9 @@ CONFIG_SND_SOC_CS530X_I2C                       policy<{'amd64': '-', 'arm64': '
 CONFIG_SND_SOC_CS530X_SPI                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_SOC_CS53L30                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_SOC_CS_AMP_LIB                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_CV1800B_ADC_CODEC                policy<{'arm64': '-'}>
+CONFIG_SND_SOC_CV1800B_DAC_CODEC                policy<{'arm64': '-'}>
+CONFIG_SND_SOC_CV1800B_TDM                      policy<{'arm64': '-'}>
 CONFIG_SND_SOC_CX2072X                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_SOC_DA7213                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_SOC_DA7219                           policy<{'amd64': '-', 'arm64': '-'}>
@@ -1182,6 +1182,7 @@ CONFIG_SND_SOC_INTEL_SOF_REALTEK_COMMON         policy<{'amd64': '-'}>
 CONFIG_SND_SOC_INTEL_SOF_RT5682_MACH            policy<{'amd64': '-'}>
 CONFIG_SND_SOC_INTEL_SOF_SSP_AMP_MACH           policy<{'amd64': '-'}>
 CONFIG_SND_SOC_INTEL_SOF_SSP_COMMON             policy<{'amd64': '-'}>
+CONFIG_SND_SOC_INTEL_SOF_TI_COMMON              policy<{'amd64': '-'}>
 CONFIG_SND_SOC_INTEL_SOF_WM8804_MACH            policy<{'amd64': '-'}>
 CONFIG_SND_SOC_INTEL_SST                        policy<{'amd64': '-'}>
 CONFIG_SND_SOC_INTEL_SST_TOPLEVEL               policy<{'amd64': '-'}>
@@ -1340,6 +1341,8 @@ CONFIG_SND_SOC_RT286                            policy<{'amd64': '-'}>
 CONFIG_SND_SOC_RT298                            policy<{'amd64': '-'}>
 CONFIG_SND_SOC_RT5514                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_SOC_RT5514_SPI                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_RT5575                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SND_SOC_RT5575_SPI                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_SOC_RT5616                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_SOC_RT5631                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_SOC_RT5640                           policy<{'amd64': '-', 'arm64': '-'}>
@@ -1742,7 +1745,6 @@ CONFIG_SURFACE_PRO3_BUTTON                      policy<{'amd64': '-', 'arm64': '
 CONFIG_SUSPEND                                  policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_SUSPEND_FREEZER                          policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_SUSPEND_SKIP_SYNC                        policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_TASKS_RCU                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TEE_BNXT_FW                              policy<{'arm64': 'm'}>
 CONFIG_TEE_STMM_EFI                             policy<{'arm64': 'n'}>
 CONFIG_TEGRA186_GPC_DMA                         policy<{'arm64': '-'}>
@@ -1793,7 +1795,6 @@ CONFIG_TYPEC_WCOVE                              policy<{'amd64': 'n'}>
 CONFIG_UBUNTU_ODM_DRIVERS                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UCB1400_CORE                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UCSI_LENOVO_YOGA_C630                    policy<{'arm64': 'm'}>
-CONFIG_UNINLINE_SPIN_UNLOCK                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_AUDIO                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_BRCMSTB                              policy<{'arm64': 'm'}>
 CONFIG_USB_CDNSP_GADGET                         policy<{'amd64': 'n', 'arm64': 'n'}>
