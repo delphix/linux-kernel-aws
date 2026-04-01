@@ -300,7 +300,6 @@ CONFIG_BT_VIRTIO                                policy<{'amd64': '-', 'arm64': '
 CONFIG_BUILD_BIN2C                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CACHEFILES_ERROR_INJECTION               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CAPI_TRACE                               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_CC_VERSION_TEXT                          policy<{'amd64': '"x86_64-linux-gnu-gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0"', 'arm64': '"aarch64-linux-gnu-gcc (Ubuntu 15.2.0-15ubuntu2) 15.2.0"'}>
 CONFIG_CEC_CH7322                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CEC_TEGRA                                policy<{'arm64': '-'}>
 CONFIG_CHARGER_BQ2515X                          policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -515,7 +514,6 @@ CONFIG_NVME_KEYRING                             policy<{'amd64': 'y', 'arm64': '
 CONFIG_OMAP_GPMC                                policy<{'arm64': 'm'}>
 CONFIG_PAGE_SHIFT                               policy<{'amd64': '12', 'arm64': '12', 'arm64-aws-64k': '16'}>
 CONFIG_PAGE_SIZE_4KB                            policy<{'amd64': 'y', 'arm64': 'y', 'arm64-aws-64k': '-'}>
-CONFIG_PAHOLE_VERSION                           policy<{'amd64': '131', 'arm64': '131'}>
 CONFIG_PCIE_BRCMSTB                             policy<{'arm64': 'm'}>
 CONFIG_PCIE_IPROC                               policy<{'arm64': 'm'}>
 CONFIG_PCIE_IPROC_MSI                           policy<{'arm64': 'y'}>
@@ -603,7 +601,6 @@ CONFIG_RSI_COEX                                 policy<{'amd64': '-', 'arm64': '
 CONFIG_RTC_DRV_BRCMSTB                          policy<{'arm64': 'm'}>
 CONFIG_RTC_DRV_NVIDIA_VRS10                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_TEGRA                            policy<{'arm64': '-'}>
-CONFIG_RUSTC_VERSION                            policy<{'amd64': '109301', 'arm64': '109301'}>
 CONFIG_RUSTC_VERSION_TEXT                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RUST_BITMAP_HARDENED                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RUST_BUILD_ASSERT_ALLOW                  policy<{'amd64': '-', 'arm64': '-'}>
