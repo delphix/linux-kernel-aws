@@ -15,6 +15,7 @@ CONFIG_MEMCG_V1                                 note<'Leave memcg v1 enabled on 
 CONFIG_PROC_PID_CPUSET                          policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_PROC_PID_CPUSET                          note<'Dependency to enable cpuset v1'>
 
+
 # ---- Annotations without notes ----
 
 CONFIG_AS_VERSION                               policy<{'amd64': '24200', 'arm64': '24200'}>
