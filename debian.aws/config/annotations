@@ -30,6 +30,9 @@ CONFIG_DRM_ETNAVIV                              note<'LP: #1990167'>
 CONFIG_DRM_ETNAVIV_THERMAL                      policy<{'arm64': '-'}>
 CONFIG_DRM_ETNAVIV_THERMAL                      note<'LP: #1990167'>
 
+CONFIG_DRM_NOVA                                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_DRM_NOVA                                 note<'LP: #2150845'>
+
 CONFIG_ENA_ETHERNET                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_ENA_ETHERNET                             note<'LP: #2144694'>
 
@@ -355,7 +358,6 @@ CONFIG_DRM_KMB_DISPLAY                          policy<{'arm64': '-'}>
 CONFIG_DRM_LONTIUM_LT9611                       policy<{'arm64': 'n'}>
 CONFIG_DRM_LONTIUM_LT9611UXC                    policy<{'arm64': 'n'}>
 CONFIG_DRM_NOMODESET                            policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_DRM_NOVA                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DRM_PANEL_ABT_Y030XX067A                 policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_MANTIX_MLAF057WE51             policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_NOVATEK_NT36672A               policy<{'arm64': 'n'}>
