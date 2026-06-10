@@ -6,6 +6,15 @@
 
 include "../../debian.aws/config/annotations"
 
+CONFIG_CPUSETS_V1                               policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_CPUSETS_V1                               note<'Leave cpuset v1 enabled on Noble AWS kernels 6.17+ -- LP: #2122368'>
+
+CONFIG_MEMCG_V1                                 policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_MEMCG_V1                                 note<'Leave memcg v1 enabled on Noble AWS kernels 6.17+ -- LP: #2122368'>
+
+CONFIG_PROC_PID_CPUSET                          policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_PROC_PID_CPUSET                          note<'Dependency to enable cpuset v1'>
+
 
 # ---- Annotations without notes ----
 
