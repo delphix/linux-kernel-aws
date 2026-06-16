@@ -33,9 +33,6 @@ CONFIG_DRM_ETNAVIV_THERMAL                      note<'LP: #1990167'>
 CONFIG_DRM_NOVA                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DRM_NOVA                                 note<'LP: #2150845'>
 
-CONFIG_ENA_ETHERNET                             policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_ENA_ETHERNET                             note<'LP: #2144694'>
-
 CONFIG_GPIO_CDEV_V1                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_GPIO_CDEV_V1                             note<'LP: #1953613'>
 
