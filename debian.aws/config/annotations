@@ -57,6 +57,9 @@ CONFIG_IOMMU_DEFAULT_DMA_STRICT                 note<'LP: #1806488'>
 CONFIG_KERNEL_ZSTD                              policy<{'amd64': 'y', 'arm64': 'n'}>
 CONFIG_KERNEL_ZSTD                              note<'LP: #1931725'>
 
+CONFIG_NOVA_CORE                                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_NOVA_CORE                                note<'LP: #2150845'>
+
 CONFIG_PM_STD_PARTITION                         policy<{'amd64': '""', 'arm64': '""'}>
 CONFIG_PM_STD_PARTITION                         note<'LP:lp2060992'>
 
@@ -505,7 +508,6 @@ CONFIG_MTD_OF_PARTS_LINKSYS_NS                  policy<{'arm64': 'y'}>
 CONFIG_NFC_S3FWRN82_UART                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NFSD_V2_ACL                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NOUVEAU_PLATFORM_DRIVER                  policy<{'arm64': '-'}>
-CONFIG_NOVA_CORE                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NPCM7XX_WATCHDOG                         policy<{'arm64': 'm'}>
 CONFIG_NVEC_PAZ00                               policy<{'arm64': '-'}>
 CONFIG_NVEC_POWER                               policy<{'arm64': '-'}>
