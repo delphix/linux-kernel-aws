@@ -188,6 +188,14 @@ struct nfsd4_compound_state {
 	struct nfsd4_slot	*slot;
 	int			data_offset;
 	bool                    spo_must_allowed;
+	/*
+	 * Set by nfsd4_sequence() when it answers a COMPOUND from the
+	 * session reply cache. Tells nfsd4_proc_compound() to stop
+	 * processing the COMPOUND, and nfsd4_sequence_done() to leave the
+	 * cached entry alone. It cannot be inferred from @status, which by
+	 * then holds the cached reply's status for the wire.
+	 */
+	bool			sequence_replay;
 	size_t			iovlen;
 	u32			minorversion;
 	__be32			status;
