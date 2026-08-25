@@ -3155,7 +3155,7 @@ nfsd4_proc_compound(struct svc_rqst *rqstp)
 		trace_nfsd_compound_op_err(rqstp, op->opnum, op->status);
 
 		/* Only from SEQUENCE */
-		if (cstate->sequence_replay) {
+		if (cstate->status == nfserr_replay_cache) {
 			dprintk("%s NFS4.1 replay from cache\n", __func__);
 			status = op->status;
 			goto out;

@@ -4451,16 +4451,10 @@ nfsd4_sequence(struct svc_rqst *rqstp, struct nfsd4_compound_state *cstate,
 		cstate->slot = slot;
 		cstate->session = session;
 		cstate->clp = clp;
-		/*
-		 * Return the cached reply status, and flag the replay for
-		 * nfsd4_proc_compound() and nfsd4_sequence_done(). Note
-		 * that this branch leaves NFSD4_SLOT_INUSE clear, so
-		 * nothing serialises this slot against a concurrent
-		 * retransmit of the same seqid; nfsd4_sequence_done() must
-		 * not write to the slot on this path.
-		 */
+		/* Return the cached reply status and set cstate->status
+		 * for nfsd4_proc_compound processing */
 		status = nfsd4_replay_cache_entry(resp, seq);
-		cstate->sequence_replay = true;
+		cstate->status = nfserr_replay_cache;
 		goto out;
 	}
 	if (status)
@@ -4560,7 +4554,7 @@ nfsd4_sequence_done(struct nfsd4_compoundres *resp)
 	struct nfsd4_compound_state *cs = &resp->cstate;
 
 	if (nfsd4_has_session(cs)) {
-		if (!cs->sequence_replay) {
+		if (cs->status != nfserr_replay_cache) {
 			nfsd4_store_cache_entry(resp);
 			cs->slot->sl_flags &= ~NFSD4_SLOT_INUSE;
 		}
