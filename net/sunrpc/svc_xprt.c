@@ -1191,9 +1191,28 @@ static void svc_revisit(struct cache_deferred_req *dreq, int too_many)
 	spin_lock(&xprt->xpt_lock);
 	set_bit(XPT_DEFERRED, &xprt->xpt_flags);
 	if (too_many || test_bit(XPT_DEAD, &xprt->xpt_flags)) {
+		/*
+		 * When the deferral is being destroyed because the global
+		 * deferred list is over its limit, rather than because the
+		 * transport is already gone, no reply will ever be sent for
+		 * a request the transport has already acknowledged.  The
+		 * connection must not be left up: an NFSv4 client sets
+		 * RPC_TASK_NO_RETRANS_TIMEOUT and so waits forever for a
+		 * reply that is never coming.  RFC 3530 forbids dropping a
+		 * request without also closing the connection for precisely
+		 * this reason.  Closing makes the client retransmit, which
+		 * also rescues any other request stranded on this transport.
+		 */
+		if (too_many)
+			set_bit(XPT_CLOSE, &xprt->xpt_flags);
 		spin_unlock(&xprt->xpt_lock);
 		trace_svc_defer_drop(dr);
 		free_deferred(xprt, dr);
+		if (too_many) {
+			pr_warn_ratelimited("svc: too many deferred requests; dropped a request from %s and closed the connection\n",
+					    xprt->xpt_remotebuf);
+			svc_xprt_enqueue(xprt);
+		}
 		svc_xprt_put(xprt);
 		return;
 	}
