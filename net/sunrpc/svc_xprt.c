@@ -30,6 +30,7 @@ module_param(svc_rpc_per_connection_limit, uint, 0644);
 static struct svc_deferred_req *svc_deferred_dequeue(struct svc_xprt *xprt);
 static int svc_deferred_recv(struct svc_rqst *rqstp);
 static struct cache_deferred_req *svc_defer(struct cache_req *req);
+static bool svc_can_defer(struct cache_req *req);
 static void svc_age_temp_xprts(struct timer_list *t);
 static void svc_delete_xprt(struct svc_xprt *xprt);
 
@@ -816,6 +817,7 @@ static void svc_handle_xprt(struct svc_rqst *rqstp, struct svc_xprt *xprt)
 		clear_bit(XPT_OLD, &xprt->xpt_flags);
 
 		rqstp->rq_chandle.defer = svc_defer;
+		rqstp->rq_chandle.can_defer = svc_can_defer;
 
 		if (serv->sv_stats)
 			serv->sv_stats->netcnt++;
@@ -1203,6 +1205,29 @@ static void svc_revisit(struct cache_deferred_req *dreq, int too_many)
 	trace_svc_defer_queue(dr);
 	svc_xprt_enqueue(xprt);
 	svc_xprt_put(xprt);
+}
+
+/*
+ * Report whether this request could be deferred, so that a cache lookup
+ * which misses need not block a server thread to find out.
+ *
+ * This is deliberately narrower than svc_defer() below, which also
+ * refuses a request whose rq_arg.page_len is non-zero.  That is true of
+ * any NFS WRITE bigger than a page, including while it is being
+ * authenticated -- RQ_USEDEFERRAL is set at the top of
+ * svc_process_common(), before svc_authenticate() -- and there a
+ * -ETIMEDOUT becomes SVC_CLOSE, which takes down the connection and
+ * every other request in flight on it.  The asymmetry is the point:
+ * answering "yes" when svc_defer() will in fact refuse costs only the
+ * wait we had before, because ->defer() is still called and still
+ * decides; answering "no" when it would have succeeded throws away a
+ * wait that would have turned the miss into a hit.  So err toward yes.
+ */
+static bool svc_can_defer(struct cache_req *req)
+{
+	struct svc_rqst *rqstp = container_of(req, struct svc_rqst, rq_chandle);
+
+	return test_bit(RQ_USEDEFERRAL, &rqstp->rq_flags);
 }
 
 /*
