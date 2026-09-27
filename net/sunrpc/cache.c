@@ -721,7 +721,15 @@ static bool cache_defer_req(struct cache_req *req, struct cache_head *item)
 {
 	struct cache_deferred_req *dreq;
 
-	if (!cache_defer_immediately()) {
+	/*
+	 * Waiting here is an optimisation: it spares us building and
+	 * revisiting a deferral for an upcall that is about to be
+	 * answered anyway.  For a caller that has told us it cannot be
+	 * deferred it is not an optimisation but a server thread held
+	 * for up to thread_wait seconds before returning the -ETIMEDOUT
+	 * that was certain from the start.
+	 */
+	if (!cache_defer_immediately() && req->thread_wait) {
 		cache_wait_req(req, item);
 		if (!test_bit(CACHE_PENDING, &item->flags))
 			return false;

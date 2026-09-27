@@ -3075,6 +3075,7 @@ nfsd4_proc_compound(struct svc_rqst *rqstp)
 	 * too hard to avoid non-idempotency problems.
 	 */
 	clear_bit(RQ_USEDEFERRAL, &rqstp->rq_flags);
+	rqstp->rq_chandle.thread_wait = 0;
 
 	/*
 	 * According to RFC3010, this takes precedence over all other errors.

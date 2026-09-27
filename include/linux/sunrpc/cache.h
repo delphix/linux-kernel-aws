@@ -133,6 +133,10 @@ struct cache_req {
 	struct cache_deferred_req *(*defer)(struct cache_req *req);
 	unsigned long	thread_wait;	/* How long (jiffies) we can block the
 					 * current thread to wait for updates.
+					 * Zero means this request cannot be
+					 * deferred, so a wait could only delay
+					 * the -ETIMEDOUT it already ends in:
+					 * do not block the thread at all.
 					 */
 };
 

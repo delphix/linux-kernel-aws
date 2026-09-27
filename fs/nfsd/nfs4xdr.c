@@ -6379,6 +6379,16 @@ nfs4svc_decode_compoundargs(struct svc_rqst *rqstp, struct xdr_stream *xdr)
 	 */
 	clear_bit(RQ_USEDEFERRAL, &rqstp->rq_flags);
 
+	/*
+	 * The corollary: every cache lookup this compound goes on to
+	 * make ends in -ETIMEDOUT if it misses -- NFS4ERR_DELAY on the
+	 * wire -- however long it waits, because svc_defer() refuses on
+	 * the bit just cleared.  Spend the thread_wait budget svc_recv()
+	 * handed us now rather than have cache_defer_req() park an nfsd
+	 * thread for seconds to arrive at the same answer.
+	 */
+	rqstp->rq_chandle.thread_wait = 0;
+
 	return nfsd4_decode_compound(args);
 }
 
