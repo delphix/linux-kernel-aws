@@ -131,6 +131,12 @@ struct cache_detail {
  */
 struct cache_req {
 	struct cache_deferred_req *(*defer)(struct cache_req *req);
+	/* Optional.  Reports whether ->defer() would be able to defer this
+	 * request, so that a caller need not block a thread to find out.
+	 * NULL means "no idea", and is the conservative answer: wait, then
+	 * ask ->defer() as before.
+	 */
+	bool		(*can_defer)(struct cache_req *req);
 	unsigned long	thread_wait;	/* How long (jiffies) we can block the
 					 * current thread to wait for updates.
 					 */

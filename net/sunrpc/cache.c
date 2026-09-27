@@ -721,7 +721,24 @@ static bool cache_defer_req(struct cache_req *req, struct cache_head *item)
 {
 	struct cache_deferred_req *dreq;
 
-	if (!cache_defer_immediately()) {
+	/*
+	 * Waiting here is an optimisation: it spares us building and
+	 * revisiting a deferral for an upcall that is about to be answered
+	 * anyway, and on a busy cache most waits end that way.  It is only
+	 * worth a server thread if a deferral is possible at all, though.
+	 * Where it is not -- an NFSv4 compound has cleared RQ_USEDEFERRAL
+	 * by the time it looks anything up -- the thread sleeps for up to
+	 * thread_wait seconds, ->defer() then refuses, and the request ends
+	 * in -ETIMEDOUT, which reaches an NFSv4 client as NFS4ERR_DELAY.
+	 * Give the wait up in that case: the client retries in its own
+	 * time, while the thread it was holding is owed to every other
+	 * client on the box.
+	 *
+	 * cache_defer_immediately() is tested last so that a request which
+	 * was never going to wait does not consume an injected failure.
+	 */
+	if ((!req->can_defer || req->can_defer(req)) &&
+	    !cache_defer_immediately()) {
 		cache_wait_req(req, item);
 		if (!test_bit(CACHE_PENDING, &item->flags))
 			return false;
