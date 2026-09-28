@@ -519,8 +519,18 @@ idmap_lookup(struct svc_rqst *rqstp,
 	if (ret == -ETIMEDOUT) {
 		struct ent *prev_item = *item;
 		*item = lookup_fn(detail, key);
-		if (*item != prev_item)
+		if (*item != prev_item) {
+			/*
+			 * cache_check() used to cost at least thread_wait
+			 * before it could return here.  It does not any
+			 * more -- RQ_USEDEFERRAL is always clear on this
+			 * path, so cache_defer_req() no longer waits --
+			 * and this loop runs for as long as something
+			 * else keeps replacing the entry.
+			 */
+			cond_resched();
 			goto retry;
+		}
 		cache_put(&(*item)->h, detail);
 	}
 	return ret;

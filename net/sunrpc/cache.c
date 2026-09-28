@@ -721,7 +721,30 @@ static bool cache_defer_req(struct cache_req *req, struct cache_head *item)
 {
 	struct cache_deferred_req *dreq;
 
-	if (!cache_defer_immediately()) {
+	/*
+	 * Waiting here buys two different things, and it is worth being
+	 * clear about which.  For a request that can be deferred it spares
+	 * us building and revisiting a deferral for an upcall that is
+	 * about to be answered anyway.  For one that cannot, it is the
+	 * only way the lookup can succeed at all -- so skipping it is a
+	 * real loss, not the removal of a formality.
+	 *
+	 * It is paid for in server threads either way, and that is the
+	 * scarcer resource.  A deferral costs a kmalloc and a list entry
+	 * and is capped at DFR_MAX; a waiter costs a whole thread and is
+	 * capped at nothing.  So where a deferral is impossible -- an
+	 * NFSv4 compound has cleared RQ_USEDEFERRAL by the time it looks
+	 * anything up -- give the wait up.  If the upcall does not land,
+	 * the request was going to end in -ETIMEDOUT regardless, which
+	 * reaches an NFSv4 client as NFS4ERR_DELAY; if it would have
+	 * landed, the client pays one retry and the thread goes back to
+	 * serving everyone else.
+	 *
+	 * cache_defer_immediately() is tested last so that a request which
+	 * was never going to wait does not consume an injected failure.
+	 */
+	if ((!req->can_defer || req->can_defer(req)) &&
+	    !cache_defer_immediately()) {
 		cache_wait_req(req, item);
 		if (!test_bit(CACHE_PENDING, &item->flags))
 			return false;
