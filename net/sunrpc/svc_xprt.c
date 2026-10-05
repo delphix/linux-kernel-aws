@@ -1187,13 +1187,35 @@ static void svc_revisit(struct cache_deferred_req *dreq, int too_many)
 	struct svc_deferred_req *dr =
 		container_of(dreq, struct svc_deferred_req, handle);
 	struct svc_xprt *xprt = dr->xprt;
+	bool dead, evicted;
 
 	spin_lock(&xprt->xpt_lock);
 	set_bit(XPT_DEFERRED, &xprt->xpt_flags);
-	if (too_many || test_bit(XPT_DEAD, &xprt->xpt_flags)) {
+	dead = test_bit(XPT_DEAD, &xprt->xpt_flags);
+	evicted = too_many && !dead;
+	if (too_many || dead) {
 		spin_unlock(&xprt->xpt_lock);
 		trace_svc_defer_drop(dr);
+		if (evicted)
+			pr_warn_ratelimited("svc: %s: too many deferred requests; dropping xid 0x%08x from %pISpc\n",
+					    xprt->xpt_server->sv_name,
+					    be32_to_cpu(dr->args[0]),
+					    (struct sockaddr *)&dr->addr);
 		free_deferred(xprt, dr);
+		/*
+		 * An eviction destroys the reply to a request the transport
+		 * has already acknowledged while leaving that transport up,
+		 * which strands the caller.  Close connected transports only,
+		 * matching the close_xprt path in svc_process_common(): a UDP
+		 * permsock is shared and registered with rpcbind, and a UDP
+		 * client retransmits on its own.  XPT_TEMP is fixed before a
+		 * transport can receive anything.  Acting on the XPT_DEAD
+		 * read above after dropping xpt_lock is safe because XPT_DEAD
+		 * is only set alongside XPT_CLOSE, so svc_xprt_deferred_close()
+		 * declines to enqueue a transport that died in between.
+		 */
+		if (evicted && test_bit(XPT_TEMP, &xprt->xpt_flags))
+			svc_xprt_deferred_close(xprt);
 		svc_xprt_put(xprt);
 		return;
 	}
